@@ -11,6 +11,7 @@ import {
   signOut,
 } from "./app/slices/auth.slice";
 import { IUser } from "./types/users.type";
+import axios, {AxiosResponse} from "axios";
 
 const App = () => {
   const user = useSelector(selectUser);
@@ -19,21 +20,11 @@ const App = () => {
   useEffect(() => {
 
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then((resObject: IUser) => {
-          dispatch(signIn(resObject));
+      axios.get("http://localhost:5000/auth/login/success",{
+        withCredentials: true
+      }).then((resObject:AxiosResponse<IUser, any>) => {
+          console.log(resObject)
+          dispatch(signIn(resObject.data));
         })
         .catch((err: { message: string }) => {
           dispatch(signOut());
