@@ -39,39 +39,45 @@ const AllRoutes = ({ user }: IProps) => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+      {user && (
+        <>
+          {clientRoutes.map((el) => (
+            <Route
+              path={el.path}
+              element={
+                <ClientProtectedRoute user={user}>
+                  {el.element}
+                </ClientProtectedRoute>
+              }
+              key={el.path}
+            />
+          ))}
+          {editorRoutes.map((el) => (
+            <Route
+              path={el.path}
+              element={
+                <EditorProtectedRoute user={user}>
+                  {el.element}
+                </EditorProtectedRoute>
+              }
+              key={el.path}
+            />
+          ))}
 
-      {clientRoutes.map((el) => (
-        <Route
-          path={el.path}
-          element={
-            <ClientProtectedRoute user={user}>
-              {el.element}
-            </ClientProtectedRoute>
-          }
-          key={el.path}
-        />
-      ))}
-      {editorRoutes.map((el) => (
-        <Route
-          path={el.path}
-          element={
-            <EditorProtectedRoute user={user}>
-              {el.element}
-            </EditorProtectedRoute>
-          }
-          key={el.path}
-        />
-      ))}
+          {adminRoutes.map((el) => (
+            <Route
+              path={el.path}
+              element={
+                <AdminProtectedRoute user={user}>
+                  {el.element}
+                </AdminProtectedRoute>
+              }
+              key={el.path}
+            />
+          ))}
+        </>
+      )}
 
-      {adminRoutes.map((el) => (
-        <Route
-          path={el.path}
-          element={
-            <AdminProtectedRoute user={user}>{el.element}</AdminProtectedRoute>
-          }
-          key={el.path}
-        />
-      ))}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
