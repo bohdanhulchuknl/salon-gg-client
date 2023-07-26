@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 import { Navbar, AllRoutes } from "./components";
 
-
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectUser,
@@ -11,7 +10,7 @@ import {
   signOut,
 } from "./app/slices/auth.slice";
 import { IUser } from "./types/users.type";
-import axios, {AxiosResponse} from "axios";
+import axios, { AxiosResponse } from "axios";
 
 import { serverUri } from "./config/config";
 
@@ -20,16 +19,20 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(user)
+    console.log(user);
     const getUser = () => {
-      axios.get(`${serverUri}/auth/login/success`,{
-        withCredentials: true
-      }).then((resObject:AxiosResponse<IUser, any>) => {
-          console.log(resObject)
-          dispatch(signIn(resObject.data));
+      axios
+        .get(`${serverUri}/auth/login/success`, {
+          withCredentials: true,
+        })
+        .then((resObject: AxiosResponse<IUser, any>) => {
+          console.log(resObject.data)
+          if (resObject.data) {
+            dispatch(signIn(resObject.data));
+          }
         })
         .catch((err: { message: string }) => {
-          console.log(err)
+          console.log(err);
           dispatch(signOut());
           dispatch(setAuthError(err.message));
         });
@@ -40,7 +43,7 @@ const App = () => {
   return (
     <div>
       <Navbar user={user} />
-      <AllRoutes user={user}/>
+      <AllRoutes user={user} />
     </div>
   );
 };
