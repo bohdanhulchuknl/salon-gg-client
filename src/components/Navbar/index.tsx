@@ -2,13 +2,15 @@ import userIcon from "../../assets/user-avatar.png";
 import { Link } from "react-router-dom";
 import { IUser } from "../../types/users.type";
 
+import { serverUri } from "../../config/config";
+
 type Props = {
   user: IUser | null;
 };
 
 const Navbar = ({ user }: Props) => {
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open(`${serverUri}/auth/logout`, "_self");
     // const res = await fetch("http://localhost:5000/auth/logout")
     // console.log(res)
   };

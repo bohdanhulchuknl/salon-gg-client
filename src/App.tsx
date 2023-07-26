@@ -13,6 +13,8 @@ import {
 import { IUser } from "./types/users.type";
 import axios, {AxiosResponse} from "axios";
 
+import { serverUri } from "./config/config";
+
 const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -20,7 +22,7 @@ const App = () => {
   useEffect(() => {
 
     const getUser = () => {
-      axios.get("http://localhost:5000/auth/login/success",{
+      axios.get(`${serverUri}/auth/login/success`,{
         withCredentials: true
       }).then((resObject:AxiosResponse<IUser, any>) => {
           console.log(resObject)

@@ -1,8 +1,10 @@
 
+import { serverUri } from "../../config/config"
+
 const Login = () => {
 
     const handleGoogleLogin = () => {
-        window.open("http://localhost:5000/auth/google", "_self")
+        window.open(`${serverUri}/auth/google`, "_self")
     }
 
     // const handleFacebookLogin = () => {
