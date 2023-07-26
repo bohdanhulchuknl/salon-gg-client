@@ -20,7 +20,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
+    console.log(user)
     const getUser = () => {
       axios.get(`${serverUri}/auth/login/success`,{
         withCredentials: true
@@ -29,6 +29,7 @@ const App = () => {
           dispatch(signIn(resObject.data));
         })
         .catch((err: { message: string }) => {
+          console.log(err)
           dispatch(signOut());
           dispatch(setAuthError(err.message));
         });
