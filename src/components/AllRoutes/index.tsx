@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Home, Login, Admin, Editor, User } from "../../pages";
+import { Home, Login, Admin, Editor, User, TestUser } from "../../pages";
+
 import {
   AdminProtectedRoute,
   EditorProtectedRoute,
@@ -28,6 +29,10 @@ const clientRoutes = [
     element: <User />,
     path: "/client",
   },
+  {
+    element: <TestUser />,
+    path: "/test-user",
+  },
 ];
 
 interface IProps {
@@ -39,6 +44,7 @@ const AllRoutes = ({ user }: IProps) => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+ 
       {user && (
         <>
           {clientRoutes.map((el) => (

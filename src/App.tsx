@@ -42,8 +42,15 @@ const App = () => {
 
   return (
     <div>
-      <Navbar user={user} />
+      <header>
+       <Navbar user={user} />  
+      </header>
+      <main>
       <AllRoutes user={user} />
+      </main>
+      <footer>
+        
+      </footer>
     </div>
   );
 };

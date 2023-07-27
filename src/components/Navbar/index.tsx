@@ -45,6 +45,9 @@ const Navbar = ({ user }: Props) => {
           <li>
             <Link to="/">Home</Link>
           </li>
+          <li>
+            <Link to="/test-user">TEST</Link>
+          </li>
         </ul>
       ) : (
         <div>
