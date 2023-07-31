@@ -14,7 +14,7 @@ const Navbar = ({ user }: Props) => {
     // const res = await fetch("http://localhost:5000/auth/logout")
     // console.log(res)
     axios
-      .get("https://o-auth-video-backend.herokuapp.com/auth/logout", {
+      .get(`${serverUri}/auth/logout`, {
         withCredentials: true,
       })
       .then((resResponse) => {
