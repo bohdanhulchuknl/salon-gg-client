@@ -1,7 +1,7 @@
 import userIcon from "../../assets/user-avatar.png";
 import { Link } from "react-router-dom";
 import { IUser } from "../../types/users.type";
-
+import axios from "axios";
 import { serverUri } from "../../config/config";
 
 type Props = {
@@ -10,9 +10,18 @@ type Props = {
 
 const Navbar = ({ user }: Props) => {
   const logout = () => {
-    window.open(`${serverUri}/auth/logout`, "_self");
+    // window.open(`${serverUri}/auth/logout`, "_self");
     // const res = await fetch("http://localhost:5000/auth/logout")
     // console.log(res)
+    axios
+      .get("https://o-auth-video-backend.herokuapp.com/auth/logout", {
+        withCredentials: true,
+      })
+      .then((resResponse) => {
+        if (resResponse.data === "done") {
+          window.location.href = "/";
+        }
+      }).catch(err => console.log(err));
   };
   return (
     <div>
@@ -52,19 +61,15 @@ const Navbar = ({ user }: Props) => {
       ) : (
         <div>
           <div>
-
             <Link to="/login">Login</Link>
           </div>
           <div>
-
             <Link to="/client">Client</Link>
           </div>
           <div>
-
             <Link to="/editor">editor</Link>
           </div>
           <div>
-
             <Link to="/admin">admin</Link>
           </div>
         </div>
