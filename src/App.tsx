@@ -22,7 +22,7 @@ const App = () => {
     console.log(user);
     const getUser = () => {
       axios
-        .get(`${serverUri}/success`, {
+        .get(`${serverUri}/getuser`, {
           withCredentials: true,
         })
         .then((resObject: AxiosResponse<IUser, any>) => {
