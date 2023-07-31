@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Navbar, AllRoutes } from "./components";
+import { Navbar, AllRoutes, Footer, Carousel } from "./components";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -12,11 +12,17 @@ import {
 import { IUser } from "./types/users.type";
 import axios, { AxiosResponse } from "axios";
 
+import sliderOne from "./assets/sliderOne.jpg";
+import sliderTwo from "./assets/sliderTwo.jpg";
+import sliderThe from "./assets/sliderTwo.jpg";
+
 import { serverUri } from "./config/config";
 
 const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+
+  const slider = [sliderOne, sliderTwo, sliderThe];
 
   useEffect(() => {
     console.log(user);
@@ -26,7 +32,7 @@ const App = () => {
           withCredentials: true,
         })
         .then((resObject: AxiosResponse<IUser, any>) => {
-          console.log(resObject.data)
+          console.log(resObject.data);
           if (resObject.data) {
             dispatch(signIn(resObject.data));
           }
@@ -41,15 +47,20 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <header>
-       <Navbar user={user} />  
+    <div className="flex flex-col min-h-full">
+      <header className="sticky top-0 z-10 ">
+        <Navbar user={user} />
       </header>
-      <main>
-      <AllRoutes user={user} />
+      <main className=" flex-grow flex-shrink flex-auto">
+        <AllRoutes user={user} />
+        <Carousel autoSlide={true}>
+          {slider.map((s) => (
+            <img src={s} />
+          ))}
+        </Carousel>
       </main>
-      <footer>
-        
+      <footer id="footer">
+        <Footer />
       </footer>
     </div>
   );
