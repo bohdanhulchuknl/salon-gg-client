@@ -1,18 +1,34 @@
 import userIcon from "../../assets/user-avatar.png";
+
 import Logo from "../../assets/logo.svg";
 import IconButton from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IUser } from "../../types/users.type";
 
 import { serverUri } from "../../config/config";
+import axios from "axios";
 
 type Props = {
   user: IUser | null;
 };
 
 const Navbar = ({ user }: Props) => {
+  const navigate = useNavigate();
   const logout = () => {
-    window.open(`${serverUri}/auth/logout`, "_self");
+    axios
+      .get(`${serverUri}/auth/logout`, {
+        withCredentials: true,
+      })
+      .then((data) => {
+        console.log(data.data);
+        if (data.data === "done") {
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // window.open(`${serverUri}/auth/logout`, "_self");
     // const res = await fetch("http://localhost:5000/auth/logout")
     // console.log(res)
   };
