@@ -2,7 +2,7 @@ import userIcon from "../../assets/user-avatar.png";
 
 import Logo from "../../assets/logo.svg";
 import IconButton from "../../assets/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IUser } from "../../types/users.type";
 
 import { serverUri } from "../../config/config";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Navbar = ({ user }: Props) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const logout = () => {
     axios
       .get(`${serverUri}/auth/logout`, {
@@ -22,7 +22,8 @@ const Navbar = ({ user }: Props) => {
       .then((data) => {
         console.log(data.data);
         if (data.data === "done") {
-          navigate("/");
+          // navigate("/");
+          window.location.href = "/";
         }
       })
       .catch((error) => {
