@@ -2,7 +2,7 @@ import userIcon from "../../assets/user-avatar.png";
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { IUser } from "../../types/users.type";
-
+import axios from "axios";
 import { serverUri } from "../../config/config";
 
 type Props = {
@@ -11,9 +11,19 @@ type Props = {
 
 const Navbar = ({ user }: Props) => {
   const logout = () => {
-    window.open(`${serverUri}/auth/logout`, "_self");
+    // window.open(`${serverUri}/auth/logout`, "_self");
     // const res = await fetch("http://localhost:5000/auth/logout")
     // console.log(res)
+    axios
+      .get(`${serverUri}/auth/logout`, {
+        withCredentials: true,
+      })
+      .then((resResponse) => {
+        console.log(resResponse)
+        if (resResponse.data === "done") {
+          window.location.href = "/";
+        }
+      }).catch(err => console.log(err));
   };
   return (
     <div className="flex">
