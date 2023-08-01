@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Navbar, AllRoutes } from "./components";
+import { Navbar, AllRoutes, Footer, Carousel } from "./components";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -22,7 +22,7 @@ const App = () => {
     console.log(user);
     const getUser = () => {
       axios
-        .get(`${serverUri}/auth/getuser`, {
+        .get(`${serverUri}/auth/login/success`, {
           withCredentials: true,
         })
         .then((resObject: AxiosResponse<IUser, any>) => {
@@ -41,14 +41,16 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-full">
       <header className="sticky top-0 z-10 ">
         <Navbar user={user} />
       </header>
-      <main>
+      <main className=" flex-grow flex-shrink flex-auto">
         <AllRoutes user={user} />
       </main>
-      <footer></footer>
+      <footer id="footer">
+        <Footer />
+      </footer>
     </div>
   );
 };

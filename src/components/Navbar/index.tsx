@@ -1,6 +1,6 @@
 import userIcon from "../../assets/user-avatar.png";
 import Logo from "../../assets/logo.svg";
-import IconButton from "../../assets/menu-button_icon.svg";
+import IconButton from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { IUser } from "../../types/users.type";
 

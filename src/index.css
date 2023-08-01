@@ -1,5 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* @font-face {
+  font-family: "BreeSerif-Regular";
+  font-weight: 700;
+  src: local("BreeSerif-Regular"),
+    url(/fonts/BreeSerif-Regular.ttf) format("ttf");
+} */
