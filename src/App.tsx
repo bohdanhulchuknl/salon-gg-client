@@ -26,7 +26,7 @@ const App = () => {
           withCredentials: true,
         })
         .then((resObject: AxiosResponse<IUser, any>) => {
-          console.log(resObject.data)
+          console.log(resObject.data);
           if (resObject.data) {
             dispatch(signIn(resObject.data));
           }
@@ -42,15 +42,14 @@ const App = () => {
 
   return (
     <div>
-      <header>
-       <Navbar user={user} />  
+      <header className="">
+        <p>ok</p>
+        <Navbar user={user} />
       </header>
       <main>
-      <AllRoutes user={user} />
+        <AllRoutes user={user} />
       </main>
-      <footer>
-        
-      </footer>
+      <footer></footer>
     </div>
   );
 };
