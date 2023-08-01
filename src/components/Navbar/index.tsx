@@ -18,6 +18,7 @@ const Navbar = ({ user }: Props) => {
         withCredentials: true,
       })
       .then((resResponse) => {
+        console.log(resResponse)
         if (resResponse.data === "done") {
           window.location.href = "/";
         }
