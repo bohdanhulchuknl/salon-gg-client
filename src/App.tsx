@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Navbar, AllRoutes, Footer, Carousel } from "./components";
+import { Navbar, AllRoutes, Footer } from "./components";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
