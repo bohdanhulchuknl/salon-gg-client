@@ -42,8 +42,7 @@ const App = () => {
 
   return (
     <div>
-      <header className="">
-        <p>ok</p>
+      <header className="sticky top-0 z-10 ">
         <Navbar user={user} />
       </header>
       <main>
