@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Navbar, AllRoutes, Footer } from "./components";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import {
   selectUser,
   signIn,
@@ -20,7 +21,7 @@ import { serverUri } from "./config/config";
 const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
+  const location = useLocation()
   useEffect(() => {
     //!
     console.log(user);
@@ -70,7 +71,7 @@ const App = () => {
   return (
     <div className="flex flex-col items-center min-h-full">
       <header className="bg-[#1E1823] sticky top-0 z-[1000] w-full m-auto px-5">
-        <Navbar user={user} />
+        {location.pathname === '/' && <Navbar user={user} />}
       </header>
       <main className=" flex-grow flex-shrink flex-auto">
         <AllRoutes user={user} />

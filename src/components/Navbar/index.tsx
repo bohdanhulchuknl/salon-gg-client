@@ -3,11 +3,13 @@ import axios from "axios";
 import { IUser } from "../../types/users.type";
 import { UserAuth, UserNoAuth } from "../NavBarComponens";
 
+
 type Props = {
   user: IUser | null;
 };
 
 const Navbar = ({ user }: Props) => {
+ 
   const logout = () => {
     axios
       .get(`${serverUri}/auth/logout`, {
