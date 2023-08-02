@@ -1,8 +1,12 @@
 export interface IUser {
-  username: string;
+  name: string;
   picture?: string;
   locale: string;
-  email: string;
-  phone: string;
+  emails: { value: string; verified: boolean; _id: string }[];
+  phone: {
+    value: string;
+    verified: boolean;
+  };
   roles: number[];
+  googleId: string;
 }

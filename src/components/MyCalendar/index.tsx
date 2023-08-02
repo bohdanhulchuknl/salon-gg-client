@@ -18,16 +18,18 @@ const MyCalendar = () => {
       start: moment().toDate(),
       end: moment().add(1, "hours").toDate(),
       title: "Some TITLE",
+      resourceId: 1
     },
     {
       start: moment().add(2, "hours").toDate(),
       end: moment().add(3, "hours").toDate(),
-      title: "Some TITLE",
+      title: "Some TITLE2",
+      resourceId: 2
     },
   ]);
 
   const onEventResize = (data: any) => {
-    console.log(data);
+    console.log(data,"resize");
     const { start, end } = data;
     setMyEventsList((prev) => {
       const tempState = prev;
@@ -38,7 +40,7 @@ const MyCalendar = () => {
   };
 
   const onEventDrop = (data: any) => {
-    console.log(data);
+    console.log(data,"data drop");
   };
 
   return (
@@ -48,10 +50,20 @@ const MyCalendar = () => {
         events={myEventsList}
         onEventDrop={onEventDrop}
         onEventResize={onEventResize}
-        defaultView="month"
+        onDoubleClickEvent={(e:any) => {
+          console.log(e, 'double')
+        }}
+        onDragOver={(e) => {
+          console.log(e, 'dragOver')
+        }}
+        onShowMore={(e:any) => {
+          console.log(e, "showMORE")
+        }}
+        defaultView="week"
         defaultDate={new Date()}
         style={{ height: "100vh" }}
         resizable
+        views={['day', "week"]}
       />
     </div>
   );
