@@ -4,8 +4,6 @@ import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import { useState } from 'react';
 
-
-
 const MyCalendar = () => {
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
