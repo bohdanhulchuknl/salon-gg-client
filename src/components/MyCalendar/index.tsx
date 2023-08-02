@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { Calendar, momentLocalizer, DateLocalizer } from 'react-big-calendar'
+import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import { useState } from 'react';
 
@@ -11,7 +11,7 @@ const MyCalendar = () => {
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const localizer = momentLocalizer(moment) 
 
-const [myEventsList, setMyEventsList] = useState([{
+const [myEventsList] = useState([{
   start: moment().toDate(),
   end: moment().add(1,'days').toDate(),
   title: "Some TITLE"
