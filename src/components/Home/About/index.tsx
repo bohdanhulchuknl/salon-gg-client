@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
 
-import aboutFigure from "../../../assets/about-figure 1.svg";
+import aboutFigure from "../../../assets/about-figure 1.png";
 const About = () => {
   return (
-    <div className="container pl-20 pr-20" id="About">
-      <div className=" flex flex-col items-center pt-20 font-bree leading-3">
+    <div className="container relative pl-20 pr-20" id="About">
+      <div className=" flex flex-col items-center pt-20 font-bree">
         <div className="flex items-center">
-          <p className=" text-[50px]">About</p>
-          <div className=" flex items-center flex-col text-base pt-2 pl-1   text-gray-500">
-            <p>u</p>
-            <p>s</p>
+          <div className="relative text-[50px]">
+            About
+            <p className="absolute  top-3 -right-5 text-gray-500 text-2xl">u</p>
+            <p className="absolute bottom-3 -right-5 text-gray-500 text-2xl">
+              s
+            </p>
           </div>
+          {/* <div className=" flex items-center flex-col text-base pt-3 pl-2   text-gray-500"></div> */}
         </div>
-        <p className=" text-base text-gray-500">DM studio luxury</p>
+        <p className=" text-base text-gray-500 -ml-3 -mt-4	 ">
+          DM studio luxury
+        </p>
       </div>
+
       <div className="text-base text-gray-500 max-w-sm font-bree">
         <p className="pt-20">
           Well-groomed hands and a fresh manicure are already an integral part
@@ -35,16 +41,13 @@ const About = () => {
             ></span>
           </Link>
         </button>
-
-        <div className="flex ">
-          <img
-            className="absolute flex "
-            src={aboutFigure}
-            alt="about-figure"
-            width={150}
-            height={100}
-          />
-        </div>
+        <img
+          className="absolute bottom-0 right-0 z-[-1] "
+          src={aboutFigure}
+          alt="about-figure"
+          width={600}
+          height={400}
+        />
       </div>
     </div>
   );

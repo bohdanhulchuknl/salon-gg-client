@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center min-h-full">
-      <header className="sticky top-0 z-[1000] h-full max-h-[90px] w-full ">
+      <header className="bg-[#A6A6A6] sticky top-0 z-[1000] w-full">
         <Navbar user={user} />
       </header>
       <main className=" flex-grow flex-shrink flex-auto">
