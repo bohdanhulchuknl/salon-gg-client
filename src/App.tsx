@@ -41,14 +41,14 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-full">
-      <header className="container sticky top-0 z-10 h-full max-h-[90px]  ">
+    <div className="flex flex-col items-center min-h-full">
+      <header className="sticky top-0 z-[1000] h-full max-h-[90px] w-full ">
         <Navbar user={user} />
       </header>
       <main className=" flex-grow flex-shrink flex-auto">
         <AllRoutes user={user} />
       </main>
-      <footer id="footer">
+      <footer className="w-full">
         <Footer />
       </footer>
     </div>

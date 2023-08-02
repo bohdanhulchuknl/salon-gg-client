@@ -27,7 +27,7 @@ export default function Carousel({
     return () => clearInterval(slideInterval);
   }, []);
   return (
-    <div className="overflow-hidden relative h-full w-full max-h-[820px] max-w-[1440px]">
+    <div className="overflow-hidden relative w-full max-w-[1440px]">
       <div
         className="flex transition-transform ease-out duration-500  "
         style={{ transform: `translateX(-${curr * 100}%)` }}
@@ -47,7 +47,7 @@ export default function Carousel({
       <div className="md:absolute inset-0 flex items-end justify-between px-[100px] pb-[40px]">
         <h2 className="text-white text-[40px]">beauty salon</h2>
         <div className="hidden md:flex items-center pr-4 ">
-          <Link to="/login" className="relative inline-block text-lg group">
+          <Link to="/login" className="relative inline-block text-lg group ">
             <span className="relative z-10 block px-7 py-4 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white">
               <span className="absolute inset-0 w-full h-full px-5 py-3  bg-gray-50"></span>
               <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>

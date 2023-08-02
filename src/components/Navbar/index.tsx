@@ -69,15 +69,15 @@ const Navbar = ({ user }: Props) => {
       ) : (
         <div className="w-full">
           <nav className="bg-white  border-gray-200 dark:bg-gray-900">
-            <div className="flex flex-wrap  justify-between items-center mx-auto max-w-screen-xl p-2">
+            <div className="md:flex justify-between items-center mx-auto max-w-screen-xl p-2">
               <span className=" items-center flex ">
                 <a href="/" className="flex items-center ">
                   <img src={Logo} alt="DM logo" width={70} height={70} />
                 </a>
               </span>
-              <div className="max-w-screen-xl px-4 py-3 mx-auto">
+              <div className="px-4 py-3 mx-auto">
                 <div className="hidden sm:flex items-center">
-                  <ul className="flex flex-row font-bree mt-0 mr-6 space-x-8 text-lg">
+                  <ul className="flex text-lg flex-row font-bree mt-0 mr-6 space-x-8 md:text-sm">
                     <li>
                       <a
                         href="/"
@@ -138,7 +138,7 @@ const Navbar = ({ user }: Props) => {
                   ></span>
                 </Link>
               </div>
-              <button className="inline-block md:hidden w-14 h-14">
+              <button className="md:hidden w-14 h-14">
                 <img src={IconButton} alt="mobile-icon" />
               </button>
             </div>
