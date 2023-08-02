@@ -1,30 +1,52 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { Calendar, momentLocalizer } from 'react-big-calendar'
-import moment from 'moment'
-import { useState } from 'react';
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import { useState } from "react";
+import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+
+import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-const MyCalendar = () => {
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-const localizer = momentLocalizer(moment) 
+const localizer = momentLocalizer(moment);
+const DnDCalendar = withDragAndDrop(Calendar);
 
-const [myEventsList] = useState([{
-  start: moment().toDate(),
-  end: moment().add(1,'days').toDate(),
-  title: "Some TITLE"
-}])
+const MyCalendar = () => {
+  const [myEventsList, setMyEventsList] = useState([
+    {
+      start: moment().toDate(),
+      end: moment().add(1, "days").toDate(),
+      title: "Some TITLE",
+    },
+  ]);
+
+  const onEventResize = (data: any) => {
+    console.log(data);
+    const { start, end } = data;
+    setMyEventsList((prev) => {
+      const tempState = prev;
+      tempState[0].start = start;
+      tempState[0].end = end;
+      return tempState;
+    });
+  };
+
+  const onEventDrop = (data: any) => {
+    console.log(data);
+  };
+
   return (
-    <div className='container'>
-      <h1>HELLO</h1>
-      <Calendar
+    <div className="container">
+      <DnDCalendar
         localizer={localizer}
         events={myEventsList}
-        startAccessor="start"
-        endAccessor="end"
+        onEventDrop={onEventDrop}
+        onEventResize={onEventResize}
         defaultView="month"
         defaultDate={new Date()}
         style={{ height: "100vh" }}
+        resizable
       />
     </div>
   );
