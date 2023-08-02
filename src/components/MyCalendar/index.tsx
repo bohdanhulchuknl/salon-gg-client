@@ -16,7 +16,12 @@ const MyCalendar = () => {
   const [myEventsList, setMyEventsList] = useState([
     {
       start: moment().toDate(),
-      end: moment().add(1, "days").toDate(),
+      end: moment().add(1, "hours").toDate(),
+      title: "Some TITLE",
+    },
+    {
+      start: moment().add(2, "hours").toDate(),
+      end: moment().add(3, "hours").toDate(),
       title: "Some TITLE",
     },
   ]);
