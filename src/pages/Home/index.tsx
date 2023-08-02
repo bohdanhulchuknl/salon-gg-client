@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import sliderOne from "../../assets/sliderOne.svg";
 import sliderTwo from "../../assets/sliderTwo.jpg";
 import sliderThe from "../../assets/sliderThe.jpg";
-// import aboutFigure from "../../assets/about-figure .svg";
+import aboutFigure from "../../assets/about-figure 1.svg";
 const slider = [sliderOne, sliderTwo, sliderThe];
 
 const Home = () => {
   return (
-    <div className="font-bree">
+    <div className="font-bree h-[calc(100vh-86px)]">
       <Carousel autoSlide={true} autoSlideInterval={3000}>
         {slider}
       </Carousel>
@@ -44,15 +44,15 @@ const Home = () => {
               ></span>
             </Link>
           </button>
-          {/* <div className="flex ">
+          <div className="flex ">
             <img
-              className="flex"
+              className="absolute"
               src={aboutFigure}
               alt="about-figure"
               width={150}
               height={100}
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

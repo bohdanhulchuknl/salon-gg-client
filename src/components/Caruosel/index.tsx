@@ -27,9 +27,9 @@ export default function Carousel({
     return () => clearInterval(slideInterval);
   }, []);
   return (
-    <div className="overflow-hidden relative h-full w-full">
+    <div className="overflow-hidden relative h-full w-full max-h-[820px] max-w-[1440px]">
       <div
-        className="flex transition-transform ease-out duration-500 max-h-[820px] max-w-[1440px] "
+        className="flex transition-transform ease-out duration-500  "
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {children.map((i) => (
@@ -44,7 +44,7 @@ export default function Carousel({
           <h2 className="text-[32px]">luxury</h2>
         </div>
       </div>
-      <div className="md:absolute inset-0 flex items-center justify-between px-[100px] py-[100px ]">
+      <div className="md:absolute inset-0 flex items-end justify-between px-[100px] pb-[40px]">
         <h2 className="text-white text-[40px]">beauty salon</h2>
         <div className="hidden md:flex items-center pr-4 ">
           <Link to="/login" className="relative inline-block text-lg group">
