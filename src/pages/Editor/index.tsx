@@ -1,7 +1,11 @@
 
+import { EditorCalendar } from "../../components"
+
 const Editor = () => {
   return (
-    <div>Editor</div>
+    <div>
+      <EditorCalendar/>
+    </div>
   )
 }
 

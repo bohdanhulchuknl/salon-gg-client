@@ -12,7 +12,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
 
-const MyCalendar = () => {
+const EditorCalendar = () => {
   const [myEventsList, setMyEventsList] = useState([
     {
       start: moment().toDate(),
@@ -69,4 +69,4 @@ const MyCalendar = () => {
   );
 };
 
-export default MyCalendar;
+export default EditorCalendar;
