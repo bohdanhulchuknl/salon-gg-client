@@ -16,6 +16,7 @@ const [myEventsList] = useState([{
 }])
   return (
     <div className='container'>
+      <h1>HELLO</h1>
       <Calendar
         localizer={localizer}
         events={myEventsList}
