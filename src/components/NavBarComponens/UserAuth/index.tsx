@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import userIcon from "../../../assets/user-avatar.png";
 import { IUser } from "../../../types/users.type";
+
 interface IUserAuthProps {
   logout: () => void;
   user: IUser;

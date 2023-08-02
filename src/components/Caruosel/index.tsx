@@ -44,6 +44,7 @@ export default function Carousel({
           <h2 className="text-[32px]">luxury</h2>
         </div>
       </div>
+
       <div className="md:absolute inset-0 flex items-end justify-between px-[100px] pb-[40px]">
         <h2 className="text-white text-[40px]">beauty salon</h2>
         <div className="hidden md:flex items-center pr-4 ">
