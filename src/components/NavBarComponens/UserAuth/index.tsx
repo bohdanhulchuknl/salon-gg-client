@@ -36,7 +36,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
               objectFit: "cover",
             }}
           />
-          <p>{user.username}</p>
+          <p>{user.name}</p>
           <p onClick={logout}>LOGOUT</p>
         </div>
       </nav>
