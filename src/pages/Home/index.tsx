@@ -8,7 +8,7 @@ const slider = [sliderOne, sliderTwo, sliderThe];
 
 const Home = () => {
   return (
-    <div className="font-bree h-[calc(100vh-86px)]">
+    <div className="container font-bree h-[calc(100vh-86px)]">
       <Carousel autoSlide={true} autoSlideInterval={3000}>
         {slider}
       </Carousel>
