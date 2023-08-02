@@ -30,7 +30,7 @@ const Navbar = ({ user }: Props) => {
   // const navigate = useNavigate();
 
   return (
-    <div className="container w-full m-auto">
+    <div className="container w-full mx-auto">
       <div className=" flex justify-between font-bree">
         {user ? <UserAuth logout={logout} user={user} /> : <UserNoAuth />}
       </div>

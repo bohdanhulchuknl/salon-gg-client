@@ -37,7 +37,7 @@ export default function Carousel({
         ))}
       </div>
 
-      <div className="md:relative inset-0 flex  font-bree text-white pt-[100px] pl-[100px]">
+      <div className="md:absolute inset-0 flex  font-bree text-white pt-[100px] pl-[100px]">
         <h1 className="text-[80px]">DM</h1>
         <div className=" flex flex-col pt-2 pl-1">
           <h2 className="text-[32px]">studio</h2>
