@@ -1,7 +1,7 @@
 import { MyCalendar } from "../../components"
 const User = () => {
   return (
-    <div style={{"height":"500px"}}>
+    <div>
       <MyCalendar />
     </div>
   )
