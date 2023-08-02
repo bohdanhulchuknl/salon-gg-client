@@ -34,10 +34,24 @@ const Navbar = ({ user }: Props) => {
     // console.log(res)
   };
   return (
-    <div className="flex">
+    <div className="flex justify-between font-bree">
       {user ? (
-        <ul className="flex gap-6">
-          <li>
+        <nav className="">
+          <ul className="flex gap-6">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/client">Client</Link>
+            </li>
+            <li>
+              <Link to="/editor">editor</Link>
+            </li>
+            <li>
+              <Link to="/Admin">admin</Link>
+            </li>
+          </ul>
+          <div>
             <img
               src={userIcon}
               alt="user icon"
@@ -48,28 +62,16 @@ const Navbar = ({ user }: Props) => {
                 objectFit: "cover",
               }}
             />
-          </li>
-          <li>{user.username}</li>
-          <li onClick={logout}>LOGOUT</li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/client">Client</Link>
-          </li>
-          <li>
-            <Link to="/editor">editor</Link>
-          </li>
-          <li>
-            <Link to="/Admin">admin</Link>
-          </li>
-        </ul>
+            <p>{user.username}</p>
+            <p onClick={logout}>LOGOUT</p>
+          </div>
+        </nav>
       ) : (
         <div className="w-full">
           <nav className="bg-white  border-gray-200 dark:bg-gray-900">
             <div className="flex flex-wrap  justify-between items-center mx-auto max-w-screen-xl p-4">
-              <span>
-                <a href="/" className="flex items-center h-[50px] ">
+              <span className=" items-center flex">
+                <a href="/" className="flex items-center h-[20px] ">
                   <img src={Logo} alt="DM logo" />
                 </a>
               </span>
