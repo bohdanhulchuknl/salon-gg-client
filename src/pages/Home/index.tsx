@@ -13,17 +13,17 @@ const Home = () => {
         {slider}
       </Carousel>
       <div className="container pl-20 pr-20" id="About">
-        <div className=" flex flex-col items-center pt-20 font-bree">
+        <div className=" flex flex-col items-center pt-20 font-bree leading-3">
           <div className="flex items-center">
-            <p className=" text-[40px]">About</p>
-            <div className=" text-sm pt-3 pl-1   text-gray-500">
+            <p className=" text-[50px]">About</p>
+            <div className=" flex items-center flex-col text-base pt-2 pl-1   text-gray-500">
               <p>u</p>
               <p>s</p>
             </div>
           </div>
-          <p className=" text-sm  text-gray-500">DM studio luxury</p>
+          <p className=" text-base text-gray-500">DM studio luxury</p>
         </div>
-        <div className="text-sm text-gray-500 max-w-sm font-bree">
+        <div className="text-base text-gray-500 max-w-sm font-bree">
           <p className="pt-20">
             Well-groomed hands and a fresh manicure are already an integral part
             of appearance. At DM studio luxury, we offer trimmed and untrimmed

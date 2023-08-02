@@ -69,15 +69,15 @@ const Navbar = ({ user }: Props) => {
       ) : (
         <div className="w-full">
           <nav className="bg-white  border-gray-200 dark:bg-gray-900">
-            <div className="flex flex-wrap  justify-between items-center mx-auto max-w-screen-xl p-4">
-              <span className=" items-center flex">
-                <a href="/" className="flex items-center h-[20px] ">
-                  <img src={Logo} alt="DM logo" />
+            <div className="flex flex-wrap  justify-between items-center mx-auto max-w-screen-xl p-2">
+              <span className=" items-center flex ">
+                <a href="/" className="flex items-center ">
+                  <img src={Logo} alt="DM logo" width={70} height={70} />
                 </a>
               </span>
               <div className="max-w-screen-xl px-4 py-3 mx-auto">
                 <div className="hidden sm:flex items-center">
-                  <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
+                  <ul className="flex flex-row font-bree mt-0 mr-6 space-x-8 text-lg">
                     <li>
                       <a
                         href="/"
@@ -122,12 +122,12 @@ const Navbar = ({ user }: Props) => {
                   </ul>
                 </div>
               </div>
-              <div className="hidden md:flex items-center">
+              <div className="hidden md:flex items-center pr-4 ">
                 <Link
                   to="/login"
                   className="relative inline-block text-lg group"
                 >
-                  <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white">
+                  <span className="relative z-10 block px-6 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white">
                     <span className="absolute inset-0 w-full h-full px-5 py-3  bg-gray-50"></span>
                     <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
                     <span className="relative">login</span>
