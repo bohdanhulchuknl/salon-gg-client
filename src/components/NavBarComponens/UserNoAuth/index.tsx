@@ -15,7 +15,7 @@ const UserNoAuth = () => {
               <ul className="flex text-lg flex-row font-bree mt-0 mr-6 space-x-8 md:text-sm">
                 <li>
                   <a
-                    href="/"
+                    href="#Home"
                     className="text-white dark:text-white hover:underline"
                     aria-current="page"
                   >
@@ -32,7 +32,7 @@ const UserNoAuth = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="#Servises"
                     className="text-white dark:text-white hover:underline"
                   >
                     Our services

@@ -21,7 +21,7 @@ import { serverUri } from "./config/config";
 const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const location = useLocation()
+  const location = useLocation();
   useEffect(() => {
     //!
     console.log(user);
@@ -58,11 +58,12 @@ const App = () => {
     //     locale: "ru",
     //     name: "Олександр Клименко",
     //     phone: {
-    //       value:'',
-    //       verified: false
+    //       value: "",
+    //       verified: false,
     //     },
-    //     picture: "https://lh3.googleusercontent.com/a/AAcHTtflTYJUvVS4y_2xzGdQ6ftEicXkQLKXqs9R8-vAMnl4=s96-c",
-    //     roles: [2001, 1984, 5150]
+    //     picture:
+    //       "https://lh3.googleusercontent.com/a/AAcHTtflTYJUvVS4y_2xzGdQ6ftEicXkQLKXqs9R8-vAMnl4=s96-c",
+    //     roles: [2001, 1984, 5150],
     //   })
     // );
     // !!
@@ -71,12 +72,12 @@ const App = () => {
   return (
     <div className="flex flex-col items-center min-h-full">
       <header className="bg-[#1E1823] sticky top-0 z-[1000] w-full m-auto px-5">
-        {location.pathname === '/' && <Navbar user={user} />}
+        {location.pathname === "/" && <Navbar user={user} />}
       </header>
       <main className=" flex-grow flex-shrink flex-auto">
         <AllRoutes user={user} />
       </main>
-      <footer className="w-full">
+      <footer className="w-full pt-10">
         <Footer />
       </footer>
     </div>
