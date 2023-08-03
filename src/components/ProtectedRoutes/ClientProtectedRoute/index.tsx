@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Navigate } from "react-router-dom";
 
 import ROLES_LIST from "../../../utils/roleList";
