@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         bree: ['"BreeSerif-Regular"', '"sans-serif"'],
       },
+      colors: {
+        hoverColor: '#F7AB0A'
+      }
     },
   },
   plugins: [

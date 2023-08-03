@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Home, Login, Admin, Editor, User } from "../../pages";
+import { Home, Login, Admin, Editor, User, ClientHistory } from "../../pages";
 
 import {
   AdminProtectedRoute,
@@ -28,6 +28,10 @@ const clientRoutes = [
   {
     element: <User />,
     path: "/client",
+  },
+  {
+    element: <ClientHistory />,
+    path: "/history-client",
   },
 ];
 

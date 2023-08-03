@@ -13,10 +13,7 @@ import {
   //!!
 } from "./app/slices/auth.slice";
 //!
-import { IUser } from "./types/users.type";
-import axios, { AxiosResponse } from "axios";
-
-import { serverUri } from "./config/config";
+import { getUserAPI } from "./Api/userApi";
 //!!
 const App = () => {
   const user = useSelector(selectUser);
@@ -25,24 +22,16 @@ const App = () => {
   useEffect(() => {
     //!
     console.log(user);
-    const getUser = () => {
-      axios
-        .get(`${serverUri}/auth/getuser`, {
-          withCredentials: true,
-        })
-        .then((resObject: AxiosResponse<IUser, any>) => {
-          console.log(resObject.data);
-          if (resObject.data) {
-            dispatch(signIn(resObject.data));
-          }
-        })
-        .catch((err: { message: string }) => {
-          console.log(err);
-          dispatch(signOut());
-          dispatch(setAuthError(err.message));
-        });
-    };
-    getUser();
+    getUserAPI()
+      .then((res) => {
+        if (res) {
+          dispatch(signIn(res));
+        }
+      })
+      .catch((err:Error) => {
+        dispatch(signOut());
+        dispatch(setAuthError(err.message));
+      });
     //!!
     //!
     // dispatch(
@@ -74,11 +63,11 @@ const App = () => {
       <header className="bg-[#1E1823] sticky top-0 z-[1000] w-full m-auto px-5">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
-      <main className=" flex-grow flex-shrink flex-auto">
+      <main className=" flex-grow flex-shrink flex-auto w-full">
         <AllRoutes user={user} />
       </main>
-      <footer className="w-full pt-10">
-        <Footer />
+      <footer className="w-full">
+        {location.pathname === "/" && <Footer />}
       </footer>
     </div>
   );
