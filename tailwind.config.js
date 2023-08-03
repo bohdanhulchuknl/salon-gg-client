@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -20,6 +24,7 @@ export default {
     
   },
   plugins: [
+    require("flowbite/plugin"),
     plugin(function ({ addBase }) {
       addBase({
         "@font-face": {
