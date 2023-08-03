@@ -9,7 +9,7 @@ interface ICaruosel {
 
 // import { ChevronLeft, ChevronRight } from "react-feather";
 
-export default function Carousel({
+export default function HomeCarousel({
   children,
   autoSlide = true,
   autoSlideInterval = 3000,
@@ -27,20 +27,17 @@ export default function Carousel({
     return () => clearInterval(slideInterval);
   }, []);
   return (
-    <div className="overflow-hidden relative w-full  max-w-[1440px]">
+    <div className=" relative w-full max-h-[600px]">
       <div
-        className="flex transition-transform ease-out duration-500  "
+        className="flex transition-transform ease-out duration-500 w-full   "
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {children.map((i) => (
-          <img src={i} key={i} />
+          <img src={i} key={i} className="object-cover w-full  " />
         ))}
       </div>
 
-      <div
-        className=" md:absolute inset-0 flex  font-bree text-white pt-[70px] pl-[100px]"
-        id="Home"
-      >
+      <div className="absolute inset-0 flex  font-bree text-white " id="Home">
         <h1 className="text-[80px]">DM</h1>
         <div className=" flex flex-col pt-2 pl-1">
           <h2 className="text-[32px]">studio</h2>
@@ -48,9 +45,9 @@ export default function Carousel({
         </div>
       </div>
 
-      <div className="absolute inset-0 flex items-end justify-between px-[100px] pb-64">
+      <div className="absolute inset-0 flex items-end justify-between ">
         <h2 className="text-white text-[40px]">beauty salon</h2>
-        <div className="hidden md:flex items-center pr-4 ">
+        <div className=" md:flex items-center pr-4 ">
           <Link to="/login" className="relative inline-block text-lg group ">
             <span className="relative z-10 block px-7 py-4 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white">
               <span className="absolute inset-0 w-full h-full px-5 py-3  bg-gray-50"></span>
@@ -80,7 +77,7 @@ export default function Carousel({
         </button>
       </div> */}
 
-      <div className="absolute bottom-4 right-0 left-0">
+      {/* <div className="absolute bottom-4 right-0 left-0">
         <div className="flex items-center justify-center gap-2">
           {children.map((_, i) => (
             <div
@@ -91,7 +88,7 @@ export default function Carousel({
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
