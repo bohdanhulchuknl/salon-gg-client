@@ -9,8 +9,15 @@ export default {
       },
       colors: {
         hoverColor: '#F7AB0A'
-      }
+      },
+      transitionProperty: {
+        'height': 'height'
+      },
+      variants: {
+        height: ['responsive', 'hover', 'focus']
+    }
     },
+    
   },
   plugins: [
     plugin(function ({ addBase }) {
