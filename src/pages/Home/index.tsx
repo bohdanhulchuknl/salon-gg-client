@@ -26,9 +26,9 @@ const Home = () => {
 
       <About />
       <Servises />
-      <CarouselWork autoSlide={true} autoSlideInterval={3000}>
+      {/* <CarouselWork autoSlide={true} autoSlideInterval={3000}>
         {sliderWork}
-      </CarouselWork>
+      </CarouselWork> */}
     </div>
   );
 };

@@ -28,7 +28,7 @@ const App = () => {
           dispatch(signIn(res));
         }
       })
-      .catch((err:Error) => {
+      .catch((err: Error) => {
         dispatch(signOut());
         dispatch(setAuthError(err.message));
       });
@@ -63,10 +63,10 @@ const App = () => {
       <header className="bg-[#1E1823] sticky top-0 z-[1000] w-full m-auto px-5">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
-      <main className=" flex-grow flex-shrink flex-auto w-full">
+      <main className="container flex-grow flex-shrink flex-auto w-full">
         <AllRoutes user={user} />
       </main>
-      <footer className="w-full">
+      <footer className="w-full container z-[1000] m-auto bottom-0 pt-32">
         {location.pathname === "/" && <Footer />}
       </footer>
     </div>

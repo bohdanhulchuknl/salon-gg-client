@@ -8,21 +8,15 @@ export default {
         bree: ['"BreeSerif-Regular"', '"sans-serif"'],
       },
       colors: {
-<<<<<<< HEAD
         hoverColor: "#F7AB0A",
       },
-=======
-        hoverColor: '#F7AB0A'
-      },
       transitionProperty: {
-        'height': 'height'
+        height: "height",
       },
       variants: {
-        height: ['responsive', 'hover', 'focus']
-    }
->>>>>>> f96aac5692b6ac1df4a861eafffd014170edb060
+        height: ["responsive", "hover", "focus"],
+      },
     },
-    
   },
   plugins: [
     plugin(function ({ addBase }) {
