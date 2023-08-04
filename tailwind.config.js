@@ -1,30 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
+
+
+const MyClass = plugin(function ({ addUtilities }) {
+  addUtilities({
+    ".my-rotate-y-180": {
+      transform: "rotateY(180deg)",
+    },
+    ".preserve-3d": {
+      transformStyle: "preserve-3d",
+    },
+    ".perspective": {
+      perspective: "1000px",
+    },
+    ".backface-hidden": {
+      backfaceVisibility: "hidden",
+    },
+  });
+});
+
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
         bree: ['"BreeSerif-Regular"', '"sans-serif"'],
       },
       colors: {
-        hoverColor: '#F7AB0A'
+        hoverColor: "#F7AB0A",
       },
       transitionProperty: {
-        'height': 'height'
+        height: "height",
       },
       variants: {
-        height: ['responsive', 'hover', 'focus']
-    }
+        height: ["responsive", "hover", "focus"],
+      },
     },
-    
   },
   plugins: [
-    require("flowbite/plugin"),
     plugin(function ({ addBase }) {
       addBase({
         "@font-face": {
@@ -34,5 +47,6 @@ export default {
         },
       });
     }),
+    MyClass
   ],
 };
