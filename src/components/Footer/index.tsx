@@ -1,25 +1,14 @@
-import Logo from "../../assets/logo.svg";
+import Logo from "../Logo";
+import { LiaTelegramPlane, LiaInstagram } from "react-icons/lia";
 const Footer = () => {
   return (
-    <footer className="bg-current dark:bg-gray-800">
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span>
-          <a href="/" className="flex items-center h-full pl-2">
-            <img src={Logo} alt="DM logo" />
-          </a>
+    <footer className="  w-full bg-[#1E1823] ">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between font-bree text-white">
+        <span className=" items-center flex ">
+          <Logo />
         </span>
 
-        <div className="flex items-center gap-2 text-white  ">
-          <div className="text-4xl ">
-            <h2>DM</h2>
-          </div>
-          <div className="text-2xl">
-            <h3>stydio</h3>
-            <h3>luxury</h3>
-          </div>
-        </div>
-
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-white dark:text-gray-400 sm:mt-0">
+        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium  dark:text-gray-400 sm:mt-0">
           <li>
             <a href="#" className="mr-4 hover:underline md:mr-6 ">
               About
@@ -41,6 +30,21 @@ const Footer = () => {
             </a>
           </li>
         </ul>
+        <div className="flex flex-col items-start text-sm">
+          <p className="pb-3">Contact us</p>
+          <a href="tel:380684439426">+38012345678</a>
+          <a href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
+          <div className=" flex gap-3">
+            <div className="pt-3 flex flex-col  items-center">
+              <LiaTelegramPlane className="h-10 w-10" />
+              <p>Telegram</p>
+            </div>
+            <div className="pt-3 flex flex-col items-center">
+              <LiaInstagram className="h-10 w-10" />
+              <p>Instagram</p>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
