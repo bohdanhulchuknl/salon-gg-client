@@ -1,6 +1,8 @@
 import { HomeCarousel } from "../../components";
 // import { About, Servises, CarouselWork } from "../../components/Home"; //! CarouselWork мішало
 import { About, Servises } from "../../components/Home";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../app/slices/auth.slice";
 
 //! мішало
 // import workOne from "../../assets/halloween-nails.jpg";
@@ -18,11 +20,12 @@ import sliderThe from "../../assets/sliderThe.jpg";
 
 const slides = [sliderOne, sliderTwo, sliderThe];
 
-const Home = ({}) => {
+const Home = () => {
+  const user = useSelector(selectUser)
   return (
     <div className="font-bree w-full ">
       <div className="w-full  m-auto overflow-hidden  ">
-        <HomeCarousel slides={slides} />
+        <HomeCarousel slides={slides} user={user}/>
       </div>
 
       <About />
