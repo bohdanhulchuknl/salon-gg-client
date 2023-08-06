@@ -2,7 +2,6 @@ import { HomeCarousel } from "../../components";
 // import { About, Servises, CarouselWork } from "../../components/Home"; //! CarouselWork мішало
 import { About, Servises } from "../../components/Home";
 
-
 //! мішало
 // import workOne from "../../assets/halloween-nails.jpg";
 // import workTwo from "../../assets/nails2.jpg";
@@ -17,15 +16,13 @@ import sliderThe from "../../assets/sliderThe.jpg";
 
 // const sliderWork = [workOne, workTwo, workThe, workFry]; //! sliderWork мішало
 
-const slider = [sliderOne, sliderTwo, sliderThe];
+const slides = [sliderOne, sliderTwo, sliderThe];
 
-const Home = () => {
+const Home = ({}) => {
   return (
     <div className="font-bree w-full ">
       <div className="w-full  m-auto overflow-hidden  ">
-        <HomeCarousel autoSlide={true} autoSlideInterval={3000}>
-          {slider}
-        </HomeCarousel>
+        <HomeCarousel slides={slides} />
       </div>
 
       <About />

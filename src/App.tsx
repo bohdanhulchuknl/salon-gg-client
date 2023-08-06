@@ -25,7 +25,7 @@ const App = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   useEffect(() => {
-    //!
+    // //!
     console.log(user);
     getUserAPI()
       .then((res) => {

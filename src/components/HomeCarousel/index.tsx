@@ -1,51 +1,50 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
 
 interface ICaruosel {
-  children: string[];
-  autoSlide: boolean;
-  autoSlideInterval: number;
+  slides: string[];
 }
 
-// import { ChevronLeft, ChevronRight } from "react-feather";
-
-export default function HomeCarousel({
-  children,
-  autoSlide = true,
-  autoSlideInterval = 3000,
-}: ICaruosel) {
-  const [curr, setCurr] = useState(0);
-
+const HomeCarousel = ({ slides }: ICaruosel) => {
   // const prev = () =>
   //   setCurr((curr) => (curr === 0 ? children.length - 1 : curr - 1));
-  const next = () =>
-    setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
+  // const next = () =>
+  //   setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
 
-  useEffect(() => {
-    if (!autoSlide) return;
-    const slideInterval = setInterval(next, autoSlideInterval);
-    return () => clearInterval(slideInterval);
-  }, []);
   return (
-    <div className=" relative w-full max-h-[600px]">
-      <div
-        className="flex transition-transform ease-out duration-500 w-full   "
-        style={{ transform: `translateX(-${curr * 100}%)` }}
-      >
-        {children.map((i) => (
-          <img src={i} key={i} className="object-cover w-full  " />
-        ))}
+    <div className=" relative w-full max-h-[940px]  h-[calc(100vh-80px)]">
+      <div className="w-full self-end h-full ">
+        <Carousel
+          autoPlay
+          infiniteLoop
+          interval={4000}
+          className="h-full "
+          showThumbs={false}
+        >
+          {slides.map((i) => (
+            <div className="h-full">
+              <img
+                src={i}
+                height={940}
+                className="w-full  h-[calc(100vh-80px)] object-cover object-top"
+              />
+            </div>
+          ))}
+        </Carousel>
       </div>
 
-      <div className="absolute inset-0 flex  font-bree text-white " id="Home">
-        <h1 className="text-[80px]">DM</h1>
-        <div className=" flex flex-col pt-2 pl-1">
-          <h2 className="text-[32px]">studio</h2>
-          <h2 className="text-[32px]">luxury</h2>
+      <div
+        className="absolute inset-0 flex  font-bree text-white pl-20 pt-10"
+        id="Home"
+      >
+        <h1 className="text-[100px]">DM</h1>
+        <div className=" flex flex-col pt-[38px] pl-2 ">
+          <h2 className="text-[36px] leading-none">studio</h2>
+          <h2 className="text-[36px]">luxury</h2>
         </div>
       </div>
 
-      <div className="absolute inset-0 flex items-end justify-between ">
+      <div className="absolute inset-0 flex items-end justify-between pb-20 px-20">
         <h2 className="text-white text-[40px]">beauty salon</h2>
         <div className=" md:flex items-center pr-4 ">
           <Link to="/login" className="relative inline-block text-lg group ">
@@ -91,4 +90,5 @@ export default function HomeCarousel({
       </div> */}
     </div>
   );
-}
+};
+export default HomeCarousel;
