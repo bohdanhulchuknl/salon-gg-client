@@ -16,6 +16,20 @@ const masters = [
     rang: "Middle",
     regals: ["good", "1 year of experience"],
     works: [work1, work2, work3],
+    comments: [
+      {
+        from: 'Anna',
+        text: "So good master"
+      },
+      {
+        from: 'Anna',
+        text: "So good master"
+      },
+      {
+        from: 'Anna',
+        text: "So good master"
+      }
+    ]
   },
   {
     name: "name 2",
@@ -23,6 +37,20 @@ const masters = [
     rang: "Top",
     regals: ["very good", "2 years of experience"],
     works: [work1, work2, work3],
+    comments: [
+      {
+        from: 'Anna',
+        text: "So good master"
+      },
+      {
+        from: 'Anna',
+        text: "So good master"
+      },
+      {
+        from: 'Anna',
+        text: "So good master"
+      }
+    ]
   },
 ];
 
