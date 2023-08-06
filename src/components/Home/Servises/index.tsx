@@ -6,7 +6,7 @@ import Vii from "../../../assets/servisvii.png";
 const Servises = () => {
   return (
     <div
-      className="container relative h-[calc(100vh-80px)] max-h-[940px] pl-20 pr-20"
+      className="container relative h-[calc(100vh-80px)] max-h-[940px] pl-20 pr-20 bg-white"
       id="Servises"
     >
       <div className=" flex flex-col items-center pt-20 font-bree">

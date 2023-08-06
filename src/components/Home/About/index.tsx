@@ -1,27 +1,26 @@
 import { Link } from "react-router-dom";
 
-import aboutFigure from "../../../assets/about-figure 1.png";
+import aboutFigure from "../../../assets/about-figure 1.svg";
 const About = () => {
   return (
-    <div className="container relative pl-20 pr-20" id="About">
+    <div className="container relative pl-20 pr-20 bg-white" id="About">
       <div className=" flex flex-col items-center pt-20 font-bree">
         <div className="flex items-center">
-          <div className="relative text-[50px]">
+          <div className="relative text-[50px] z-10">
             About
             <p className="absolute  top-3 -right-5 text-gray-500 text-2xl">u</p>
             <p className="absolute bottom-3 -right-5 text-gray-500 text-2xl">
               s
             </p>
           </div>
-          {/* <div className=" flex items-center flex-col text-base pt-3 pl-2   text-gray-500"></div> */}
         </div>
-        <p className=" text-base text-gray-500 -ml-3 -mt-4	 ">
+        <p className=" text-base text-gray-500 -ml-3 -mt-4	z-10 ">
           DM studio luxury
         </p>
       </div>
 
       <div className="text-base text-gray-500 max-w-sm font-bree">
-        <p className="pt-20">
+        <p className="pt-20 ">
           Well-groomed hands and a fresh manicure are already an integral part
           of appearance. At DM studio luxury, we offer trimmed and untrimmed
           manicure services, gel polish or eco-coating, as well as alternative
@@ -42,7 +41,7 @@ const About = () => {
           </Link>
         </button>
         <img
-          className="absolute bottom-0 right-0 z-[-1] "
+          className="absolute bottom-0 right-0 "
           src={aboutFigure}
           alt="about-figure"
           width={600}
