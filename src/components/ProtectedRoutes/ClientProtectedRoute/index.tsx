@@ -4,6 +4,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import ROLES_LIST from "../../../utils/roleList";
 import { IUser } from "../../../types/users.type";
 import { UserProtectNavBar } from "../../ProtectedNavBars";
+import { CreateOrderNavBar } from "../../CreateOrderComponents";
 
 type Props = {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ type Props = {
 
 const redirectPath = "/";
 const showPath = ["/client", "/history-client"];
+const userOrderPath = ['/create-order-select-master']
 
 const ClientProtectedRoute = ({ children, user }: Props) => {
   const location = useLocation();
@@ -23,7 +25,9 @@ const ClientProtectedRoute = ({ children, user }: Props) => {
       {showPath.includes(location.pathname) && (
         <UserProtectNavBar user={user} />
       )}
-
+      {userOrderPath.includes(location.pathname) && (
+        <CreateOrderNavBar />
+      )}
       {children}
     </div>
   );

@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Home, Login, Admin, Editor, User, ClientHistory, CreateOrder } from "../../pages";
+import { Home, Login, Admin, Editor, User, ClientHistory, CreateOrderSelectMaster } from "../../pages";
 
 import {
   AdminProtectedRoute,
@@ -34,8 +34,8 @@ const clientRoutes = [
     path: "/history-client",
   },
   {
-    element: <CreateOrder />,
-    path: "/create-order",
+    element: <CreateOrderSelectMaster />,
+    path: "/create-order-select-master",
   },
   
 ];

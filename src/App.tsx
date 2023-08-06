@@ -4,6 +4,10 @@ import { Navbar, AllRoutes, Footer } from "./components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+//!
+// import { IUser } from "./types/users.type";
+//!!
+
 import {
   selectUser,
   signIn,
@@ -14,6 +18,7 @@ import {
 } from "./app/slices/auth.slice";
 //!
 import { getUserAPI } from "./Api/userApi";
+
 //!!
 const App = () => {
   const user = useSelector(selectUser);
@@ -34,27 +39,26 @@ const App = () => {
       });
     //!!
     //!
-    // dispatch(
-    //   signIn({
-    //     emails: [
-    //       {
-    //         value: "bohdanhulchuknl@gmail.com",
-    //         verified: true,
-    //         _id: "64c90cf99af3313d3604cfac",
-    //       },
-    //     ],
-    //     googleId: "113085998945233853344",
-    //     locale: "ru",
-    //     name: "Олександр Клименко",
-    //     phone: {
-    //       value: "",
-    //       verified: false,
+    // const offlineUser: IUser = {
+    //   emails: [
+    //     {
+    //       value: "bohdanhulchuknl@gmail.com",
+    //       verified: true,
+    //       _id: "64c90cf99af3313d3604cfac",
     //     },
-    //     picture:
-    //       "https://lh3.googleusercontent.com/a/AAcHTtflTYJUvVS4y_2xzGdQ6ftEicXkQLKXqs9R8-vAMnl4=s96-c",
-    //     roles: [2001, 1984, 5150],
-    //   })
-    // );
+    //   ],
+    //   googleId: "113085998945233853344",
+    //   locale: "ru",
+    //   name: "Олександр Клименко",
+    //   phone: {
+    //     value: "",
+    //     verified: false,
+    //   },
+    //   picture:
+    //     "https://lh3.googleusercontent.com/a/AAcHTtflTYJUvVS4y_2xzGdQ6ftEicXkQLKXqs9R8-vAMnl4=s96-c",
+    //   roles: [2001, 1984, 5150],
+    // };
+    // dispatch(signIn(offlineUser));
     // !!
   }, []);
 
@@ -63,12 +67,14 @@ const App = () => {
       <header className="bg-[#1E1823] sticky top-0 z-[1000] w-full m-auto px-5">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
-      <main className="container flex-grow flex-shrink flex-auto w-full">
+      <main className="flex-grow flex-shrink flex-auto w-full">
         <AllRoutes user={user} />
       </main>
-      <footer className="w-full container z-[1000] m-auto bottom-0 pt-32">
-        {location.pathname === "/" && <Footer />}
-      </footer>
+      {location.pathname === "/" && (
+        <footer className="w-full container z-[1000] m-auto bottom-0 pt-32">
+          <Footer />
+        </footer>
+      )}
     </div>
   );
 };
