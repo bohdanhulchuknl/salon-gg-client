@@ -92,7 +92,7 @@ const UserNoAuth = () => {
           </div>
           <div>
             <Link
-              to="/"
+              to="/login"
               className="shadow-sm shadow-black relative inline-block text-lg font-bree group "
             >
               <span className="shadow-sm shadow-black group-hover:shadow-lg group-hover:shadow-black relative z-10 block px-3 py-1 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-gray-900">
