@@ -71,7 +71,7 @@ const App = () => {
         <AllRoutes user={user} />
       </main>
       {location.pathname === "/" && (
-        <footer className="w-full container z-[1000] m-auto bottom-0 pt-32">
+        <footer className="w-full m-auto bottom-0 pt-36">
           <Footer />
         </footer>
       )}
