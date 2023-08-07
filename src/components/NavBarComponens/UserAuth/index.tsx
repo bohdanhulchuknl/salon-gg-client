@@ -16,7 +16,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
           <Logo />
         </span>
         <nav className="">
-          <ul className="flex gap-6 font-bree">
+          <ul className="flex gap-6 font-poppinsBold">
             <li>
               <NavLink
                 to="/"
@@ -96,7 +96,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
               to="/"
               className="shadow-sm shadow-black relative inline-block text-lg font-bree group "
             >
-              <span className="shadow-sm shadow-black group-hover:shadow-lg group-hover:shadow-black relative z-10 block px-3 py-1 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-gray-900">
+              <span className="shadow-sm shadow-black group-hover:shadow-lg group-hover:shadow-black relative z-10 block px-3 py-1 overflow-hidden font-poppinsBold leading-tight text-white transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-gray-900">
                 <span className="absolute inset-0 w-full h-full px-3 py-1  bg-gray-900"></span>
                 <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-white group-hover:-rotate-180 ease"></span>
                 <span className="relative text-sm flex items-center gap-1 ">

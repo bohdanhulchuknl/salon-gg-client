@@ -23,8 +23,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['"Poppins"', '"sans-serif"'],
-        poppinsBolt: ['"Poppins-Bolt"', '"sans-serif"'],
+        poppinsBold: ['"Poppins-Bold"', '"sans-serif"'],
       },
       colors: {
         hoverColor: "#F7AB0A",
@@ -41,9 +40,9 @@ export default {
     plugin(function ({ addBase }) {
       addBase({
         "@font-face": {
-          fontFamily: "Poppins-Regular",
-          fontWeight: "400",
-          src: "url(/src/fonts/Poppins-Regular.ttf)",
+          fontFamily: "Poppins-Bold",
+          fontWeight: "700",
+          src: "url(/src/fonts/Poppins-Bold.ttf)",
         },
       });
     }),
