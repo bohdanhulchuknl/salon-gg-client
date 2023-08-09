@@ -40,7 +40,7 @@ const CreateOrderSelectService = () => {
     <div className="font-poppinsBold container mx-auto  flex flex-col  items-center justify-center pt-5">
       <div className="flex items-center justify-center pb-5">
         <div>
-          <div className="text-4xl">Select a <span className="underline text-fourColor">service</span></div>
+          <div className="text-6xl text-firstColor">Select a <span className="underline text-fourColor">service</span></div>
           <div className="text-secondColor">DM studio luxury</div>
         </div>
       </div>

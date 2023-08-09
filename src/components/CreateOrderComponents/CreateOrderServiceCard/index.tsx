@@ -18,7 +18,7 @@ const CreateOrderServiceCard = ({ service }: ICreateOrderServiceCardProps) => {
               src={service.img}
               className=" absolute object-cover w-full h-full object-top -z-10"
             />
-            <h1 className="text-thirdColor bg-firstColor/50 w-full text-center py-2">
+            <h1 className="text-thirdColor bg-fourColor w-full text-center py-2">
               {service.title}
             </h1>
           </div>
