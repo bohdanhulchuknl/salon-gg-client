@@ -31,7 +31,7 @@ const Navbar = ({ user }: Props) => {
 
   return (
     <div className="container w-full mx-auto">
-      <div className=" flex justify-between font-bree">
+      <div className=" flex justify-between font-poppinsBold">
         {user ? <UserAuth logout={logout} user={user} /> : <UserNoAuth />}
       </div>
     </div>

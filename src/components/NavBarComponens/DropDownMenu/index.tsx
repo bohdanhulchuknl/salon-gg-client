@@ -12,12 +12,12 @@ interface IDropDownMenuProps {
 
 const DropDownMenu = ({ user, logout }: IDropDownMenuProps) => {
   return (
-    <div className="font-bree">
+    <div className="font-poppinsBold">
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button className="text-white">
-              <div className="flex items-center justify-center gap-1 pl-3 pr-2 py-2">
+            <Menu.Button className="group/dropMenuButton">
+              <div className="flex items-center justify-center gap-1 pl-3 pr-2 py-2 ">
                 <img
                   className=""
                   src={user.picture}
@@ -29,7 +29,7 @@ const DropDownMenu = ({ user, logout }: IDropDownMenuProps) => {
                   className={`h-[10px] w-[10px] ease-in-out transition-all  ${
                     open
                       ? "rotate-180 translate-y-5 fill-fourColor"
-                      : "fill-secondColor"
+                      : "fill-secondColor group-hover/dropMenuButton:fill-thirdColor"
                   }`}
                 />
               </div>
@@ -43,7 +43,7 @@ const DropDownMenu = ({ user, logout }: IDropDownMenuProps) => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <Menu.Items className="divide-y divide-secondColor text-white absolute top-1 right-0 flex flex-col bg-firstColor min-w-[300px] border-2 border-fourColor p-2  cursor-pointer text-xs">
+              <Menu.Items className="divide-y divide-secondColor text-white absolute top-1 right-0 flex flex-col bg-firstColor min-w-[200px] border-2 border-fourColor p-2  cursor-pointer text-xs">
                 <Menu.Item disabled>
                   <span className="opacity-75 flex items-center gap-1 p-1">
                     <AiFillSetting /> Account settings

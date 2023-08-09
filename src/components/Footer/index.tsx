@@ -3,7 +3,7 @@ import { LiaTelegramPlane, LiaInstagram } from "react-icons/lia";
 const Footer = () => {
   return (
     <footer className="w-full bg-[#1E1823]">
-      <div className="w-full mx-auto px-16  md:flex md:items-center justify-between font-bree text-white">
+      <div className="w-full mx-auto px-16  md:flex md:items-center justify-between font-poppinsBold text-white">
         <span className="items-center flex">
           <Logo />
         </span>

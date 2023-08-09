@@ -4,7 +4,7 @@ import aboutFigure from "../../../assets/about-figure 1.svg";
 const About = () => {
   return (
     <div className="container mx-auto relative max-h-[940px]  h-[calc(100vh-80px)] px-20 bg-white ">
-      <div className=" flex flex-col items-center pt-20 font-bree">
+      <div className=" flex flex-col items-center pt-20 font-poppinsBold">
         <div className="flex items-center">
           <div className="relative text-[50px] z-10">
             About
@@ -19,7 +19,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="text-base text-gray-500 max-w-sm font-bree">
+      <div className="text-base text-gray-500 max-w-sm font-poppinsBold">
         <p className="pt-20 ">
           Well-groomed hands and a fresh manicure are already an integral part
           of appearance. At DM studio luxury, we offer trimmed and untrimmed

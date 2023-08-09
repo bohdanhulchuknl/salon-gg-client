@@ -36,10 +36,10 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
       </div>
 
       <div
-        className="absolute inset-0 flex  font-poppinsBold text-white pl-20 pt-10"
+        className="absolute inset-0 flex  font-poppinsBold text-white pl-20 pt-10 "
         id="Home"
       >
-        <h1 className="text-[100px]">DM</h1>
+        <h1 className="text-[100px] ">DM</h1>
         <div className=" flex flex-col pt-[34px] pl-2 ">
           <h2 className="text-[36px] leading-none">studio</h2>
           <h2 className="text-[36px]">luxury</h2>
@@ -47,7 +47,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
       </div>
 
       <div className="absolute inset-0 flex items-end justify-between pb-20 px-20 font-poppinsBold">
-        <h2 className="text-white text-[40px]">beauty salon</h2>
+        <h2 className="text-white text-[40px] bg-fourColor py-1 px-2">beauty salon</h2>
         <div className=" md:flex items-center pr-4 ">
 
           <LinkButtonCustom

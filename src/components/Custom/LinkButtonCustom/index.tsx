@@ -25,7 +25,7 @@ const LinkButtonCustom = ({
     <Link
       onClick={onClick}
       to={to}
-      className={`relative inline-block group text-firstColor ${
+      className={`relative inline-block font-poppinsBold group text-firstColor ${
         textSize ?? "text-xs"
       }  `}
     >
