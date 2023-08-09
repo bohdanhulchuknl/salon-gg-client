@@ -1,7 +1,6 @@
 import IconButton from "../../../assets/logo.svg";
 import { Logo } from "../../index";
 
-import { Link } from 'react-router-dom'
 
 import { NavLinkCustom, LinkButtonCustom } from "../../Custom";
 
