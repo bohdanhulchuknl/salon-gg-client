@@ -67,11 +67,11 @@ const App = () => {
       <header className="bg-firstColor sticky top-0 z-[1000] w-full m-auto px-5">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
-      <main className="flex-grow flex-shrink flex-auto w-full">
+      <main className="flex-grow flex-shrink flex-auto w-full ">
         <AllRoutes user={user} />
       </main>
       {location.pathname === "/" && (
-        <footer className="w-full container z-[1000] m-auto bottom-0 pt-32">
+        <footer className="w-full m-auto bottom-0 pt-36">
           <Footer />
         </footer>
       )}

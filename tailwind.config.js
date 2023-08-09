@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
 
-
 const MyClass = plugin(function ({ addUtilities }) {
   addUtilities({
     ".my-rotate-y-180": {
@@ -24,7 +23,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        bree: ['"BreeSerif-Regular"', '"sans-serif"'],
+        poppinsBold: ['"Poppins-Bold"', '"sans-serif"'],
       },
       colors: {
         firstColor: "#2F2E33",
@@ -44,12 +43,12 @@ export default {
     plugin(function ({ addBase }) {
       addBase({
         "@font-face": {
-          fontFamily: "BreeSerif-Regular",
-          fontWheight: "700",
-          src: "url(/src/fonts/BreeSerif-Regular.ttf)",
+          fontFamily: "Poppins-Bold",
+          fontWeight: "700",
+          src: "url(/src/fonts/Poppins-Bold.ttf)",
         },
       });
     }),
-    MyClass
+    MyClass,
   ],
 };

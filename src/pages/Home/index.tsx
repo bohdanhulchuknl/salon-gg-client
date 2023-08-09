@@ -1,6 +1,6 @@
 import { HomeCarousel } from "../../components";
 // import { About, Servises, CarouselWork } from "../../components/Home"; //! CarouselWork мішало
-import { About, Servises } from "../../components/Home";
+import { Servises, Masters } from "../../components/Home";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/slices/auth.slice";
 
@@ -21,15 +21,15 @@ import sliderThe from "../../assets/sliderThe.jpg";
 const slides = [sliderOne, sliderTwo, sliderThe];
 
 const Home = () => {
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
   return (
-    <div className="font-bree w-full ">
+    <div className=" font-poppins w-full ">
       <div className="w-full  m-auto overflow-hidden  ">
-        <HomeCarousel slides={slides} user={user}/>
+        <HomeCarousel slides={slides} user={user} />
       </div>
-
-      <About />
       <Servises />
+      <Masters />
+
       {/* <CarouselWork autoSlide={true} autoSlideInterval={3000}>
         {sliderWork}
       </CarouselWork> */}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import aboutFigure from "../../../assets/about-figure 1.svg";
 const About = () => {
   return (
-    <div className="container relative pl-20 pr-20 bg-white" id="About">
+    <div className="container mx-auto relative max-h-[940px]  h-[calc(100vh-80px)] px-20 bg-white ">
       <div className=" flex flex-col items-center pt-20 font-bree">
         <div className="flex items-center">
           <div className="relative text-[50px] z-10">
@@ -44,8 +44,6 @@ const About = () => {
           className="absolute bottom-0 right-0 "
           src={aboutFigure}
           alt="about-figure"
-          width={600}
-          height={400}
         />
       </div>
     </div>
