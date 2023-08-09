@@ -27,7 +27,10 @@ export default {
         bree: ['"BreeSerif-Regular"', '"sans-serif"'],
       },
       colors: {
-        hoverColor: "#F7AB0A",
+        firstColor: "#2F2E33",
+        secondColor: "#D5D6D2",
+        thirdColor: "#FFFFFF",
+        fourColor: "rgb(20 184 166)",
       },
       transitionProperty: {
         height: "height",

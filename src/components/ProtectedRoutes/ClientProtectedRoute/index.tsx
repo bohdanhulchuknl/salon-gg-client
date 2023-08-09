@@ -13,7 +13,7 @@ type Props = {
 
 const redirectPath = "/";
 const showPath = ["/client", "/history-client"];
-const userOrderPath = ['/create-order-select-master']
+const userOrderPath = ['/create-order-select-master', '/create-order-select-service']
 
 const ClientProtectedRoute = ({ children, user }: Props) => {
   const location = useLocation();

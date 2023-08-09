@@ -5,5 +5,6 @@ import User from "./User";
 import Editor from "./Editor";
 import ClientHistory from "./ClientHistory";
 import CreateOrderSelectMaster from "./CreateOrderSelectMaster";
+import CreateOrderSelectService from "./CreateOrderSelectService";
 
-export { Home, Login, Admin, Editor, User, ClientHistory, CreateOrderSelectMaster };
+export { Home, Login, Admin, Editor, User, ClientHistory, CreateOrderSelectMaster, CreateOrderSelectService };

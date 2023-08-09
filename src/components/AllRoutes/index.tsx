@@ -1,6 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Home, Login, Admin, Editor, User, ClientHistory, CreateOrderSelectMaster } from "../../pages";
+import {
+  Home,
+  Login,
+  Admin,
+  Editor,
+  User,
+  ClientHistory,
+  CreateOrderSelectMaster,
+  CreateOrderSelectService,
+} from "../../pages";
 
 import {
   AdminProtectedRoute,
@@ -37,7 +46,11 @@ const clientRoutes = [
     element: <CreateOrderSelectMaster />,
     path: "/create-order-select-master",
   },
-  
+
+  {
+    element: <CreateOrderSelectService />,
+    path: "/create-order-select-service",
+  },
 ];
 
 interface IProps {

@@ -57,9 +57,9 @@ const masters = [
 const CreateOrderSelectMaster = () => {
   return (
     <div className="font-bree">
-      <div className="flex items-center justify-center pb-5">
+      <div className="flex items-center justify-center py-5">
         <div>
-          <div className="text-6xl">Select a master</div>
+          <div className="text-4xl">Select a <span className="underline">master</span></div>
           <div className="text-gray-500">DM studio luxury</div>
         </div>
       </div>

@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import { IUser } from "../../types/users.type";
+import { LinkButtonCustom } from "../Custom";
 
 interface ICaruosel {
   slides: string[];
-  user: IUser | null
+  user: IUser | null;
 }
 
 const HomeCarousel = ({ slides, user }: ICaruosel) => {
@@ -49,17 +49,14 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
       <div className="absolute inset-0 flex items-end justify-between pb-20 px-20">
         <h2 className="text-white text-[40px]">beauty salon</h2>
         <div className=" md:flex items-center pr-4 ">
-          <Link to={`${!user ? '/login' : "/create-order-select-master"}`} className="relative inline-block text-lg group ">
-            <span className="relative z-10 block px-7 py-4 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white">
-              <span className="absolute inset-0 w-full h-full px-5 py-3  bg-gray-50"></span>
-              <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-              <span className="relative">Create order</span>
-            </span>
-            <span
-              className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900  group-hover:mb-0 group-hover:mr-0"
-              data-rounded=""
-            ></span>
-          </Link>
+          <LinkButtonCustom
+            title="Create order"
+            to={`${!user ? "/login" : "/create-order-select-master"}`}
+            textSize="text-lg"
+            px="px-8"
+            py="py-3"
+            bgHeight="h-12"
+          />
         </div>
       </div>
 
