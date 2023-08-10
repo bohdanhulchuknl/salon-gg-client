@@ -8,7 +8,6 @@ interface ICreateOrderServiceCardProps {
 }
 
 const CreateOrderServiceCard = ({ service }: ICreateOrderServiceCardProps) => {
-  console.log(service);
   return (
     <div className="w-[350px] h-[400px] cursor-pointer group pb-6 font-poppinsBold">
       <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">

@@ -28,7 +28,7 @@ const authNavLinks = [
 ];
 
 const UserAuth = ({ logout, user }: IUserAuthProps) => {
-  console.log(logout, user)
+
   return (
     <div className="container text-secondColor">
       <div className=" flex items-center justify-between  m-auto px-5 ">

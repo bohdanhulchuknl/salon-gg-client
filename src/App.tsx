@@ -26,7 +26,6 @@ const App = () => {
   const location = useLocation();
   useEffect(() => {
     //!
-    console.log(user);
     getUserAPI()
       .then((res) => {
         if (res) {
