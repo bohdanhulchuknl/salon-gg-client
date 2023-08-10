@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 interface ICreateOrderServiceOptionSelectedCardProps {
   selectedItem: {
     text: string;
