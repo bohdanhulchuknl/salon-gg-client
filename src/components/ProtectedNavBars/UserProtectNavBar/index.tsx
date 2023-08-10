@@ -1,6 +1,5 @@
 import { Logo } from "../..";
 import { ImUndo2 } from "react-icons/im";
-import { MdBorderColor } from "react-icons/md";
 import { IoMdOptions } from "react-icons/io";
 import { MdFeaturedPlayList } from "react-icons/md";
 import { AiFillPlusSquare } from "react-icons/ai";

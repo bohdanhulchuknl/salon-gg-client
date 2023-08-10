@@ -11,11 +11,6 @@ interface IServiceItem {
   price: string;
 }
 
-interface IServiceOptions {
-  title: string;
-  items: IServiceItem[];
-}
-
 const CreateOrderSelectServiceOptions = () => {
   const [selectedOp, setSelectedOp] = useState<IServiceItem[]>([]);
 
