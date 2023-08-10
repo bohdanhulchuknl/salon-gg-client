@@ -1,6 +1,11 @@
 import { Logo } from "../..";
 import { ImUndo2 } from "react-icons/im";
 import { MdBorderColor } from "react-icons/md";
+import { IoMdOptions } from "react-icons/io";
+import { MdFeaturedPlayList } from "react-icons/md";
+import { AiFillPlusSquare } from "react-icons/ai";
+
+
 
 import { IUser } from "../../../types/users.type";
 import { LinkButtonCustom, NavLinkCustom } from "../../Custom";
@@ -46,7 +51,7 @@ const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
                   title="Create"
                   to="/create-order-select-master"
                   icon={
-                    <MdBorderColor className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
+                    <AiFillPlusSquare className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
                   }
                 />
               </div>
@@ -55,10 +60,20 @@ const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
                   title="Service"
                   to="/create-order-select-service"
                   icon={
-                    <MdBorderColor className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
+                    <MdFeaturedPlayList className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
                   }
                 />
               </div>
+              <div className="group/backButton -mb-4">
+                <LinkButtonCustom
+                  title="Options"
+                  to="/create-order-select-service-options"
+                  icon={
+                    <IoMdOptions className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
+                  }
+                />
+              </div>
+              
             </div>
           </span>
           <nav>

@@ -13,7 +13,7 @@ type Props = {
 
 const redirectPath = "/";
 const showPath = ["/client", "/history-client"];
-const userOrderPath = ['/create-order-select-master', '/create-order-select-service']
+const userOrderPath = ['/create-order-select-master', '/create-order-select-service', '/create-order-select-service-options']
 
 const ClientProtectedRoute = ({ children, user }: Props) => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const ClientProtectedRoute = ({ children, user }: Props) => {
     return <Navigate to={redirectPath} replace />;
   }
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       {showPath.includes(location.pathname) && (
         <UserProtectNavBar user={user} />
       )}

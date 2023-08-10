@@ -9,6 +9,7 @@ import {
   ClientHistory,
   CreateOrderSelectMaster,
   CreateOrderSelectService,
+  CreateOrderSelectServiceOptions
 } from "../../pages";
 
 import {
@@ -51,6 +52,11 @@ const clientRoutes = [
     element: <CreateOrderSelectService />,
     path: "/create-order-select-service",
   },
+  {
+    element: <CreateOrderSelectServiceOptions />,
+    path: "/create-order-select-service-options",
+  },
+  
 ];
 
 interface IProps {
@@ -64,7 +70,7 @@ const AllRoutes = ({ user }: IProps) => {
       <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
 
       {user && (
-        <>
+        <>  
           {clientRoutes.map((el) => (
             <Route
               path={el.path}
