@@ -63,7 +63,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center min-h-full">
-      <header className="bg-firstColor sticky top-0 z-[1000] w-full m-auto px-5 shadow-sm shadow-black">
+      <header className="bg-firstColor sticky top-0 z-50 w-full m-auto px-5 shadow-sm shadow-black">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
       <main className="flex-grow flex-shrink flex-auto w-full h-full">
