@@ -1,4 +1,6 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+
+import { AnimatePresence } from "framer-motion";
 
 import {
   Home,
@@ -9,7 +11,7 @@ import {
   ClientHistory,
   CreateOrderSelectMaster,
   CreateOrderSelectService,
-  CreateOrderSelectServiceOptions
+  CreateOrderSelectServiceOptions,
 } from "../../pages";
 
 import {
@@ -19,6 +21,7 @@ import {
 } from "../ProtectedRoutes";
 
 import { IUser } from "../../types/users.type";
+import { MyTransition } from "../Custom";
 
 const adminRoutes = [
   {
@@ -56,7 +59,6 @@ const clientRoutes = [
     element: <CreateOrderSelectServiceOptions />,
     path: "/create-order-select-service-options",
   },
-  
 ];
 
 interface IProps {
@@ -64,52 +66,55 @@ interface IProps {
 }
 
 const AllRoutes = ({ user }: IProps) => {
+  const location = useLocation();
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
 
-      {user && (
-        <>  
-          {clientRoutes.map((el) => (
-            <Route
-              path={el.path}
-              element={
-                <ClientProtectedRoute user={user}>
-                  {el.element}
-                </ClientProtectedRoute>
-              }
-              key={el.path}
-            />
-          ))}
-          {editorRoutes.map((el) => (
-            <Route
-              path={el.path}
-              element={
-                <EditorProtectedRoute user={user}>
-                  {el.element}
-                </EditorProtectedRoute>
-              }
-              key={el.path}
-            />
-          ))}
+        {user && (
+          <>
+            {clientRoutes.map((el) => (
+              <Route
+                path={el.path}
+                element={
+                  <ClientProtectedRoute user={user}>
+                    <MyTransition>{el.element}</MyTransition>
+                  </ClientProtectedRoute>
+                }
+                key={el.path}
+              />
+            ))}
+            {editorRoutes.map((el) => (
+              <Route
+                path={el.path}
+                element={
+                  <EditorProtectedRoute user={user}>
+                    {el.element}
+                  </EditorProtectedRoute>
+                }
+                key={el.path}
+              />
+            ))}
 
-          {adminRoutes.map((el) => (
-            <Route
-              path={el.path}
-              element={
-                <AdminProtectedRoute user={user}>
-                  {el.element}
-                </AdminProtectedRoute>
-              }
-              key={el.path}
-            />
-          ))}
-        </>
-      )}
+            {adminRoutes.map((el) => (
+              <Route
+                path={el.path}
+                element={
+                  <AdminProtectedRoute user={user}>
+                    {el.element}
+                  </AdminProtectedRoute>
+                }
+                key={el.path}
+              />
+            ))}
+          </>
+        )}
 
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

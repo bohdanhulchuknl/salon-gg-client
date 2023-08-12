@@ -1,6 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import { IUser } from "../../types/users.type";
 import { LinkButtonCustom } from "../Custom";
+import { motion } from "framer-motion";
 
 interface ICaruosel {
   slides: string[];
@@ -35,7 +36,11 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <div
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 100 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
         className="absolute inset-0 flex  font-poppinsBold text-white pl-20 pt-10 "
         id="Home"
       >
@@ -44,12 +49,25 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
           <h2 className="text-[36px] leading-none">studio</h2>
           <h2 className="text-[36px]">luxury</h2>
         </div>
-      </div>
+      </motion.div>
 
       <div className="absolute inset-0 flex items-end justify-between pb-20 px-20 font-poppinsBold">
-        <h2 className="text-white text-[40px] bg-fourColor py-1 px-2">beauty salon</h2>
-        <div className=" md:flex items-center pr-4 ">
-
+        <motion.h2
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 100 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="text-white text-[40px] bg-fourColor py-1 px-2"
+        >
+          beauty salon
+        </motion.h2>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 100 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className=" md:flex items-center pr-4 "
+        >
           <LinkButtonCustom
             title="Create order"
             to={`${!user ? "/login" : "/create-order-select-master"}`}
@@ -58,8 +76,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
             py="py-3"
             bgHeight="h-12"
           />
-
-        </div>
+        </motion.div>
       </div>
 
       {/* <div className="absolute inset-0 flex items-center justify-between p-4">

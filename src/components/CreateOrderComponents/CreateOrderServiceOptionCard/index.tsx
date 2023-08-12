@@ -29,8 +29,13 @@ const CreateOrderServiceOptionCard = ({
       setSelectedOp((prev) => [...prev, item]);
     }
   }, []);
+
   return (
-    <div className="p-2 flex gap-3 items-center justify-between">
+    <div
+      className={` transition-all p-2 flex gap-3 items-center justify-between border-b-2 ${
+        isChecked ? "border-b-fourColor" : "border-b-thirdColor"
+      }`}
+    >
       <div>{item.text}</div>
       <div className="flex items-center gap-2">
         <span>{item.price}</span>
