@@ -32,9 +32,7 @@ const CreateOrderServiceOptionCard = ({
 
   return (
     <div
-      className={` transition-all p-2 flex gap-3 items-center justify-between border-b-2 ${
-        isChecked ? "border-b-fourColor" : "border-b-thirdColor"
-      }`}
+      className={` transition-all p-2 flex gap-3 items-center justify-between hover:bg-secondColor`}
     >
       <div>{item.text}</div>
       <div className="flex items-center gap-2">
