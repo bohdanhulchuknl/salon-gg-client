@@ -1,5 +1,10 @@
+import { CreateOrderSelectMaster } from "../../../pages";
 const Masters = () => {
-  return <div>Masters</div>;
+  return (
+    <div>
+      <CreateOrderSelectMaster />
+    </div>
+  );
 };
 
 export default Masters;
