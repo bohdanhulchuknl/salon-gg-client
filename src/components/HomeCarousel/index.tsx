@@ -15,7 +15,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
   //   setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className=" relative w-full max-h-[940px]  h-[calc(100vh-80px)]">
+    <div className=" relative w-full max-h-[940px]  h-[calc(100vh-80px)] font-poppinsBold">
       <div className="w-full self-end h-full ">
         <Carousel
           autoPlay
@@ -36,46 +36,53 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <motion.div
-        initial={{ y: -100, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 100 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="absolute inset-0 flex  font-poppinsBold text-white pl-20 pt-10 "
-        id="Home"
-      >
-        <h1 className="text-[100px] ">DM</h1>
-        <div className=" flex flex-col pt-[34px] pl-2 ">
-          <h2 className="text-[36px] leading-none">studio</h2>
-          <h2 className="text-[36px]">luxury</h2>
-        </div>
-      </motion.div>
-
-      <div className="absolute inset-0 flex items-end justify-between pb-20 px-20 font-poppinsBold">
-        <motion.h2
-          initial={{ y: 100, opacity: 0 }}
+      <div className="absolute container mx-auto flex flex-col justify-between   inset-0 p-5">
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-white text-[40px] bg-fourColor py-1 px-2"
+          className="flex font-poppinsBold text-white md:pl-10 "
+          id="Home"
         >
-          beauty salon
-        </motion.h2>
+          <h1 className="text-[74px] sm:text-[100px] ">DM</h1>
+          <div className="pt-[10px]  md:flex md:flex-col sm:pt-[37px] sm:pl-2 ">
+            <h2 className="text-[28px] sm:text-[38px] sm:leading-none  md:-mt-2 md:">
+              studio
+            </h2>
+            <h2 className="text-[28px] sm:text-[38px] ">luxury</h2>
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className=" md:flex items-center pr-4 "
+          className="flex flex-col justify-between pb-5 md:items-center  md:flex-row whitespace-nowrap md:px-10 lg:pb-16 gap-6 lg:px-10"
         >
-          <LinkButtonCustom
-            title="Create order"
-            to={`${!user ? "/login" : "/create-order-select-master"}`}
-            textSize="text-lg"
-            px="px-8"
-            py="py-3"
-            bgHeight="h-12"
-          />
+          <div>
+            <motion.span
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 100 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className=" text-white text-[30px] bg-fourColor py-2 px-2 whitespace-nowrap "
+            >
+              beauty salon
+            </motion.span>
+          </div>
+
+          <div>
+            <LinkButtonCustom
+              title="Create order"
+              to={`${!user ? "/login" : "/create-order-select-master"}`}
+              textSize="text-lg"
+              px="px-8"
+              py="py-3"
+              bgHeight="h-12"
+            />
+          </div>
         </motion.div>
       </div>
 

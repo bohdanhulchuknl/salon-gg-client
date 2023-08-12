@@ -1,5 +1,3 @@
-
-
 import { CreateOrderMasterCard } from "../../components/CreateOrderComponents";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -18,18 +16,18 @@ const masters = [
     works: [work1, work2, work3],
     comments: [
       {
-        from: 'Anna',
-        text: "So good master"
+        from: "Anna",
+        text: "So good master",
       },
       {
-        from: 'Anna',
-        text: "So good master"
+        from: "Anna",
+        text: "So good master",
       },
       {
-        from: 'Anna',
-        text: "So good master"
-      }
-    ]
+        from: "Anna",
+        text: "So good master",
+      },
+    ],
   },
   {
     name: "name 2",
@@ -39,18 +37,18 @@ const masters = [
     works: [work1, work2, work3],
     comments: [
       {
-        from: 'Anna',
-        text: "So good master"
+        from: "Anna",
+        text: "So good master",
       },
       {
-        from: 'Anna',
-        text: "So good master"
+        from: "Anna",
+        text: "So good master",
       },
       {
-        from: 'Anna',
-        text: "So good master"
-      }
-    ]
+        from: "Anna",
+        text: "So good master",
+      },
+    ],
   },
 ];
 
@@ -59,15 +57,20 @@ const CreateOrderSelectMaster = () => {
     <div className="font-poppinsBold">
       <div className="flex items-center justify-center py-5">
         <div>
-          <div className="text-4xl text-firstColor">Select a <span className="underline text-fourColor">master</span></div>
-          <div className="text-secondColor">DM studio luxury</div>
+          <div className="text-4xl text-firstColor lg:text-6xl">
+            Select a <span className="underline text-fourColor">master</span>
+          </div>
+          <div className="text-secondColor lg:text-2xl">DM studio luxury</div>
         </div>
       </div>
 
       <div className="flex gap-10 justify-center items-center">
         <section className="flex justify-center items-center gap-16 text-white h-[calc(100vh-200px)] flex-wrap">
           {masters.map((master) => (
-            <CreateOrderMasterCard master={master} key={master.name + Math.random().toString().split('.')[1]}/>
+            <CreateOrderMasterCard
+              master={master}
+              key={master.name + Math.random().toString().split(".")[1]}
+            />
           ))}
         </section>
       </div>

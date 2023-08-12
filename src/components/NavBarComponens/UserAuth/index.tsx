@@ -28,14 +28,13 @@ const authNavLinks = [
 ];
 
 const UserAuth = ({ logout, user }: IUserAuthProps) => {
-
   return (
     <div className="container text-secondColor">
       <div className=" flex items-center justify-between  m-auto px-5 ">
         <span className="items-center flex ">
           <Logo />
         </span>
-        <nav className="">
+        <nav className="min-[320px]:hidden md:block">
           <ul className="flex gap-6 font-poppinsBold">
             {authNavLinks.map((navLink) => (
               <li>
@@ -49,7 +48,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
           </ul>
         </nav>
         <div className="flex gap-5 items-center justify-center">
-          <DropDownMenu user={user} logout={logout}/>
+          <DropDownMenu user={user} logout={logout} />
         </div>
       </div>
     </div>

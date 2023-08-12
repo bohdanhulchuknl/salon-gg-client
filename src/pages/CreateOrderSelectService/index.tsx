@@ -37,7 +37,7 @@ const CreateOrderSelectService = () => {
   ];
 
   return (
-    <div className="font-poppinsBold container mx-auto  flex flex-col  items-center justify-center pt-5">
+    <div className="font-poppinsBold container mx-auto flex flex-col items-center justify-center pt-5">
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 100 }}
@@ -46,18 +46,18 @@ const CreateOrderSelectService = () => {
         className="flex items-center justify-center pb-5"
       >
         <div>
-          <div className="text-6xl text-firstColor">
+          <div className="text-4xl text-firstColor lg:text-6xl">
             Select a <span className="underline text-fourColor">service</span>
           </div>
-          <div className="text-secondColor">DM studio luxury</div>
+          <div className="text-secondColor lg:text-2xl">DM studio luxury</div>
         </div>
       </motion.div>
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 100 }}
-        viewport={{ once: true, margin:"0px" }}
+        viewport={{ once: true, margin: "0px" }}
         transition={{ delay: 0.5 }}
-        className="flex gap-10 pt-10"
+        className="md:flex gap-10 pt-10 flex-wrap"
       >
         {services.map((service) => (
           <CreateOrderServiceCard service={service} />
