@@ -9,7 +9,13 @@ const CreateOrderNavBar = () => {
     <div className="sticky top-0 bg-firstColor p-4 z-50 flex justify-between items-center">
       <div className="container mx-auto">
         <div>
-          <LinkButtonCustom to="/" title="Back" icon={<ImUndo2 className="group-hover:-rotate-12 duration-150 fill-hoverColor group-hover/backButton:fill-black " />}/>
+          <LinkButtonCustom
+            to="/"
+            title="Back"
+            icon={
+              <ImUndo2 className="group-hover:-rotate-12 duration-150 fill-hoverColor group-hover/backButton:fill-black " />
+            }
+          />
         </div>
 
         {/* <ul className="flex items-center gap-5">
