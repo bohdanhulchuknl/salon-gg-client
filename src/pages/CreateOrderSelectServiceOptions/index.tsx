@@ -3,7 +3,7 @@ import {
   CreateOrderServiceOptionCard,
   CreateOrderServiceOptionSelectedCard,
 } from "../../components/CreateOrderComponents";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { serviceOptions } from "../../utils/mockDate";
 import { LinkButtonCustom } from "../../components/Custom";
 import { ImUndo2 } from "react-icons/im";
@@ -67,21 +67,21 @@ const CreateOrderSelectServiceOptions = () => {
               </div>
             ))}
           </motion.div>
-          <motion.div
-            className="transition-all shadow-sm shadow-secondColor max-h-[calc(100vh-200px)] overflow-y-auto flex-[40%]"
-          >
+          <motion.div className="transition-all shadow-sm shadow-secondColor max-h-[calc(100vh-200px)] overflow-y-auto flex-[40%]">
             <h5 className="bg-fourColor py-4 px-2 sticky top-0 flex justify-between">
               <p>Order</p>
               <div className="border-b-2 text-lg">
                 Total: {selectedOpSum} zł
               </div>
             </h5>
-            {selectedOp.map((selectedItem) => (
-              <CreateOrderServiceOptionSelectedCard
-                selectedItem={selectedItem}
-                key={selectedItem.text}
-              />
-            ))}
+            <AnimatePresence>
+              {selectedOp.map((selectedItem) => (
+                <CreateOrderServiceOptionSelectedCard
+                  selectedItem={selectedItem}
+                  key={selectedItem.text}
+                />
+              ))}
+            </AnimatePresence>
           </motion.div>
         </div>
       </div>
