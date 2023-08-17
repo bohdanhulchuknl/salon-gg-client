@@ -267,8 +267,8 @@ const CreateOrderSelectService = () => {
             ))}
           </ul>
         </div>
-        <div className="sticky top-0 left-0 flex items-center w-full h-screen sm:px-10">
-          <div className="relative flex flex-col justify-between w-full aspect-square rounded-2xl">
+        <div className="sticky top-0 left-0 flex items-center w-full h-screen bg-gray-100 sm:px-10">
+          <div className="relative flex flex-col justify-between w-full rounded-2xl">
             {services.map((service) => (
               <service.card
                 key={service.title}
