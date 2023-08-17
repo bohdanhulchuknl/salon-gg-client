@@ -1,16 +1,13 @@
 import { Menu, Transition } from "@headlessui/react";
-import { IUser } from "../../../types/users.type";
-ImMenu3;
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { AiFillSetting } from "react-icons/ai";
 import { ImMenu3, ImMenu4 } from "react-icons/im";
 
 interface IDropDownMenuProps {
-  user: IUser;
   logout: () => void;
 }
 
-const DropDownMenu = ({ user, logout }: IDropDownMenuProps) => {
+const DropDownMenu = ({ logout }: IDropDownMenuProps) => {
   return (
     <div className="relative z-10">
       <Menu>

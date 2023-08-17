@@ -85,7 +85,7 @@ const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
             </ul>
           </nav>
 
-          <DropDownMenu user={user} logout={logout} />
+          <DropDownMenu logout={logout} />
         </div>
       </div>
     </div>

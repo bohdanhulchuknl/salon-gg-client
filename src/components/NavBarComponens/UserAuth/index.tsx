@@ -55,7 +55,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
             <address>+380989571902</address>
           </div>
           <div className="font-ttInterfacesRegular">{user.name}</div>
-          <DropDownMenu user={user} logout={logout} />
+          <DropDownMenu  logout={logout} />
         </div>
       </div>
     </div>
