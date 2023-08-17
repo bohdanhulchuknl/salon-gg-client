@@ -18,33 +18,33 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="w-[350px] h-full max-h-[600px] cursor-pointer group pb-6 ">
-      <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-        <div className="absolute backface-hidden  w-full h-full shadow-md shadow-black">
-          <div className="w-full h-full relative flex items-end justify-center ">
+      <div className="relative w-full h-full duration-1000 preserve-3d group-hover:my-rotate-y-180">
+        <div className="absolute w-full h-full shadow-md backface-hidden shadow-black">
+          <div className="relative flex items-end justify-center w-full h-full ">
             <img
               src={master.photo}
-              className=" absolute object-cover w-full h-full object-top -z-10"
+              className="absolute object-cover object-top w-full h-full  -z-10"
             />
-            <h1 className="text-thirdColor  bg-firstColor/50 w-full text-center py-2">
+            <h1 className="w-full py-2 text-center text-thirdColor bg-firstColor/50">
               {master.name}
             </h1>
           </div>
         </div>
 
-        <div className="shadow-2xl text-xs bg-fourColor  shadow-black absolute my-rotate-y-180 backface-hidden w-full h-full border-2 overflow-hidden">
-          <div className="text-center divide-y-2 divide-white flex flex-col items-center justify-between  h-full text-firstColor pb-2 ">
+        <div className="absolute w-full h-full overflow-hidden text-xs border-2 shadow-2xl bg-fourColor shadow-black my-rotate-y-180 backface-hidden">
+          <div className="flex flex-col items-center justify-between h-full pb-2 text-center divide-y-2 divide-white text-firstColor ">
             <div className="w-full p-3 ">
-              <div className=" pb-2 flex  gap-1  justify-between items-center">
+              <div className="flex items-center justify-between gap-1 pb-2 ">
                 <div className="flex items-center ">
                   <AiFillStar />
                   <h1 className="">{master.rang}</h1>
                 </div>
                 <div className="">
                   <div
-                    className="flex items-center gap-1 group/comments transition-all"
+                    className="flex items-center gap-1 transition-all group/comments"
                     onClick={() => setIsOpen(true)}
                   >
-                    <p className=" text-secondColor group-hover/comments:text-firstColor ">
+                    <p className=" text-secondColor group-hover/comments:text-firstColor">
                       Comments
                     </p>
                     <MdInsertComment className="fill-secondColor group-hover/comments:fill-gray-900" />
@@ -53,11 +53,11 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
                   <Dialog
                     open={isOpen}
                     onClose={() => setIsOpen(false)}
-                    className="backdrop-blur-sm fixed top-0 h-screen w-full bg-transparent/50 flex items-center justify-center font-poppinsBold"
+                    className="fixed top-0 flex items-center justify-center w-full h-screen backdrop-blur-sm bg-transparent/50"
                   >
-                    <Dialog.Panel className="bg-white drop-shadow-2xl shadow-white p-10 relative">
+                    <Dialog.Panel className="relative p-10 bg-white drop-shadow-2xl shadow-white">
                       <Dialog.Title className="flex justify-between pb-5">
-                        <div className="flex items-start flex-col gap-2">
+                        <div className="flex flex-col items-start gap-2">
                           <img
                             src={master.photo}
                             alt=""
@@ -91,7 +91,7 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
                           showThumbs={false}
                         >
                           {master.comments.map((comment) => (
-                            <div className="bg-gray-100 py-10">
+                            <div className="py-10 bg-gray-100">
                               <h5>{comment.from}</h5>
                               <p>{comment.text}</p>
                             </div>
@@ -107,13 +107,13 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
                 </div>
               </div>
 
-              <ul className="flex gap-1 text-secondColor flex-col items-start">
+              <ul className="flex flex-col items-start gap-1 text-secondColor">
                 <li className="flex gap-1"><BsCheckSquare/> <span>{master.regals[0]}</span></li>
                 <li className="flex gap-1"><BsCheckSquare/> <span>{master.regals[1]}</span></li>
               </ul>
             </div>
 
-            <div className="w-full self-end h-full">
+            <div className="self-end w-full h-full">
               <Carousel
                 autoPlay
                 infiniteLoop
@@ -129,8 +129,8 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
               </Carousel>
             </div>
 
-            <div className="absolute bottom-0 z-20 bg-thirdColor w-full p-2">
-              <LinkButtonCustom title="Select" to="/"  icon={<ImUndo2 className=" duration-150 fill-hoverColor group-hover/backButton:fill-black rotate-180" />}/>
+            <div className="absolute bottom-0 z-20 w-full p-2 bg-thirdColor">
+              <LinkButtonCustom title="Select" to="/"  icon={<ImUndo2 className="duration-150 rotate-180  fill-hoverColor group-hover/backButton:fill-black" />}/>
 
             </div>
           </div>

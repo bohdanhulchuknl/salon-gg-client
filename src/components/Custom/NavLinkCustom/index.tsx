@@ -11,12 +11,12 @@ const NavLinkCustom = ({ to, title, className }: INavLinkCustomProps) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `text-sm shadow-sm shadow-black px-4 py-2  ease-in-out transition-all duration-200 ${
+        `font-ttInterfacesBold text-sm px-4 py-2  ease-in-out transition-all duration-200 ${
           className ? className : ""
         } ${
           isActive
-            ? "text-thirdColor border-b-4 border-fourColor"
-            : "text-secondColor hover:underline hover:text-thirdColor hover:shadow-md hover:shadow-black"
+            ? "text-firstColor border-b-4 border-firstColor"
+            : "text-gray-700 hover:underline hover:text-firstColor "
         }`
       }
     >

@@ -2,7 +2,7 @@ import { CreateOrderSelectService } from "../../../pages";
 
 const Servises = () => {
   return (
-    <div className="container mx-auto py-20 shadow-sm shadow-secondColor">
+    <div className="container pt-10 mx-auto sm:py-20 ">
       <CreateOrderSelectService />
     </div>
   );

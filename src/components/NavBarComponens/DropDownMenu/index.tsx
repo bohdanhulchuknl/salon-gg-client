@@ -1,9 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
 import { IUser } from "../../../types/users.type";
-
+ImMenu3;
 import { RiLogoutBoxRLine } from "react-icons/ri";
-import { BsCaretDownSquare } from "react-icons/bs";
 import { AiFillSetting } from "react-icons/ai";
+import { ImMenu3, ImMenu4 } from "react-icons/im";
 
 interface IDropDownMenuProps {
   user: IUser;
@@ -12,26 +12,17 @@ interface IDropDownMenuProps {
 
 const DropDownMenu = ({ user, logout }: IDropDownMenuProps) => {
   return (
-    <div className="font-poppinsBold">
+    <div className="relative z-10">
       <Menu>
         {({ open }) => (
           <>
             <Menu.Button className="group/dropMenuButton">
-              <div className="flex items-center justify-center gap-1 pl-3 pr-2 py-2 ">
-                <img
-                  className=""
-                  src={user.picture}
-                  alt="User"
-                  height={25}
-                  width={25}
-                />
-                <BsCaretDownSquare
-                  className={`h-[10px] w-[10px] ease-in-out transition-all  ${
-                    open
-                      ? "rotate-180 translate-y-5 fill-fourColor"
-                      : "fill-secondColor group-hover/dropMenuButton:fill-thirdColor"
-                  }`}
-                />
+              <div className="flex items-center justify-center gap-1 py-2 pl-3 pr-2 ">
+                {!open ? (
+                  <ImMenu3 className="w-8 h-8 fill-firstColor" />
+                ) : (
+                  <ImMenu4 className="w-8 h-8 fill-firstColor" />
+                )}
               </div>
             </Menu.Button>
             <Transition
@@ -43,22 +34,23 @@ const DropDownMenu = ({ user, logout }: IDropDownMenuProps) => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <Menu.Items className="divide-y divide-secondColor text-white absolute top-1 right-0 flex flex-col bg-firstColor min-w-[200px] border-2 border-fourColor p-2  cursor-pointer text-xs">
+              <Menu.Items className="divide-y divide-secondColor text-white absolute top-0 right-0 flex flex-col bg-firstColor min-w-[200px] border-2 border-thirdColor p-2  cursor-pointer text-xs">
                 <Menu.Item disabled>
-                  <span className="opacity-75 flex items-center gap-1 p-1">
-                    <AiFillSetting /> Account settings
+                  <span className="flex items-center gap-1 p-1 opacity-75">
+                    <AiFillSetting /> <span>Account settings</span>
                   </span>
                 </Menu.Item>
-                <div className="">
+                <div className="z-50">
                   <Menu.Item>
                     {({ active }) => (
                       <div
                         onClick={logout}
-                        className={`transition-all flex items-center gap-1 p-1 hover:bg-hoverColor hover:text-firstColor ${
-                          active ? "bg-fourColor" : ""
+                        className={` cursor-pointer transition-all flex items-center gap-1 p-1 hover:bg-hoverColor hover:text-firstColor ${
+                          active ? "bg-thirdColor" : ""
                         }`}
                       >
-                        <RiLogoutBoxRLine className="rotate-180" /> Logout
+                        <RiLogoutBoxRLine className="rotate-180" />{" "}
+                        <span>Logout</span>
                       </div>
                     )}
                   </Menu.Item>

@@ -10,6 +10,7 @@ import {
   setInViewService,
 } from "../../app/slices/service.slice";
 import { useDispatch, useSelector } from "react-redux";
+import { LinkButtonCustom } from "../../components/Custom";
 
 const ServiceTitle = ({
   children,
@@ -30,7 +31,7 @@ const ServiceTitle = ({
   return (
     <p
       ref={ref}
-      className={`py-16 pl-20 font-mono text-5xl transition-colors ${
+      className={`text-2xl py-8 sm:py-16 pl-5 sm:pl-20 font-ttInterfacesBold sm:text-5xl transition-colors ${
         isInView ? "text-black" : "text-gray-300"
       }`}
     >
@@ -51,7 +52,7 @@ const ServiceCard = ({
   const inViewService = useSelector(selectInViewService);
   return (
     <div
-      className={`w-full h-full absolute inset-0 rounded-2xl bg-gradient-to-br transition-opacity ${gradient} ${
+      className={` w-full h-full absolute top-0 right-3 sm:inset-0 rounded-2xl bg-gradient-to-br transition-opacity ${gradient} ${
         inViewService === id ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -60,26 +61,155 @@ const ServiceCard = ({
   );
 };
 
-const Legs = ({ id }: { id: string }) => {
+const Legs = ({
+  id,
+  variants,
+  img,
+}: {
+  id: string;
+  variants: string[];
+  img: string;
+}) => {
   return (
-    <ServiceCard id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
-      <span />
+    <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
+      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 font-ttInterfacesRegular group/serviceCard">
+        <div className="flex items-center justify-center h-full ">
+          <div className="relative z-10 px-4 py-6 sm:py-12 sm:px-8 bg-thirdColor rounded-2xl drop-shadow-md">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-ttInterfacesBold rounded-2xl group-hover/serviceCard:justify-start">
+              <img
+                src={img}
+                alt="nails"
+                className="absolute object-cover object-right-top w-20 h-20 transition-all left-2 top-2 -z-10 rounded-2xl group-hover/serviceCard:top-0 group-hover/serviceCard:left-0 group-hover/serviceCard:w-full group-hover/serviceCard:h-full "
+              />
+              <span className="px-4 py-2 text-firstColor group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
+                {id}
+              </span>
+            </h5>
+            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
+              {variants.map((variant) => (
+                <div className="px-4 py-2 bg-gray-100 rounded-xl">
+                  {variant}
+                </div>
+              ))}
+            </div>
+            <div className="z-10 flex items-center justify-end pt-5">
+              <LinkButtonCustom to="/" title="Select" className="!px-2 !py-2 text-xs sm:text-base"/>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="transition-all absolute top-[10%] right-[10%] skew-y-12 group-hover/serviceCard:skew-y-0">
+          <img
+            src={img}
+            alt={id}
+            height={150}
+            width={150}
+            className="object-cover border-[15px] border-b-[40px]  border-thirdColor rounded-sm"
+          />
+        </div> */}
+      </div>
     </ServiceCard>
   );
 };
 
-const Neil = ({ id }: { id: string }) => {
+const Neil = ({
+  id,
+  variants,
+  img,
+}: {
+  id: string;
+  variants: string[];
+  img: string;
+}) => {
   return (
-    <ServiceCard id={id} gradient="from-[#f5fff7] to-[#adf8ff]">
-      <span />
+    <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
+      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 font-ttInterfacesRegular group/serviceCard">
+        <div className="flex items-center justify-center h-full ">
+          <div className="relative z-10 px-4 py-6 sm:py-12 sm:px-8 bg-thirdColor rounded-2xl drop-shadow-md">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-ttInterfacesBold rounded-2xl group-hover/serviceCard:justify-start">
+              <img
+                src={img}
+                alt="nails"
+                className="absolute object-cover object-right-top w-20 h-20 transition-all left-2 top-2 -z-10 rounded-2xl group-hover/serviceCard:top-0 group-hover/serviceCard:left-0 group-hover/serviceCard:w-full group-hover/serviceCard:h-full "
+              />
+              <span className="px-4 py-2 text-firstColor group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
+                {id}
+              </span>
+            </h5>
+            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
+              {variants.map((variant) => (
+                <div className="px-4 py-2 bg-gray-100 rounded-xl">
+                  {variant}
+                </div>
+              ))}
+            </div>
+            <div className="z-10 flex items-center justify-end pt-5">
+              <LinkButtonCustom to="/" title="Select" className="!px-2 !py-2 text-xs sm:text-base"/>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="transition-all absolute top-[10%] right-[10%] skew-y-12 group-hover/serviceCard:skew-y-0">
+          <img
+            src={img}
+            alt={id}
+            height={150}
+            width={150}
+            className="object-cover border-[15px] border-b-[40px]  border-thirdColor rounded-sm"
+          />
+        </div> */}
+      </div>
     </ServiceCard>
   );
 };
 
-const Eyebrows = ({ id }: { id: string }) => {
+const Eyebrows = ({
+  id,
+  variants,
+  img,
+}: {
+  id: string;
+  variants: string[];
+  img: string;
+}) => {
   return (
-    <ServiceCard id={id} gradient="from-[#fff7f5] to-[#adffd8]">
-      <span />
+    <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
+      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 font-ttInterfacesRegular group/serviceCard">
+        <div className="flex items-center justify-center h-full ">
+          <div className="relative z-10 px-4 py-6 sm:py-12 sm:px-8 bg-thirdColor rounded-2xl drop-shadow-md">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-ttInterfacesBold rounded-2xl group-hover/serviceCard:justify-start">
+              <img
+                src={img}
+                alt="nails"
+                className="absolute object-cover object-right-top w-20 h-20 transition-all left-2 top-2 -z-10 rounded-2xl group-hover/serviceCard:top-0 group-hover/serviceCard:left-0 group-hover/serviceCard:w-full group-hover/serviceCard:h-full "
+              />
+              <span className="px-4 py-2 text-firstColor group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
+                {id}
+              </span>
+            </h5>
+            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
+              {variants.map((variant) => (
+                <div className="px-4 py-2 bg-gray-100 rounded-xl">
+                  {variant}
+                </div>
+              ))}
+            </div>
+            <div className="z-10 flex items-center justify-end pt-5">
+              <LinkButtonCustom to="/" title="Select" className="!px-2 !py-2 text-xs sm:text-base"/>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="transition-all absolute top-[10%] right-[10%] skew-y-12 group-hover/serviceCard:skew-y-0">
+          <img
+            src={img}
+            alt={id}
+            height={150}
+            width={150}
+            className="object-cover border-[15px] border-b-[40px]  border-thirdColor rounded-sm"
+          />
+        </div> */}
+      </div>
     </ServiceCard>
   );
 };
@@ -89,9 +219,9 @@ const CreateOrderSelectService = () => {
     {
       title: "Педикюр",
       variants: [
-        "Педикюр комбінований / біологічний",
-        "Педикюр комбінований + покриття",
-        "Педикюр комбінований + пʼята + покриття",
+        "комбінований / біологічний",
+        "комбінований + покриття",
+        "комбінований + пʼята + покриття",
       ],
       img: legs,
       card: Legs,
@@ -120,35 +250,14 @@ const CreateOrderSelectService = () => {
   ];
 
   return (
-    // <div className="container flex flex-col items-center justify-center pt-5 mx-auto font-poppinsBold">
-    //   <motion.div
-    //     initial={{ y: -100, opacity: 0 }}
-    //     whileInView={{ y: 0, opacity: 100 }}
-    //     viewport={{ once: true }}
-    //     transition={{ delay: 0.3 }}
-    //     className="flex items-center justify-center pb-5"
-    //   >
-    //     <div>
-    //       <div className="text-4xl text-firstColor lg:text-6xl">
-    //         Select a <span className="underline text-fourColor">service</span>
-    //       </div>
-    //       <div className="text-secondColor lg:text-2xl">DM studio luxury</div>
-    //     </div>
-    //   </motion.div>
-    //   <motion.div
-    //     initial={{ y: -100, opacity: 0 }}
-    //     whileInView={{ y: 0, opacity: 100 }}
-    //     viewport={{ once: true, margin: "0px" }}
-    //     transition={{ delay: 0.5 }}
-    //     className="flex-wrap gap-10 pt-10 md:flex"
-    //   >
-    //     {services.map((service) => (
-    //       <CreateOrderServiceCard service={service} />
-    //     ))}
-    //   </motion.div>
-    // </div>
-    <div className="container mx-auto ">
-      <div className="flex items-start w-full gap-20">
+    <div className="container mx-auto">
+      <h5 className="sticky z-10 flex items-center justify-center text-3xl sm:text-6xl top-2 font-ttInterfacesBold">
+        <div className="flex flex-col">
+          <span>Select a</span>{" "}
+          <span className="text-secondColor">Service</span>
+        </div>
+      </h5>
+      <div className="flex items-start w-full sm:gap-20">
         <div className="flex w-full py-[50vh]">
           <ul>
             {services.map((service) => (
@@ -158,10 +267,15 @@ const CreateOrderSelectService = () => {
             ))}
           </ul>
         </div>
-        <div className="sticky top-0 flex items-center w-full h-screen px-10">
-          <div className="relative flex flex-col justify-between w-full bg-gray-100 aspect-square rounded-2xl">
+        <div className="sticky top-0 left-0 flex items-center w-full h-screen sm:px-10">
+          <div className="relative flex flex-col justify-between w-full aspect-square rounded-2xl">
             {services.map((service) => (
-              <service.card key={service.title} id={service.title} />
+              <service.card
+                key={service.title}
+                id={service.title}
+                variants={service.variants}
+                img={service.img}
+              />
             ))}
           </div>
         </div>

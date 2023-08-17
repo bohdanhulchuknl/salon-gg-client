@@ -6,14 +6,14 @@ import { LinkButtonCustom } from "../../Custom";
 
 const CreateOrderNavBar = () => {
   return (
-    <div className="sticky top-0 bg-firstColor p-4 z-50 flex justify-between items-center">
+    <div className="sticky top-0 z-50 flex items-center justify-between p-4 bg-thirdColor">
       <div className="container mx-auto">
         <div>
           <LinkButtonCustom
             to="/"
             title="Back"
             icon={
-              <ImUndo2 className="group-hover:-rotate-12 duration-150 fill-hoverColor group-hover/backButton:fill-black " />
+              <ImUndo2 className="duration-150 group-hover:-rotate-12 fill-hoverColor group-hover/backButton:fill-black " />
             }
           />
         </div>
@@ -33,13 +33,13 @@ const CreateOrderNavBar = () => {
           >
             Selected master
           </NavLink>
-          <div className="text-gray-100 pt-2 text-center text-xs">
+          <div className="pt-2 text-xs text-center text-gray-100">
             not selected
           </div>
         </li>
 
         <li className="fill-white">
-          <GrNext className=" " />
+          <GrNext className="" />
         </li>
 
         <li>
@@ -56,7 +56,7 @@ const CreateOrderNavBar = () => {
           >
             Selected services
           </NavLink>
-          <div className="text-gray-100 pt-2 text-center text-xs">
+          <div className="pt-2 text-xs text-center text-gray-100">
             not selected
           </div>
         </li>

@@ -24,18 +24,14 @@ export default {
     extend: {
       fontFamily: {
         poppinsBold: ['"Poppins-Bold"', '"sans-serif"'],
+        ttInterfacesRegular:["TTInterfacesRegular"],
+        ttInterfacesBold: ["TTInterfacesBold"]
       },
       colors: {
-        firstColor: "#2F2E33",
+        firstColor: "#000",
         secondColor: "#D5D6D2",
         thirdColor: "#FFFFFF",
         fourColor: "rgb(20 184 166)",
-      },
-      transitionProperty: {
-        height: "height",
-      },
-      variants: {
-        height: ["responsive", "hover", "focus"],
       },
     },
   },
@@ -47,6 +43,7 @@ export default {
           fontWeight: "700",
           src: "url(/src/fonts/Poppins-Bold.ttf)",
         },
+        
       });
     }),
     MyClass,

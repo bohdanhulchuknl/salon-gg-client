@@ -30,45 +30,45 @@ const userNavBarItems = [
 const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
 
   return (
-    <div className=" bg-firstColor">
-      <div className="w-full container mx-auto px-5">
-        <div className="md:flex justify-between items-center">
-          <span className=" flex items-center justify-center gap-8">
+    <div className="shadow-sm bg-thirdColor">
+      <div className="container w-full px-5 mx-auto">
+        <div className="items-center justify-between md:flex">
+          <span className="flex items-center justify-center gap-8 ">
             <Logo />
             <div className="flex items-center justify-center">
-              <div className="group/backButton -mb-4">
+              <div className="group/backButton">
                 <LinkButtonCustom
                   title="Back"
                   to="/"
                   icon={
-                    <ImUndo2 className="group-hover:-rotate-12 duration-150 fill-hoverColor group-hover/backButton:fill-black " />
+                    <ImUndo2 className="duration-150 group-hover:-rotate-12 fill-hoverColor group-hover/backButton:fill-black " />
                   }
                 />
               </div>
-              <div className="group/backButton -mb-4">
+              <div className=" group/backButton">
                 <LinkButtonCustom
                   title="Create"
                   to="/create-order-select-master"
                   icon={
-                    <AiFillPlusSquare className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
+                    <AiFillPlusSquare className="duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100" />
                   }
                 />
               </div>
-              <div className="group/backButton -mb-4">
+              <div className=" group/backButton">
                 <LinkButtonCustom
                   title="Service"
                   to="/create-order-select-service"
                   icon={
-                    <MdFeaturedPlayList className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
+                    <MdFeaturedPlayList className="duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100" />
                   }
                 />
               </div>
-              <div className="group/backButton -mb-4">
+              <div className="group/backButton">
                 <LinkButtonCustom
                   title="Options"
                   to="/create-order-select-service-options"
                   icon={
-                    <IoMdOptions className=" duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100 " />
+                    <IoMdOptions className="duration-150 fill-hoverColor group-hover/backButton:fill-black group-hover/backButton:scale-100" />
                   }
                 />
               </div>
@@ -76,7 +76,7 @@ const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
             </div>
           </span>
           <nav>
-            <ul className="flex items-center text-base flex-row font-poppinsBold gap-5 ">
+            <ul className="flex flex-row items-center gap-5 text-base ">
               {userNavBarItems.map((el) => (
                 <li>
                   <NavLinkCustom title={el.title} to={el.to} />

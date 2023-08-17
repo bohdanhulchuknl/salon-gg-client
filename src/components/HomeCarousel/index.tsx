@@ -15,13 +15,13 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
   //   setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className=" relative w-full max-h-[940px]  h-[calc(100vh-80px)] font-poppinsBold">
-      <div className="w-full self-end h-full ">
+    <div className=" relative w-full max-h-[940px]  h-[calc(100vh-80px)]">
+      <div className="self-end w-full h-full ">
         <Carousel
           autoPlay
           infiniteLoop
           interval={4000}
-          className="h-full "
+          className="relative h-full cursor-auto -z-10"
           showThumbs={false}
         >
           {slides.map((i) => (
@@ -36,21 +36,21 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <div className="absolute container mx-auto flex flex-col justify-between   inset-0 p-5">
+      <div className="container absolute inset-0 flex flex-col justify-between p-5 mx-auto font-ttInterfacesBold">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex font-poppinsBold text-white md:pl-10 "
+          className="flex text-white md:pl-10 "
           id="Home"
         >
-          <h1 className="text-[74px] sm:text-[100px] ">DM</h1>
-          <div className="pt-[10px]  md:flex md:flex-col sm:pt-[37px] sm:pl-2 ">
-            <h2 className="text-[28px] sm:text-[38px] sm:leading-none  md:-mt-2 md:">
+          <h1 className=" text-[74px] sm:text-[124px] text-firstColor">DM</h1>
+          <div className="pt-[10px]  md:flex md:flex-col sm:pt-[37px] sm:pl-2 text-secondColor">
+            <h2 className="text-[28px] sm:text-[50px] sm:leading-none">
               studio
             </h2>
-            <h2 className="text-[28px] sm:text-[38px] ">luxury</h2>
+            <h2 className="text-[28px] sm:text-[50px] sm:-mt-3 ">luxury</h2>
           </div>
         </motion.div>
 
@@ -59,7 +59,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
           whileInView={{ y: 0, opacity: 100 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex flex-col justify-between pb-5 md:items-center  md:flex-row whitespace-nowrap md:px-10 lg:pb-16 gap-6 lg:px-10"
+          className="flex flex-col justify-between gap-6 pb-5 md:items-center md:flex-row whitespace-nowrap md:px-10 lg:pb-16 lg:px-10"
         >
           <div>
             <motion.span
@@ -67,7 +67,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
               whileInView={{ y: 0, opacity: 100 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className=" text-white text-[30px] bg-fourColor py-2 px-2 whitespace-nowrap "
+              className="px-2 py-2 text-3xl text-white bg-firstColor whitespace-nowrap"
             >
               beauty salon
             </motion.span>
@@ -77,10 +77,8 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
             <LinkButtonCustom
               title="Create order"
               to={`${!user ? "/login" : "/create-order-select-master"}`}
-              textSize="text-lg"
-              px="px-8"
-              py="py-3"
-              bgHeight="h-12"
+              className="px-6 py-3 text-xl bg-thirdColor !text-firstColor hover:bg-thirdColor border-2 border-thirdColor hover:border-firstColor hover:scale-95
+              "
             />
           </div>
         </motion.div>
@@ -89,19 +87,19 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
       {/* <div className="absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={prev}
-          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+          className="p-1 text-gray-800 rounded-full shadow bg-white/80 hover:bg-white"
         >
           <ChevronLeft size={40} />
         </button>
         <button
           onClick={next}
-          className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+          className="p-1 text-gray-800 rounded-full shadow bg-white/80 hover:bg-white"
         >
           <ChevronRight size={40} />
         </button>
       </div> */}
 
-      {/* <div className="absolute bottom-4 right-0 left-0">
+      {/* <div className="absolute left-0 right-0 bottom-4">
         <div className="flex items-center justify-center gap-2">
           {children.map((_, i) => (
             <div

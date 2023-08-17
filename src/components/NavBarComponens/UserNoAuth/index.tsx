@@ -30,14 +30,14 @@ const noAuthNavLinks = [
 const UserNoAuth = () => {
   return (
     <div className="w-full">
-      <nav className="border-gray-200 dark:bg-gray-900">
-        <div className="md:flex justify-between items-center mx-auto">
-          <span className=" items-center flex ">
+      <nav className="">
+        <div className="items-center justify-between mx-auto md:flex">
+          <span className="flex items-center ">
             <Logo />
           </span>
           <div className="px-4 py-3 mx-auto">
-            <div className="hidden sm:flex items-center">
-              <ul className="flex text-lg flex-row font-poppinsBold mt-0 mr-6 space-x-8 md:text-sm">
+            <div className="items-center hidden sm:flex">
+              <ul className="flex flex-row mt-0 mr-6 space-x-8 text-lg md:text-sm">
                 {noAuthNavLinks.map((el) => (
                   <li>
                     <NavLinkCustom title={el.title} to={el.to} />
@@ -47,7 +47,7 @@ const UserNoAuth = () => {
             </div>
           </div>
           <div>
-              <LinkButtonCustom title="Login" to="/login"/>
+              <LinkButtonCustom title="Login" to="/login" className="px-[15px] py-[10px] text-xs"/>
           </div>
           <button className="md:hidden w-14 h-14">
             <img src={IconButton} alt="mobile-icon" />

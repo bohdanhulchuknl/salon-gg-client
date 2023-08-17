@@ -54,7 +54,7 @@ const masters = [
 
 const CreateOrderSelectMaster = () => {
   return (
-    <div className="font-poppinsBold">
+    <div className="">
       <div className="flex items-center justify-center py-5">
         <div>
           <div className="text-4xl text-firstColor lg:text-6xl">
@@ -64,7 +64,7 @@ const CreateOrderSelectMaster = () => {
         </div>
       </div>
 
-      <div className="flex gap-10 justify-center items-center">
+      <div className="flex items-center justify-center gap-10">
         <section className="flex justify-center items-center gap-16 text-white h-[calc(100vh-200px)] flex-wrap">
           {masters.map((master) => (
             <CreateOrderMasterCard

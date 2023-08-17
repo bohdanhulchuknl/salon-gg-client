@@ -11,20 +11,20 @@ import { selectUser } from "../../app/slices/auth.slice";
 // import workFry from "../../assets/nails4.jpg";
 
 import sliderOne from "../../assets/sliderOne.svg";
-import sliderTwo from "../../assets/sliderTwo.jpg";
-import sliderThe from "../../assets/sliderThe.jpg";
+// import sliderTwo from "../../assets/sliderTwo.jpg";
+// import sliderThe from "../../assets/sliderThe.jpg";
 // import sliderFive from "../../assets/sliderFive.jpeg";
 // import sliderSix from "../../assets/sliderSix.jpeg";
 
 // const sliderWork = [workOne, workTwo, workThe, workFry]; //! sliderWork мішало
 
-const slides = [sliderOne, sliderTwo, sliderThe];
+const slides = [sliderOne, sliderOne, sliderOne];
 
 const Home = () => {
   const user = useSelector(selectUser);
   return (
-    <div className=" font-poppins w-full ">
-      <div className="w-full  m-auto overflow-hidden  ">
+    <div className="w-full">
+      <div className="w-full m-auto">
         <HomeCarousel slides={slides} user={user} />
       </div>
       <Servises />
