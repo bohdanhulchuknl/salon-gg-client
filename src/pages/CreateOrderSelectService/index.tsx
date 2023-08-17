@@ -138,7 +138,7 @@ const Neil = ({
             </h5>
             <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
               {variants.map((variant) => (
-                <div className="px-4 py-2 bg-gray-100 rounded-xl">
+                <div className="px-4 py-2 rounded-xl">
                   {variant}
                 </div>
               ))}
@@ -189,7 +189,7 @@ const Eyebrows = ({
             </h5>
             <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
               {variants.map((variant) => (
-                <div className="px-4 py-2 bg-gray-100 rounded-xl">
+                <div className="px-4 py-2 rounded-xl">
                   {variant}
                 </div>
               ))}
