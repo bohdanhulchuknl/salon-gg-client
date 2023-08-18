@@ -7,7 +7,6 @@ type Props = {
 };
 
 const Navbar = ({ user }: Props) => {
- 
   // const logout = () => {
   //   axios
   //     .get(`${serverUri}/auth/logout`, {
@@ -31,7 +30,7 @@ const Navbar = ({ user }: Props) => {
 
   return (
     <div className="container w-full mx-auto">
-      <div className="flex justify-between ">
+      <div className="flex ">
         {user ? <UserAuth logout={logout} user={user} /> : <UserNoAuth />}
       </div>
     </div>

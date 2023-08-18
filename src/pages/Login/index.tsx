@@ -10,18 +10,18 @@ const Login = () => {
   //     window.open("http://localhost:5000/auth/facebook", "_self")
   // }
   return (
-    <div className="container mx-auto  flex flex-col  justify-center items-center border rounded-lg max-w-[300px] gap-3 pt-5 font-serif">
-      <span>
-        <FcGoogle />
-      </span>
-      <p className="pb-2">Use an account Google</p>
-      <button
-        onClick={handleGoogleLogin}
-        type="button"
-        className="text-white   bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 pt-2 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
-      >
-        Sign in
-      </button>
+    <div className="container flex mx-auto items-center justify-center h-screen font-ttInterfacesBold  ">
+      <div className=" mx-auto  flex flex-col  justify-center  shadow shadow-firstColor rounded-lg gap-3 px-7 py-14 ">
+        <h2 className="text-2xl pb-10 ">Log in to your account</h2>
+
+        <button
+          onClick={handleGoogleLogin}
+          type="button"
+          className=" w-full  gap-3 text-2xl  bg-white hover:shadow-md hover:shadow-firstColor focus:ring-4 focus:outline-none border-2 shadow shadow-firstColor focus:ring-[#4285F4]/50 font-poppinsBold rounded-md py-2.5 inline-flex items-center justify-center  "
+        >
+          <FcGoogle /> <span className="text-sm">Google</span>
+        </button>
+      </div>
     </div>
   );
 };

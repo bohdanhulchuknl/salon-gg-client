@@ -1,8 +1,8 @@
-import IconButton from "../../../assets/logo.svg";
+import { DropDownMenu } from "..";
 import { Logo } from "../../index";
 
-
 import { NavLinkCustom, LinkButtonCustom } from "../../Custom";
+import { logout } from "../../../Api/userApi";
 
 const noAuthNavLinks = [
   {
@@ -29,15 +29,15 @@ const noAuthNavLinks = [
 
 const UserNoAuth = () => {
   return (
-    <div className="w-full">
-      <nav className="">
-        <div className="items-center justify-between mx-auto md:flex">
-          <span className="flex items-center ">
+    <div className="w-full flex">
+      <nav className=" w-full">
+        <div className="w-full items-center mx-auto flex justify-between  ">
+          <span className="">
             <Logo />
           </span>
           <div className="px-4 py-3 mx-auto">
-            <div className="items-center hidden sm:flex">
-              <ul className="flex flex-row mt-0 mr-6 space-x-8 text-lg md:text-sm">
+            <div className=" hidden items-center md:block ">
+              <ul className="flex flex-row mt-0 mr-5 space-x-8 text-lg md:text-sm">
                 {noAuthNavLinks.map((el) => (
                   <li>
                     <NavLinkCustom title={el.title} to={el.to} />
@@ -46,12 +46,16 @@ const UserNoAuth = () => {
               </ul>
             </div>
           </div>
-          <div>
-              <LinkButtonCustom title="Login" to="/login" className="px-[15px] py-[10px] text-xs"/>
+          <div className="px-3 md:hidden">
+            <DropDownMenu logout={logout} />
           </div>
-          <button className="md:hidden w-14 h-14">
-            <img src={IconButton} alt="mobile-icon" />
-          </button>
+          <div>
+            <LinkButtonCustom
+              title="Login"
+              to="/login"
+              className="px-[15px] py-[10px] text-xs"
+            />
+          </div>
         </div>
       </nav>
     </div>
