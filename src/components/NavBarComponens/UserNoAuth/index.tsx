@@ -1,5 +1,4 @@
 import { DropDownMenu } from "..";
-import { Logo } from "../../index";
 
 import { NavLinkCustom, LinkButtonCustom } from "../../Custom";
 import { logout } from "../../../Api/userApi";
@@ -36,7 +35,7 @@ const UserNoAuth = () => {
             <Logo />
           </span> */}
           <div className="px-4 py-3 mx-auto">
-            <div className="items-center hidden  md:block">
+            <div className="items-center hidden md:block">
               <ul className="flex flex-row mt-0 mr-5 space-x-8 text-lg md:text-sm">
                 {noAuthNavLinks.map((el) => (
                   <li>
