@@ -51,11 +51,11 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
 
         <div className="flex items-center justify-center gap-1 text-xs">
           <div className="flex items-center justify-center gap-1 pr-5 font-ttInterfacesBold text-firstColor">
-            <AiFillPhone className="w-4 h-4"/>
             <address>+380989571902</address>
+            <AiFillPhone className="w-4 h-4" />
           </div>
           <div className="font-ttInterfacesRegular">{user.name}</div>
-          <DropDownMenu  logout={logout} />
+          <DropDownMenu logout={logout} />
         </div>
       </div>
     </div>

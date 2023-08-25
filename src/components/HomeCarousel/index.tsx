@@ -15,7 +15,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
   //   setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className=" relative w-full max-h-[940px]  h-[calc(100vh-80px)]">
+    <div className="relative w-full h-screen ">
       <div className="self-end w-full h-full ">
         <Carousel
           autoPlay
@@ -29,28 +29,32 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
               <img
                 src={i}
                 height={940}
-                className="w-full  h-[calc(100vh-80px)] object-cover object-top"
+                className="object-cover object-center w-full h-screen"
               />
             </div>
           ))}
         </Carousel>
       </div>
 
-      <div className="container absolute inset-0 flex flex-col justify-between p-5 mx-auto font-ttInterfacesBold">
+      <div className="container absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-ttInterfacesBold">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
           transition={{ delay: 0.3 }}
-          className="flex text-white md:pl-10 "
+          className="flex text-white "
           id="Home"
         >
-          <h1 className=" text-[74px] sm:text-[124px] text-firstColor">DM</h1>
-          <div className="pt-[10px]  md:flex md:flex-col sm:pt-[37px] sm:pl-2 text-secondColor">
-            <h2 className="text-[28px] sm:text-[50px] sm:leading-none">
-              studio
-            </h2>
-            <h2 className="text-[28px] sm:text-[50px] sm:-mt-3 ">luxury</h2>
+          <div className="flex items-center gap-2 px-5 rounded-sm bg-thirdColor/50 md:px-10 md:pt-5">
+            <h1 className=" text-[74px] text-firstColor ">
+              DM
+            </h1>
+            <div className=" md:flex md:flex-col text-thirdColor">
+              <h2 className="text-[30px]  sm:leading-none">
+                studio
+              </h2>
+              <h2 className="text-[30px]  sm:-mt-3 ">luxury</h2>
+            </div>
           </div>
         </motion.div>
 
@@ -67,7 +71,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
               whileInView={{ y: 0, opacity: 100 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="px-2 py-2 text-3xl text-white bg-firstColor whitespace-nowrap"
+              className="px-2 py-2 text-3xl text-white rounded-sm bg-firstColor whitespace-nowrap"
             >
               beauty salon
             </motion.span>

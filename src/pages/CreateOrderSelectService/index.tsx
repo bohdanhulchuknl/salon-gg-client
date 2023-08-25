@@ -251,10 +251,10 @@ const CreateOrderSelectService = () => {
 
   return (
     <div className="container mx-auto">
-      <h5 className="sticky z-10 flex items-center justify-center text-3xl sm:text-6xl top-2 font-ttInterfacesBold">
+      <h5 className="sticky z-10 flex items-center justify-center text-3xl top-2 font-ttInterfacesBold">
         <div className="flex flex-col">
           <span>Select a</span>{" "}
-          <span className="text-secondColor">Service</span>
+          <span className="text-thirdColor drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Service</span>
         </div>
       </h5>
       <div className="flex items-start w-full sm:gap-20">

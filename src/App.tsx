@@ -63,14 +63,14 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center min-h-full">
-      <header className="w-full px-1 m-auto">
+      <header className="absolute top-0 w-full px-5  m-auto bg-gradient-to-b from-firstColor/20 to-thirdColor/30 min-h-[80px] z-20 flex items-center shadow-sm shadow-thirdColor/30">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
       <main className="flex-auto flex-grow flex-shrink w-full h-full">
         <AllRoutes user={user} />
       </main>
       {location.pathname === "/" && (
-        <footer className="bottom-0 w-full m-auto">
+        <footer className="w-full h-full m-auto">
           <Footer />
         </footer>
       )}

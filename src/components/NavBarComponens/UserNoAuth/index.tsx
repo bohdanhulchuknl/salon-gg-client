@@ -29,14 +29,14 @@ const noAuthNavLinks = [
 
 const UserNoAuth = () => {
   return (
-    <div className="w-full flex">
-      <nav className=" w-full">
-        <div className="w-full items-center mx-auto flex justify-between  ">
-          <span className="">
+    <div className="flex w-full">
+      <nav className="w-full ">
+        <div className="flex items-center justify-between w-full mx-auto ">
+          {/* <span className="">
             <Logo />
-          </span>
+          </span> */}
           <div className="px-4 py-3 mx-auto">
-            <div className=" hidden items-center md:block ">
+            <div className="items-center hidden  md:block">
               <ul className="flex flex-row mt-0 mr-5 space-x-8 text-lg md:text-sm">
                 {noAuthNavLinks.map((el) => (
                   <li>
