@@ -11,7 +11,7 @@ const NavLinkCustom = ({ to, title, className }: INavLinkCustomProps) => {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `font-ttInterfacesBold text-sm px-2 py-2  ease-in-out transition-all duration-200 ${
+        `font-apocBold text-sm px-2 py-2  ease-in-out transition-all duration-200 ${
           className ? className : ""
         } ${
           isActive

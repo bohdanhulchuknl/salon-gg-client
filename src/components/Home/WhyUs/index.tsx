@@ -1,26 +1,139 @@
 import { Parallax } from "react-parallax";
-import imgParallax_2 from "../../../assets/parallax/parallax_2.jpg";
+import imgParallax_4 from "../../../assets/parallax/parallax_4.jpg";
+import { motion } from "framer-motion";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import whyImg_1 from "../../../assets/why/1.jpg";
+import whyImg_2 from "../../../assets/why/2.jpg";
+import whyImg_3 from "../../../assets/why/3.jpg";
 
 const WhyUs = () => {
+  const [text] = useTypewriter({
+    words: ["НАШІ ПРОЄКТИ — ЦЕ ЯКІСТЬ, КОМФОРТ ТА СТАТУС, ВІДЧУТНІ НА ДОТИК.", "Будь який текст", "Буде змінюватись"],
+    delaySpeed: 5000,
+    loop: true,
+    deleteSpeed:10,
+    typeSpeed: 50
+  });
   return (
     <Parallax
       strength={300}
-      bgImage={imgParallax_2}
-      bgImageStyle={{ ["object-fit"]: "cover", ["object-position"]: "center" }}
+      bgImage={imgParallax_4}
+      bgImageStyle={{ ["object-fit"]: "cover", ["object-position"]: "bottom" }}
       className="shadow-2xl shadow-thirdColor"
     >
-      <div className="container flex flex-col h-screen p-5 mx-auto ">
-        <h1 className="flex items-center justify-center py-5 text-3xl font-ttInterfacesBold">
+      <div className="container flex flex-col min-h-screen p-5 mx-auto ">
+        <motion.h2
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01]
+          }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center py-5 text-3xl font-apocBold"
+        >
           <div className="flex flex-col">
             <span>Why we are?</span>
-            <span className=" text-thirdColor text-2xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-              DM studio luxury
-            </span>
+            <span className="text-2xl text-fifth">DM studio luxury</span>
           </div>
-        </h1>
-        <div className="flex items-center flex-1 text-firstColor">
-          <div className="p-3 rounded-lg md:p-10 md:w-1/2">
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: -200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01]
+          }}
+          viewport={{ once: true }}
+          className="flex items-center justify-center p-3 md:p-10"
+        >
+          <h1 className="px-10 py-3 text-2xl text-justify rounded-lg text-firstColor font-apocBoldItalic drop-shadow-md bg-thirdColor">
+            <span className="font-bold text-justify">{text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()}</span>
+            <Cursor cursorColor="rgb(13 148 136)" />
+          </h1>
+        </motion.div>
+        <div className="flex flex-1">
+          <div className="flex flex-col w-full gap-5 p-3 md:px-10 text-firstColor">
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+              viewport={{ once: true }}
+              className="flex self-end gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor/70 md:max-w-screen-md "
+            >
+              <p className="w-full">
+                <span className="font-bold text-fifth">
+                  Нам подобається робити Вас красивими.
+                </span>{" "}
+                Ми прагнемо оточити Вас турботою і гостинністю з першої секунди
+                Вашого візиту. Для нас кожен відвідувач - це почесний гість,
+                незалежно від того, чи буде він обслуговуватися, або просто
+                прийшов дізнатися, які у нас послуги, хоче він позасмагати у
+                солярії або замовити дорогий косметологічний догляд.
+              </p>
 
+              <img
+                src={whyImg_3}
+                alt=""
+                className="object-cover object-center max-h-[235px] w-full rounded-lg"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+              viewport={{ once: true }}
+              className="flex self-start gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor/70 md:max-w-screen-md"
+            >
+              <img
+                src={whyImg_1}
+                alt=""
+                className="object-cover object-center max-h-[235px] w-full rounded-lg"
+              />
+              <p className="w-full">
+                <span className="font-bold text-fifth font-apocBoldItalic">
+                  У нас працюють тільки майстри з великим досвідом
+                </span>{" "}
+                і величезним бажанням зробити Вас красивішою, молодшою і
+                подарувати Вам більше хорошого настрою, а наші ціни найкращі у
+                співвідношенні рівня комфорту і якості обслуговування.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+              viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+              className="flex self-end gap-5 p-5 text-justify rounded-lg bg-thirdColor/70 md:max-w-screen-md drop-shadow-md"
+            >
+              <p className="w-full">
+                <span className="font-bold text-fifth">Для нас найкраща оцінка – </span>
+                це Ваше щасливе і задоволене обличчя, а також незмінне бажання
+                відвідати нас знову і знову. Записуйтесь до нас на процедури,
+                приходьте в гості і Ви обов’язково будете задоволені! Ваш «DM
+                studio luxury»
+              </p>
+
+              <img
+                src={whyImg_2}
+                alt=""
+                className="object-cover object-bottom max-h-[235px] w-full rounded-lg"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

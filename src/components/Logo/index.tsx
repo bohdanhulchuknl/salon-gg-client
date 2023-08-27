@@ -5,7 +5,7 @@ interface ILogoProps {
 const Logo = ({ scaleOption }: ILogoProps) => {
   return (
     <div
-      className={`font-ttInterfacesBold bg-transparent h-20 w-20 relative flex items-center justify-center text-5xl overflow-hidden  cursor-pointer  group/logo ${
+      className={`font-apocBold bg-transparent h-20 w-20 relative flex items-center justify-center text-5xl overflow-hidden  cursor-pointer  group/logo ${
         scaleOption ? scaleOption : ""
       }`}
     >

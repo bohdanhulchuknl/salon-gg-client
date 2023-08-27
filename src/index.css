@@ -11,6 +11,22 @@
     font-family: TTInterfacesBold;
     src: url("../src/fonts/TTInterfaces-Bold.ttf");
   }
+  @font-face {
+    font-family: ApocBold;
+    src: url("../src/fonts/Apoc-Bold.otf");
+  }
+  @font-face {
+    font-family: ApocRegular;
+    src: url("../src/fonts/Apoc-Regular.otf");
+  }
+  @font-face {
+    font-family: ApocBoldItalic;
+    src: url("../src/fonts/Apoc-BoldItalic.otf");
+  }
+  @font-face {
+    font-family: ApocRegularItalic;
+    src: url("../src/fonts/Apoc-RegularItalic.otf");
+  }
 }
 
 * {

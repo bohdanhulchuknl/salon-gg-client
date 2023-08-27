@@ -4,12 +4,12 @@ import { BsTelephone } from "react-icons/bs";
 import { LiaTelegramPlane, LiaInstagram } from "react-icons/lia";
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#1E1823] font-poppinsBold pb-2 ">
+    <footer className="w-full bg-[#1E1823] font-apocBold pt-5">
       <div className="justify-between w-full px-16 mx-auto text-white md:flex md:items-center">
         <span className="flex items-center ">
           <Logo />
         </span>
-        <div className=" pt-1 ">
+        <div className="pt-1 ">
           <p className="text-center">Work time: </p>
           <p>
             Пн - Пт <br /> з 9:00 до 18:00 (GMT +2)
@@ -19,19 +19,19 @@ const Footer = () => {
             свято - вихідні
           </p>
         </div>
-        <div className="items-left flex-col gap-3 md:flex">
-          <p className=" text-center">Contact us:</p>
-          <span className="flex gap-3 items-center">
+        <div className="flex-col gap-3 items-left md:flex">
+          <p className="text-center ">Contact us:</p>
+          <span className="flex items-center gap-3">
             <HiOutlineHome />
             <p>m.Krakow, Pushkina 30</p>
           </span>
-          <span className="flex gap-3 items-center">
+          <span className="flex items-center gap-3">
             <BsTelephone />
             <a href="tel:380684439426" className="">
               +38012345678
             </a>
           </span>
-          <span className="flex gap-3 items-center">
+          <span className="flex items-center gap-3">
             <HiOutlineMail />
             <a href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
           </span>

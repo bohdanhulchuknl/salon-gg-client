@@ -62,7 +62,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center min-h-full">
+    <div className="flex flex-col items-center min-h-full font-apocRegular">
       <header className="absolute top-0 w-full px-5  m-auto bg-gradient-to-b from-firstColor/20 to-thirdColor/30 min-h-[80px] z-20 flex items-center shadow-sm shadow-thirdColor/30">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>

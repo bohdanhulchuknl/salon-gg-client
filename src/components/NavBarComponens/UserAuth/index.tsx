@@ -50,7 +50,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
         </nav>
 
         <div className="flex items-center justify-center gap-1 text-xs">
-          <div className="flex items-center justify-center gap-1 pr-5 font-ttInterfacesBold text-firstColor">
+          <div className="flex items-center justify-center gap-1 pr-5 font-apocBold text-firstColor">
             <address>+380989571902</address>
             <AiFillPhone className="w-4 h-4" />
           </div>

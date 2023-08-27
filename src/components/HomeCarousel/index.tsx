@@ -36,20 +36,24 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <div className="container absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-ttInterfacesBold">
+      <div className="container absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
           viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
-          transition={{ delay: 0.3 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01]
+          }}
           className="flex text-white "
           id="Home"
         >
-          <div className="flex items-center gap-2 px-5 rounded-sm bg-thirdColor/50 md:px-10 md:pt-5">
+          <div className="flex items-center justify-center gap-2 px-5 rounded-sm bg-thirdColor/50">
             <h1 className=" text-[74px] text-firstColor ">
               DM
             </h1>
-            <div className=" md:flex md:flex-col text-thirdColor">
+            <div className=" md:flex md:flex-col text-fifth">
               <h2 className="text-[30px]  sm:leading-none">
                 studio
               </h2>
@@ -62,7 +66,11 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01]
+          }}
           className="flex flex-col justify-between gap-6 pb-5 md:items-center md:flex-row whitespace-nowrap md:px-10 lg:pb-16 lg:px-10"
         >
           <div>
@@ -70,8 +78,13 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 100 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
               className="px-2 py-2 text-3xl text-white rounded-sm bg-firstColor whitespace-nowrap"
+              
             >
               beauty salon
             </motion.span>
@@ -81,7 +94,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
             <LinkButtonCustom
               title="Create order"
               to={`${!user ? "/login" : "/create-order-select-master"}`}
-              className="px-6 py-3 text-xl bg-thirdColor !text-firstColor hover:bg-thirdColor border-2 border-thirdColor hover:border-firstColor hover:scale-95
+              className="px-6 py-3 text-xl bg-fifth !text-thirdColor hover:bg-firstColor border-2 border-fifth hover:border-thirdColor hover:scale-95
               "
             />
           </div>

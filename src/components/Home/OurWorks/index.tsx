@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import work_1 from "../../../assets/works/1.jpg";
 import work_2 from "../../../assets/works/2.jpg";
 import work_3 from "../../../assets/works/3.jpg";
@@ -30,21 +32,34 @@ console.log(Math.floor(worksArr.length / 4));
 
 const OurWorks = () => {
   return (
-    <div className="container flex flex-col h-screen mx-auto">
-      <h1 className="flex items-center justify-center py-16 text-3xl font-ttInterfacesBold ">
-        <div className="flex flex-col">
+    <div className="container flex flex-col min-h-screen mx-auto ">
+      <motion.h2
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+        viewport={{ once: true }}
+        className="flex items-center justify-center py-16 text-3xl font-apocBold bg-secondColor/20"
+      >
+        <div className="flex flex-col ">
           <span>Our works</span>
-          <span className=" text-thirdColor text-2xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-            DM studio luxury
-          </span>
+          <span className="text-2xl text-fifth ">DM studio luxury</span>
         </div>
-      </h1>
+      </motion.h2>
       <div className="grid grid-cols-4 grid-rows-3 gap-2 p-2 overflow-hidden">
-        {worksArr.map((work) => (
-          <img
+        {worksArr.map((work, index) => (
+          <motion.img
+            initial={{ opacity: 0, [index % 2 ? "x" : "y"]: -100 }}
+            whileInView={{ opacity: 1, [index % 2 ? "x" : "y"]: 0 }}
+            transition={{ delay: index * 0.2, duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }}
+                       
+            viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             src={work}
             alt=""
-            className="object-cover object-top w-full h-full transition-all duration-1000 rounded-sm drop-shadow-md hover:object-bottom"
+            className="max-h-[200px] object-cover object-top w-full h-full transition-all duration-1000 rounded-sm drop-shadow-md hover:object-bottom"
           />
         ))}
       </div>

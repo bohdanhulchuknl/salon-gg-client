@@ -25,13 +25,18 @@ export default {
       fontFamily: {
         poppinsBold: ['"Poppins-Bold"', '"sans-serif"'],
         ttInterfacesRegular:["TTInterfacesRegular"],
-        ttInterfacesBold: ["TTInterfacesBold"]
+        ttInterfacesBold: ["TTInterfacesBold"],
+        apocRegular: ["ApocRegular"],
+        apocBold: ["ApocBold"],
+        apocBoldItalic: ["ApocBoldItalic"],
+        apocRegularItalic: ["ApocRegularItalic"],
       },
       colors: {
-        firstColor: "#000",
+        firstColor: "#1E1823",
         secondColor: "#D5D6D2",
         thirdColor: "#FFFFFF",
         fourColor: "rgb(20 184 166)",
+        fifth: "#cf2e2e"
       },
     },
   },

@@ -1,9 +1,11 @@
 import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
-import neil from "../../assets/masters/services/nail.jpg";
-import legs from "../../assets/masters/services/leg.jpg";
-import eyebrows from "../../assets/masters/services/eyebrows.jpg";
+import { motion } from "framer-motion";
+
+import neil from "../../assets/services/1.jpg";
+import legs from "../../assets/services/2.jpg";
+import eyebrows from "../../assets/services/3.jpg";
 
 import {
   selectInViewService,
@@ -31,7 +33,7 @@ const ServiceTitle = ({
   return (
     <p
       ref={ref}
-      className={`text-2xl py-8 sm:py-16 pl-5 sm:pl-20 font-ttInterfacesBold sm:text-5xl transition-colors ${
+      className={`text-2xl py-8 sm:py-16 pl-5 sm:pl-20 font-apocBold sm:text-5xl transition-colors ${
         isInView ? "text-black" : "text-gray-300"
       }`}
     >
@@ -64,7 +66,6 @@ const ServiceCard = ({
 const Legs = ({
   id,
   variants,
-  img,
 }: {
   id: string;
   variants: string[];
@@ -72,28 +73,25 @@ const Legs = ({
 }) => {
   return (
     <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
-      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 font-ttInterfacesRegular group/serviceCard">
+      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 group/serviceCard">
         <div className="flex items-center justify-center h-full ">
           <div className="relative z-10 px-4 py-6 sm:py-12 sm:px-8 bg-thirdColor rounded-2xl drop-shadow-md">
-            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-ttInterfacesBold rounded-2xl group-hover/serviceCard:justify-start">
-              <img
-                src={img}
-                alt="nails"
-                className="absolute object-cover object-right-top w-20 h-20 transition-all left-2 top-2 -z-10 rounded-2xl group-hover/serviceCard:top-0 group-hover/serviceCard:left-0 group-hover/serviceCard:w-full group-hover/serviceCard:h-full "
-              />
-              <span className="px-4 py-2 text-firstColor group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl font-bold sm:flex font-apocBold rounded-2xl">
+              <span className="px-4 py-2 text-fifth group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
                 {id}
               </span>
             </h5>
-            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
+            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2">
               {variants.map((variant) => (
-                <div className="px-4 py-2 rounded-xl">
-                  {variant}
-                </div>
+                <div className="px-4 py-2 rounded-xl">{variant}</div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
-              <LinkButtonCustom to="/" title="Select" className="!px-2 !py-2 text-xs sm:text-base"/>
+              <LinkButtonCustom
+                to="/"
+                title="Select"
+                className="!px-2 !py-2 text-xs sm:text-base"
+              />
             </div>
           </div>
         </div>
@@ -115,7 +113,6 @@ const Legs = ({
 const Neil = ({
   id,
   variants,
-  img,
 }: {
   id: string;
   variants: string[];
@@ -123,28 +120,25 @@ const Neil = ({
 }) => {
   return (
     <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
-      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 font-ttInterfacesRegular group/serviceCard">
+      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 group/serviceCard">
         <div className="flex items-center justify-center h-full ">
           <div className="relative z-10 px-4 py-6 sm:py-12 sm:px-8 bg-thirdColor rounded-2xl drop-shadow-md">
-            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-ttInterfacesBold rounded-2xl group-hover/serviceCard:justify-start">
-              <img
-                src={img}
-                alt="nails"
-                className="absolute object-cover object-right-top w-20 h-20 transition-all left-2 top-2 -z-10 rounded-2xl group-hover/serviceCard:top-0 group-hover/serviceCard:left-0 group-hover/serviceCard:w-full group-hover/serviceCard:h-full "
-              />
-              <span className="px-4 py-2 text-firstColor group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-apocBold rounded-2xl">
+              <span className="px-4 py-2 font-bold text-fifth group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
                 {id}
               </span>
             </h5>
-            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
+            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2">
               {variants.map((variant) => (
-                <div className="px-4 py-2 rounded-xl">
-                  {variant}
-                </div>
+                <div className="px-4 py-2 rounded-xl">{variant}</div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
-              <LinkButtonCustom to="/" title="Select" className="!px-2 !py-2 text-xs sm:text-base"/>
+              <LinkButtonCustom
+                to="/"
+                title="Select"
+                className="!px-2 !py-2 text-xs sm:text-base"
+              />
             </div>
           </div>
         </div>
@@ -166,7 +160,6 @@ const Neil = ({
 const Eyebrows = ({
   id,
   variants,
-  img,
 }: {
   id: string;
   variants: string[];
@@ -174,28 +167,25 @@ const Eyebrows = ({
 }) => {
   return (
     <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
-      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 font-ttInterfacesRegular group/serviceCard">
+      <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 group/serviceCard">
         <div className="flex items-center justify-center h-full ">
           <div className="relative z-10 px-4 py-6 sm:py-12 sm:px-8 bg-thirdColor rounded-2xl drop-shadow-md">
-            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-ttInterfacesBold rounded-2xl group-hover/serviceCard:justify-start">
-              <img
-                src={img}
-                alt="nails"
-                className="absolute object-cover object-right-top w-20 h-20 transition-all left-2 top-2 -z-10 rounded-2xl group-hover/serviceCard:top-0 group-hover/serviceCard:left-0 group-hover/serviceCard:w-full group-hover/serviceCard:h-full "
-              />
-              <span className="px-4 py-2 text-firstColor group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-apocBold rounded-2xl ">
+              <span className="px-4 py-2 font-bold text-fifth group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
                 {id}
               </span>
             </h5>
-            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 font-ttInterfacesRegular">
+            <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 ">
               {variants.map((variant) => (
-                <div className="px-4 py-2 rounded-xl">
-                  {variant}
-                </div>
+                <div className="px-4 py-2 rounded-xl">{variant}</div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
-              <LinkButtonCustom to="/" title="Select" className="!px-2 !py-2 text-xs sm:text-base"/>
+              <LinkButtonCustom
+                to="/"
+                title="Select"
+                className="!px-2 !py-2 text-xs sm:text-base"
+              />
             </div>
           </div>
         </div>
@@ -251,14 +241,23 @@ const CreateOrderSelectService = () => {
 
   return (
     <div className="container mx-auto">
-      <h5 className="sticky z-10 flex items-center justify-center text-3xl top-2 font-ttInterfacesBold">
+      <motion.h5
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 100 }}
+        viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className="sticky z-10 flex items-center justify-center text-3xl top-2 font-apocBold"
+      >
         <div className="flex flex-col">
-          <span>Select a</span>{" "}
-          <span className="text-thirdColor drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Service</span>
+          <span>Select a</span> <span className="text-fifth">Service</span>
         </div>
-      </h5>
+      </motion.h5>
       <div className="flex items-start w-full sm:gap-20">
-        <div className="flex w-full py-[30vh] sm:py-[50vh]">
+        <div className="flex w-full  py-[30vh] sm:py-[50vh]">
           <ul>
             {services.map((service) => (
               <li key={service.title} className="">
@@ -267,7 +266,7 @@ const CreateOrderSelectService = () => {
             ))}
           </ul>
         </div>
-        <div className="sticky top-0 left-0 flex items-center w-full h-screen bg-gray-100 sm:px-10">
+        <div className="sticky top-0 left-0 flex items-center w-full h-screen sm:px-10">
           <div className="relative flex flex-col justify-between w-full rounded-2xl">
             {services.map((service) => (
               <service.card

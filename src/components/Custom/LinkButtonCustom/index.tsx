@@ -41,7 +41,7 @@ const LinkButtonCustom = ({
     <Link
       onClick={onClick}
       to={to}
-      className={`flex gap-2 items-center justify-center px-6 py-3 tracking-wide text-white transition duration-200 rounded-lg font-ttInterfacesBold bg-firstColor hover:bg-gray-800 focus:shadow-outline focus:outline-none ${
+      className={`flex gap-2 items-center justify-center px-6 py-3 border-2 border-fifth text-white transition-all duration-200 rounded-lg font-apocBold bg-fifth hover:bg-gray-800 focus:shadow-outline focus:outline-none hover:border-thirdColor hover:scale-95 ${
         className ?? ""
       } ${
         disabled
