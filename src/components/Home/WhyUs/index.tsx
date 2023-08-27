@@ -1,5 +1,5 @@
 import { Parallax } from "react-parallax";
-import imgParallax_4 from "../../../assets/parallax/parallax_4.jpg";
+import imgParallax_4 from "../../../assets/parallax/parallax_5.jpg";
 import { motion } from "framer-motion";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import whyImg_1 from "../../../assets/why/1.jpg";
@@ -65,7 +65,7 @@ const WhyUs = () => {
                 ease: [0, 0.71, 0.2, 1.01]
               }}
               viewport={{ once: true }}
-              className="flex self-end gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor/70 md:max-w-screen-md "
+              className="flex self-end gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor md:max-w-screen-md "
             >
               <p className="w-full">
                 <span className="font-bold text-fifth">
@@ -93,7 +93,7 @@ const WhyUs = () => {
                 ease: [0, 0.71, 0.2, 1.01]
               }}
               viewport={{ once: true }}
-              className="flex self-start gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor/70 md:max-w-screen-md"
+              className="flex self-start gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor md:max-w-screen-md"
             >
               <img
                 src={whyImg_1}
@@ -118,7 +118,7 @@ const WhyUs = () => {
                 ease: [0, 0.71, 0.2, 1.01]
               }}
               viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
-              className="flex self-end gap-5 p-5 text-justify rounded-lg bg-thirdColor/70 md:max-w-screen-md drop-shadow-md"
+              className="flex self-end gap-5 p-5 text-justify rounded-lg bg-thirdColor md:max-w-screen-md drop-shadow-md"
             >
               <p className="w-full">
                 <span className="font-bold text-fifth">Для нас найкраща оцінка – </span>

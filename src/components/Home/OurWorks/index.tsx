@@ -42,7 +42,7 @@ const OurWorks = () => {
           ease: [0, 0.71, 0.2, 1.01]
         }}
         viewport={{ once: true }}
-        className="flex items-center justify-center py-16 text-3xl font-apocBold bg-secondColor/20"
+        className="flex items-center justify-center py-16 text-3xl font-apocBold "
       >
         <div className="flex flex-col ">
           <span>Our works</span>
