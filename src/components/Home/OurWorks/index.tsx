@@ -47,7 +47,7 @@ const OurWorks = () => {
     dispatch(setWorksIsInView(isInView));
   }, [isInView, dispatch]);
   return (
-    <div ref={ref} className="container flex flex-col min-h-screen mx-auto ">
+    <div ref={ref} className="container flex flex-col min-h-screen mx-auto pl-28">
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -21,7 +21,7 @@ const Servises = () => {
     dispatch(setServiceIsInView(isInView));
   }, [isInView, dispatch]);
   return (
-    <div ref={ref} className="container pt-10 pl-24 mx-auto sm:py-20">
+    <div ref={ref} className="container pt-10 mx-auto pl-28 sm:py-20">
       <CreateOrderSelectService />
     </div>
   );

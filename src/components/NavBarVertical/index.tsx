@@ -46,8 +46,9 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
       variants={menuVariants}
       animate={isShow ? "open" : "closed"}
       transition={{
-        duration: 0.2,
-        delay: 0,
+        duration: 0.8,
+        delay: 0.1,
+        ease: [0, 0.71, 0.2, 1.01],
       }}
       className="fixed top-0 left-0 z-50 flex flex-col justify-between h-screen gap-2 px-2 py-4 overflow-hidden transition-all shadow-sm opacity-0 shadow-secondColor w-25 bg-thirdColor"
     >

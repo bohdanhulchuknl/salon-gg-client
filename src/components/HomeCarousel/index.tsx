@@ -51,7 +51,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <div className="container px-24 absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
+      <div className="container px-28 absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}

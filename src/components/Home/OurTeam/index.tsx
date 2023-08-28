@@ -19,7 +19,7 @@ const OurTeam = () => {
     dispatch(setTeamIsInView(isInView));
   }, [isInView, dispatch]);
   return (
-    <div className="h-screen" ref={ref}>
+    <div className="h-screen pl-28" ref={ref}>
       <div className="container flex items-center justify-center h-full mx-auto ">
         <h5 className=""> OUR TEAM</h5>
       </div>
