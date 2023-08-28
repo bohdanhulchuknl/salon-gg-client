@@ -7,6 +7,7 @@ type Props = {
 };
 
 const Navbar = ({ user }: Props) => {
+
   // const logout = () => {
   //   axios
   //     .get(`${serverUri}/auth/logout`, {

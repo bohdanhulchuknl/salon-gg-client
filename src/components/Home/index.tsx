@@ -3,5 +3,6 @@ import Servises from "./Servises";
 import CarouselWork from "./CaruoselWork";
 import WhyUs from "./WhyUs";
 import OurWorks from "./OurWorks";
+import OurTeam from "./OurTeam";
 
-export { About, Servises, CarouselWork, WhyUs, OurWorks };
+export { About, Servises, CarouselWork, WhyUs, OurWorks, OurTeam };

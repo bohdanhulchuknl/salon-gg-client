@@ -1,3 +1,6 @@
+import { useRef, useEffect } from 'react'
+import { useDispatch, } from 'react-redux';
+import { useInView } from 'framer-motion';
 import { Parallax } from "react-parallax";
 import imgParallax_4 from "../../../assets/parallax/parallax_5.jpg";
 import { motion } from "framer-motion";
@@ -5,15 +8,36 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import whyImg_1 from "../../../assets/why/1.jpg";
 import whyImg_2 from "../../../assets/why/2.jpg";
 import whyImg_3 from "../../../assets/why/3.jpg";
+import { setWhyWeIsInView, setWhyWeRef} from '../../../app/slices/scrollRefs.slice';
 
 const WhyUs = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const dispatch = useDispatch();
+  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+
   const [text] = useTypewriter({
-    words: ["НАШІ ПРОЄКТИ — ЦЕ ЯКІСТЬ, КОМФОРТ ТА СТАТУС, ВІДЧУТНІ НА ДОТИК.", "Будь який текст", "Буде змінюватись"],
+    words: [
+      "НАШІ ПРОЄКТИ — ЦЕ ЯКІСТЬ, КОМФОРТ ТА СТАТУС, ВІДЧУТНІ НА ДОТИК.",
+      "Будь який текст",
+      "Буде змінюватись",
+    ],
     delaySpeed: 5000,
     loop: true,
-    deleteSpeed:10,
-    typeSpeed: 50
+    deleteSpeed: 10,
+    typeSpeed: 50,
   });
+
+  useEffect(() => {
+    if (ref) {
+      dispatch(setWhyWeRef(ref));
+    }
+  }, [ref, dispatch]);
+
+  useEffect(() => {
+    dispatch(setWhyWeIsInView(isInView));
+  }, [isInView, dispatch]);
+
   return (
     <Parallax
       strength={300}
@@ -21,14 +45,14 @@ const WhyUs = () => {
       bgImageStyle={{ ["object-fit"]: "cover", ["object-position"]: "bottom" }}
       className="shadow-2xl shadow-thirdColor"
     >
-      <div className="container flex flex-col min-h-screen p-5 mx-auto ">
+      <div ref={ref} className="container flex flex-col min-h-screen p-5 mx-auto pl-28">
         <motion.h2
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.8,
             delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01]
+            ease: [0, 0.71, 0.2, 1.01],
           }}
           viewport={{ once: true }}
           className="flex items-center justify-center py-5 text-3xl font-apocBold"
@@ -44,25 +68,27 @@ const WhyUs = () => {
           transition={{
             duration: 0.8,
             delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01]
+            ease: [0, 0.71, 0.2, 1.01],
           }}
           viewport={{ once: true }}
-          className="flex items-center justify-center p-3 md:p-10"
+          className="flex items-center justify-center p-3 "
         >
           <h1 className="px-10 py-3 text-2xl text-justify rounded-lg text-firstColor font-apocBoldItalic drop-shadow-md bg-thirdColor">
-            <span className="font-bold text-justify">{text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()}</span>
+            <span className="font-bold text-justify">
+              {text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()}
+            </span>
             <Cursor cursorColor="rgb(13 148 136)" />
           </h1>
         </motion.div>
         <div className="flex flex-1">
-          <div className="flex flex-col w-full gap-5 p-3 md:px-10 text-firstColor">
+          <div className="flex flex-col w-full gap-5 p-3 text-firstColor">
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.8,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
+                ease: [0, 0.71, 0.2, 1.01],
               }}
               viewport={{ once: true }}
               className="flex self-end gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor md:max-w-screen-md "
@@ -90,7 +116,7 @@ const WhyUs = () => {
               transition={{
                 duration: 0.8,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
+                ease: [0, 0.71, 0.2, 1.01],
               }}
               viewport={{ once: true }}
               className="flex self-start gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor md:max-w-screen-md"
@@ -115,13 +141,15 @@ const WhyUs = () => {
               transition={{
                 duration: 0.8,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
+                ease: [0, 0.71, 0.2, 1.01],
               }}
               viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
               className="flex self-end gap-5 p-5 text-justify rounded-lg bg-thirdColor md:max-w-screen-md drop-shadow-md"
             >
               <p className="w-full">
-                <span className="font-bold text-fifth">Для нас найкраща оцінка – </span>
+                <span className="font-bold text-fifth">
+                  Для нас найкраща оцінка –{" "}
+                </span>
                 це Ваше щасливе і задоволене обличчя, а також незмінне бажання
                 відвідати нас знову і знову. Записуйтесь до нас на процедури,
                 приходьте в гості і Ви обов’язково будете задоволені! Ваш «DM

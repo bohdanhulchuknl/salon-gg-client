@@ -5,14 +5,14 @@ interface ILogoProps {
 const Logo = ({ scaleOption }: ILogoProps) => {
   return (
     <div
-      className={`font-apocBold bg-transparent h-20 w-20 relative flex items-center justify-center text-5xl overflow-hidden  cursor-pointer  group/logo ${
+      className={`font-apocBold bg-transparent h-17 w-17 relative flex items-center justify-center text-4xl overflow-hidden  cursor-pointer  group/logo ${
         scaleOption ? scaleOption : ""
       }`}
     >
-      <span className="transition-colors text-secondColor group-hover/logo:text-firstColor">
+      <span className="transition-colors text-firstColor group-hover/logo:text-firstColor">
         DM
       </span>
-      <span className="absolute top-[38%] p-[2px] pl-[5px] w-20 text-[9px]  text-firstColor bg-thirdColor transition-all duration-300  group-hover/logo:scale-110 ">
+      <span className="absolute top-[25%] leading-3 px-1 text-[7px] text-thirdColor bg-fifth transition-all duration-300  group-hover/logo:scale-110 ">
         STUDIO LUXURY
       </span>
     </div>

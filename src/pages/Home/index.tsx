@@ -1,10 +1,6 @@
 import { HomeCarousel } from "../../components";
 
-import {
-  OurWorks,
-  Servises,
-  WhyUs,
-} from "../../components/Home";
+import { OurTeam, OurWorks, Servises, WhyUs } from "../../components/Home";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/slices/auth.slice";
 
@@ -23,12 +19,8 @@ const Home = () => {
       </div>
       <Servises />
       <WhyUs />
-      <OurWorks/>
-      {/* <Masters /> */}
-
-      {/* <CarouselWork autoSlide={true} autoSlideInterval={3000}>
-        {sliderWork}
-      </CarouselWork> */}
+      <OurWorks />
+      <OurTeam/>
     </div>
   );
 };

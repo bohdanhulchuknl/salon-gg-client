@@ -1,15 +1,12 @@
-import Logo from "../Logo";
 import { HiOutlineMail, HiOutlineHome } from "react-icons/hi";
 import { BsTelephone } from "react-icons/bs";
 import { LiaTelegramPlane, LiaInstagram } from "react-icons/lia";
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#1E1823] font-apocBold pt-5">
-      <div className="justify-between w-full px-16 mx-auto text-white md:flex md:items-center">
-        <span className="flex items-center ">
-          <Logo />
-        </span>
-        <div className="pt-1 ">
+    <footer className="w-full bg-[#1E1823] font-apocBold pt-5 pl-[20px]">
+      <div className="justify-around w-full px-16 mx-auto text-white md:flex md:items-center">
+
+        <div className="pt-1">
           <p className="text-center">Work time: </p>
           <p>
             Пн - Пт <br /> з 9:00 до 18:00 (GMT +2)

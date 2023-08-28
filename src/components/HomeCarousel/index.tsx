@@ -1,7 +1,12 @@
+import { useRef, useEffect } from "react";
+import { useInView } from "framer-motion";
+
 import { Carousel } from "react-responsive-carousel";
 import { IUser } from "../../types/users.type";
 import { LinkButtonCustom } from "../Custom";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { setHomeRef, setHomeIsInView } from "../../app/slices/scrollRefs.slice";
 
 interface ICaruosel {
   slides: string[];
@@ -9,13 +14,23 @@ interface ICaruosel {
 }
 
 const HomeCarousel = ({ slides, user }: ICaruosel) => {
-  // const prev = () =>
-  //   setCurr((curr) => (curr === 0 ? children.length - 1 : curr - 1));
-  // const next = () =>
-  //   setCurr((curr) => (curr === children.length - 1 ? 0 : curr + 1));
+  const ref = useRef<HTMLDivElement>(null);
+
+  const dispatch = useDispatch();
+  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+
+  useEffect(() => {
+    if (ref) {
+      dispatch(setHomeRef(ref));
+    }
+  }, [ref, dispatch]);
+
+  useEffect(() => {
+    dispatch(setHomeIsInView(isInView));
+  }, [isInView, dispatch]);
 
   return (
-    <div className="relative w-full h-screen ">
+    <div ref={ref} className="relative w-full h-screen">
       <div className="self-end w-full h-full ">
         <Carousel
           autoPlay
@@ -36,7 +51,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <div className="container absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
+      <div className="container px-24 absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
@@ -44,19 +59,15 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
           transition={{
             duration: 0.8,
             delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01]
+            ease: [0, 0.71, 0.2, 1.01],
           }}
           className="flex text-white "
           id="Home"
         >
           <div className="flex items-center justify-center gap-2 px-5 rounded-sm bg-thirdColor/50">
-            <h1 className=" text-[74px] text-firstColor ">
-              DM
-            </h1>
+            <h1 className=" text-[74px] text-firstColor ">DM</h1>
             <div className=" md:flex md:flex-col text-fifth">
-              <h2 className="text-[30px]  sm:leading-none">
-                studio
-              </h2>
+              <h2 className="text-[30px]  sm:leading-none">studio</h2>
               <h2 className="text-[30px]  sm:-mt-3 ">luxury</h2>
             </div>
           </div>
@@ -69,7 +80,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
           transition={{
             duration: 0.8,
             delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01]
+            ease: [0, 0.71, 0.2, 1.01],
           }}
           className="flex flex-col justify-between gap-6 pb-5 md:items-center md:flex-row whitespace-nowrap md:px-10 lg:pb-16 lg:px-10"
         >
@@ -81,10 +92,9 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
               transition={{
                 duration: 0.8,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
+                ease: [0, 0.71, 0.2, 1.01],
               }}
               className="px-2 py-2 text-3xl text-white rounded-sm bg-firstColor whitespace-nowrap"
-              
             >
               beauty salon
             </motion.span>

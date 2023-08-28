@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-import { Navbar, AllRoutes, Footer } from "./components";
+import { Navbar, AllRoutes, Footer, NavBarVertical } from "./components";
+import { useInView } from "framer-motion";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -24,6 +25,10 @@ const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const location = useLocation();
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(ref);
+
+
   useEffect(() => {
     //!
     getUserAPI()
@@ -61,11 +66,16 @@ const App = () => {
     // !!
   }, []);
 
+  console.log(isInView)
   return (
     <div className="flex flex-col items-center min-h-full font-apocRegular">
-      <header className="absolute top-0 w-full px-5  m-auto bg-gradient-to-b from-firstColor/20 to-thirdColor/30 min-h-[80px] z-20 flex items-center shadow-sm shadow-thirdColor/30">
+      {
+        <NavBarVertical isShow={!isInView}/>
+      }
+      <header ref={ref} className="absolute top-0 w-full px-5  m-auto bg-gradient-to-b from-firstColor/20 to-thirdColor/30 min-h-[80px] z-20 flex items-center shadow-sm shadow-thirdColor/30">
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
+
       <main className="flex-auto flex-grow flex-shrink w-full h-full">
         <AllRoutes user={user} />
       </main>

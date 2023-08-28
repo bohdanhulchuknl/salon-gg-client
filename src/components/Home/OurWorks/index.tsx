@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from 'react'
 
 import work_1 from "../../../assets/works/1.jpg";
 import work_2 from "../../../assets/works/2.jpg";
@@ -12,6 +13,8 @@ import work_9 from "../../../assets/works/9.jpg";
 import work_10 from "../../../assets/works/10.jpg";
 import work_11 from "../../../assets/works/11.jpg";
 import work_12 from "../../../assets/works/12.jpg";
+import { useDispatch } from "react-redux";
+import { setWorksIsInView, setWorksRef } from "../../../app/slices/scrollRefs.slice";
 
 const worksArr = [
   work_1,
@@ -28,11 +31,23 @@ const worksArr = [
   work_12,
 ];
 
-console.log(Math.floor(worksArr.length / 4));
-
 const OurWorks = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const dispatch = useDispatch();
+  const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+
+  useEffect(() => {
+    if (ref) {
+      dispatch(setWorksRef(ref));
+    }
+  }, [ref, dispatch]);
+
+  useEffect(() => {
+    dispatch(setWorksIsInView(isInView));
+  }, [isInView, dispatch]);
   return (
-    <div className="container flex flex-col min-h-screen mx-auto ">
+    <div ref={ref} className="container flex flex-col min-h-screen mx-auto ">
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
