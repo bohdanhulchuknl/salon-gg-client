@@ -49,7 +49,7 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
         duration: 0.2,
         delay: 0,
       }}
-      className="fixed top-0 left-0 z-50 flex flex-col justify-between h-screen gap-2 px-2 py-4 overflow-hidden transition-all opacity-0 w-25 bg-thirdColor"
+      className="fixed top-0 left-0 z-50 flex flex-col justify-between h-screen gap-2 px-2 py-4 overflow-hidden transition-all shadow-sm opacity-0 shadow-secondColor w-25 bg-thirdColor"
     >
       <div className="flex flex-col w-full h-full ">
         <div>
