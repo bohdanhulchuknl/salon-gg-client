@@ -44,6 +44,8 @@ export const scrollRefsSlice = createSlice({
       state,
       action: PayloadAction<RefObject<HTMLDivElement> | null>
     ) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       state.home.ref = action.payload;
     },
     setHomeIsInView: (state, action: PayloadAction<boolean>) => {
@@ -54,6 +56,8 @@ export const scrollRefsSlice = createSlice({
       state,
       action: PayloadAction<RefObject<HTMLDivElement> | null>
     ) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       state.service.ref = action.payload;
     },
     setServiceIsInView: (state, action: PayloadAction<boolean>) => {
@@ -64,6 +68,8 @@ export const scrollRefsSlice = createSlice({
       state,
       action: PayloadAction<RefObject<HTMLDivElement> | null>
     ) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       state.whyWe.ref = action.payload;
     },
     setWhyWeIsInView: (state, action: PayloadAction<boolean>) => {
@@ -74,6 +80,8 @@ export const scrollRefsSlice = createSlice({
       state,
       action: PayloadAction<RefObject<HTMLDivElement> | null>
     ) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       state.works.ref = action.payload;
     },
     setWorksIsInView: (state, action: PayloadAction<boolean>) => {
@@ -84,6 +92,8 @@ export const scrollRefsSlice = createSlice({
       state,
       action: PayloadAction<RefObject<HTMLDivElement> | null>
     ) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       state.team.ref = action.payload;
     },
     setTeamIsInView: (state, action: PayloadAction<boolean>) => {
@@ -103,7 +113,7 @@ export const {
   setWorksIsInView,
   setWorksRef,
   setTeamIsInView,
-  setTeamRef
+  setTeamRef,
 } = scrollRefsSlice.actions;
 //home
 export const selectHomeRef = (state: RootState) => state.scrollRefs.home.ref;
