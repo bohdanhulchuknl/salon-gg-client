@@ -39,8 +39,8 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
           className="relative h-full cursor-auto -z-10"
           showThumbs={false}
         >
-          {slides.map((i) => (
-            <div className="h-full">
+          {slides.map((i, index) => (
+            <div className="h-full" key={index}>
               <img
                 src={i}
                 height={940}

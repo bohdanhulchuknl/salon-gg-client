@@ -29,10 +29,9 @@ const CreateOrderServiceCard = ({ service }: ICreateOrderServiceCardProps) => {
                 {service.title}
               </div>
               <div className="flex flex-col items-start w-full gap-2 p-3 text-firstColor">
-                {service.variants.map((el) => (
-                  <div className="flex items-center justify-start gap-1">
-                    {" "}
-                    <BsCheckSquare />{" "}
+                {service.variants.map((el ,index) => (
+                  <div className="flex items-center justify-start gap-1" key={index}>
+                    <BsCheckSquare />
                     <span className="flex-auto flex-grow flex-shrink-0">
                       {el}
                     </span>

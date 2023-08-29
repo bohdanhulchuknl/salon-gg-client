@@ -78,7 +78,7 @@ const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
           <nav>
             <ul className="flex flex-row items-center gap-5 text-base ">
               {userNavBarItems.map((el) => (
-                <li>
+                <li key={el.title}>
                   <NavLinkCustom title={el.title} to={el.to} />
                 </li>
               ))}

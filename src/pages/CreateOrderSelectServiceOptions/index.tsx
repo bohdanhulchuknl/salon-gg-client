@@ -57,14 +57,15 @@ const CreateOrderSelectServiceOptions = () => {
             className="max-h-[calc(100vh-200px)] overflow-y-auto shadow-sm shadow-secondColor flex-[40%]"
           >
             {serviceOptions.map((opt) => (
-              <div className="divide-y-2 divide-firstColor ">
+              <div className="divide-y-2 divide-firstColor " key={opt.title}>
                 <h5 className="px-2 py-4 bg-fourColor">{opt.title}</h5>
                 <div className="p-2 ">
-                  {opt.items.map((item) => (
+                  {opt.items.map((item, index) => (
                     <CreateOrderServiceOptionCard
                       item={item}
                       selectedOp={selectedOp}
                       setSelectedOp={setSelectedOp}
+                      key={index}
                     />
                   ))}
                 </div>

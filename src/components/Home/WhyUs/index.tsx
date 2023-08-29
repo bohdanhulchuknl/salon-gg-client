@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react'
 import { useDispatch, } from 'react-redux';
 import { useInView } from 'framer-motion';
 import { Parallax } from "react-parallax";
-import imgParallax_4 from "../../../assets/parallax/parallax_5.jpg";
+import imgParallax_4 from "../../../assets/parallax/parallax_8.jpg";
 import { motion } from "framer-motion";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import whyImg_1 from "../../../assets/why/1.jpg";
@@ -42,7 +42,7 @@ const WhyUs = () => {
     <Parallax
       strength={300}
       bgImage={imgParallax_4}
-      bgImageStyle={{ ["object-fit"]: "cover", ["object-position"]: "bottom" }}
+      bgImageStyle={{ ["objectFit"]: "contain", ["objectPosition"]: "bottom" }}
       className="shadow-2xl shadow-thirdColor"
     >
       <div ref={ref} className="container flex flex-col min-h-screen p-5 mx-auto pl-28">
@@ -59,7 +59,7 @@ const WhyUs = () => {
         >
           <div className="flex flex-col">
             <span>Why we are?</span>
-            <span className="text-2xl text-fifth">DM studio luxury</span>
+            <span className="text-xl text-fifth">DM studio luxury</span>
           </div>
         </motion.h2>
         <motion.div

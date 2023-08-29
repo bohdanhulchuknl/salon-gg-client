@@ -38,7 +38,7 @@ const UserNoAuth = () => {
             <div className="items-center hidden md:block">
               <ul className="flex flex-row mt-0 mr-5 space-x-8 text-lg md:text-sm">
                 {noAuthNavLinks.map((el) => (
-                  <li>
+                  <li key={el.title}>
                     <NavLinkCustom title={el.title} to={el.to} />
                   </li>
                 ))}

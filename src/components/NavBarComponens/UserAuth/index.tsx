@@ -38,7 +38,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
         <nav className="min-[320px]:hidden md:block">
           <ul className="flex gap-6 ">
             {authNavLinks.map((navLink) => (
-              <li>
+              <li key={navLink.title}>
                 <NavLinkCustom
                   to={navLink.to}
                   title={navLink.title}

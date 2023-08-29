@@ -83,7 +83,7 @@ const Legs = ({
             </h5>
             <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2">
               {variants.map((variant) => (
-                <div className="px-4 py-2 rounded-xl">{variant}</div>
+                <div className="px-4 py-2 rounded-xl" key={variant}>{variant}</div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
@@ -130,7 +130,7 @@ const Neil = ({
             </h5>
             <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2">
               {variants.map((variant) => (
-                <div className="px-4 py-2 rounded-xl">{variant}</div>
+                <div className="px-4 py-2 rounded-xl" key={variant}>{variant}</div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
@@ -177,7 +177,7 @@ const Eyebrows = ({
             </h5>
             <div className="z-10 grid grid-cols-1 gap-1 text-sm transition-all sm:text-base sm:grid-cols-2 ">
               {variants.map((variant) => (
-                <div className="px-4 py-2 rounded-xl">{variant}</div>
+                <div className="px-4 py-2 rounded-xl" key={variant}>{variant}</div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">

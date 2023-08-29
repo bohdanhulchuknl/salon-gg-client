@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect } from "react";
 
 import work_1 from "../../../assets/works/1.jpg";
 import work_2 from "../../../assets/works/2.jpg";
@@ -14,7 +14,10 @@ import work_10 from "../../../assets/works/10.jpg";
 import work_11 from "../../../assets/works/11.jpg";
 import work_12 from "../../../assets/works/12.jpg";
 import { useDispatch } from "react-redux";
-import { setWorksIsInView, setWorksRef } from "../../../app/slices/scrollRefs.slice";
+import {
+  setWorksIsInView,
+  setWorksRef,
+} from "../../../app/slices/scrollRefs.slice";
 
 const worksArr = [
   work_1,
@@ -47,30 +50,37 @@ const OurWorks = () => {
     dispatch(setWorksIsInView(isInView));
   }, [isInView, dispatch]);
   return (
-    <div ref={ref} className="container flex flex-col min-h-screen mx-auto pl-28">
+    <div
+      ref={ref}
+      className="container flex flex-col min-h-screen pb-5 mx-auto pl-28"
+    >
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.8,
           delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01]
+          ease: [0, 0.71, 0.2, 1.01],
         }}
         viewport={{ once: true }}
-        className="flex items-center justify-center py-16 text-3xl font-apocBold "
+        className="flex items-center justify-center pt-16 pb-5 text-3xl font-apocBold "
       >
         <div className="flex flex-col ">
           <span>Our works</span>
-          <span className="text-2xl text-fifth ">DM studio luxury</span>
+          <span className="text-xl text-fifth ">DM studio luxury</span>
         </div>
       </motion.h2>
-      <div className="grid grid-cols-4 grid-rows-3 gap-2 p-2 overflow-hidden">
+      <div className="grid grid-cols-4 grid-rows-3 gap-5 p-5 overflow-hidden">
         {worksArr.map((work, index) => (
           <motion.img
+            key={index}
             initial={{ opacity: 0, [index % 2 ? "x" : "y"]: -100 }}
             whileInView={{ opacity: 1, [index % 2 ? "x" : "y"]: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }}
-                       
+            transition={{
+              delay: index * 0.2,
+              duration: 0.8,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
             viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             src={work}
             alt=""

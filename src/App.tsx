@@ -66,7 +66,6 @@ const App = () => {
     // !!
   }, []);
 
-  console.log(isInView)
   return (
     <div className="flex flex-col items-center min-h-full font-apocRegular">
       {

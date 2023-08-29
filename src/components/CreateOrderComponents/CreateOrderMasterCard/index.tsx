@@ -23,7 +23,7 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
           <div className="relative flex items-end justify-center w-full h-full ">
             <img
               src={master.photo}
-              className="absolute object-cover object-top w-full h-full  -z-10"
+              className="absolute object-cover object-top w-full h-full -z-10"
             />
             <h1 className="w-full py-2 text-center text-thirdColor bg-firstColor/50">
               {master.name}
@@ -73,8 +73,8 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
                             <AiFillStar /> {master.rang}
                           </p>
                           <p className="flex flex-col items-end text-xs">
-                            {master.regals.map((reg) => (
-                              <span>{reg}</span>
+                            {master.regals.map((reg, index) => (
+                              <span key={index}>{reg}</span>
                             ))}
                           </p>
                         </div>
@@ -90,8 +90,8 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
                           className=""
                           showThumbs={false}
                         >
-                          {master.comments.map((comment) => (
-                            <div className="py-10 bg-gray-100">
+                          {master.comments.map((comment, index) => (
+                            <div className="py-10 bg-gray-100" key={index}>
                               <h5>{comment.from}</h5>
                               <p>{comment.text}</p>
                             </div>
@@ -121,8 +121,8 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
                 className="h-full"
                 showThumbs={false}
               >
-                {master.works.map((work) => (
-                  <div className="h-full">
+                {master.works.map((work, index) => (
+                  <div className="h-full" key={index}>
                     <img src={work} className="object-cover object-top w-auto max-h-[300px]"  />
                   </div>
                 ))}
@@ -130,7 +130,7 @@ const CreateOrderMasterCard = ({ master }: ICreateOrderMasterCardProps) => {
             </div>
 
             <div className="absolute bottom-0 z-20 w-full p-2 bg-thirdColor">
-              <LinkButtonCustom title="Select" to="/"  icon={<ImUndo2 className="duration-150 rotate-180  fill-hoverColor group-hover/backButton:fill-black" />}/>
+              <LinkButtonCustom title="Select" to="/"  icon={<ImUndo2 className="duration-150 rotate-180 fill-hoverColor group-hover/backButton:fill-black" />}/>
 
             </div>
           </div>
