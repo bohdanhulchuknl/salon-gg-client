@@ -77,7 +77,7 @@ const OurTeam = () => {
           initial={"center"}
           transition={{
             duration: 0.8,
-            delay: 1.5,
+            delay: 1.0,
             ease: [0, 0.71, 0.2, 1.01],
           }}
           className="absolute flex items-center justify-center text-3xl font-apocBold top-[35%] left-[45%]"
@@ -93,7 +93,7 @@ const OurTeam = () => {
           variants={teamBlockVariants}
           transition={{
             duration: 0.5,
-            delay: 2.5,
+            delay: 1.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
           viewport={{ once: true }}
