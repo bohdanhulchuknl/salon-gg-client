@@ -1,54 +1,104 @@
-import { DropDownMenu } from "..";
-
-import { NavLinkCustom, LinkButtonCustom } from "../../Custom";
-import { logout } from "../../../Api/userApi";
-
-const noAuthNavLinks = [
-  {
-    to: "/",
-    title: "Home",
-  },
-  {
-    to: "/about",
-    title: "About",
-  },
-  {
-    to: "/services",
-    title: "Our services",
-  },
-  {
-    to: "/works",
-    title: "Our works",
-  },
-  {
-    to: "/contacts",
-    title: "Contact",
-  },
-];
+import { AiFillPhone } from "react-icons/ai";
+import { LinkButtonCustom } from "../../Custom";
+import { useSelector } from "react-redux";
+import {
+  selectHomeRef,
+  selectHomeIsInView,
+  selectServiceIsInView,
+  selectServiceRef,
+  selectWhyWeIsInView,
+  selectWhyWeRef,
+  selectWorksRef,
+  selectWorksIsInView,
+  selectTeamRef,
+  selectTeamIsInView,
+} from "../../../app/slices/scrollRefs.slice";
 
 const UserNoAuth = () => {
+  const homeRef = useSelector(selectHomeRef);
+  const isHomeInView = useSelector(selectHomeIsInView);
+  const serviceRef = useSelector(selectServiceRef);
+  const isServiceInView = useSelector(selectServiceIsInView);
+  const whyWeRef = useSelector(selectWhyWeRef);
+  const isWhyWeInView = useSelector(selectWhyWeIsInView);
+  const worksRef = useSelector(selectWorksRef);
+  const isWorksInView = useSelector(selectWorksIsInView);
+  const teamRef = useSelector(selectTeamRef);
+  const isTeamInView = useSelector(selectTeamIsInView);
   return (
     <div className="flex w-full">
-      <nav className="w-full ">
-        <div className="flex items-center justify-between w-full mx-auto ">
-          {/* <span className="">
-            <Logo />
-          </span> */}
-          <div className="px-4 py-3 mx-auto">
-            <div className="items-center hidden md:block">
-              <ul className="flex flex-row mt-0 mr-5 space-x-8 text-lg md:text-sm">
-                {noAuthNavLinks.map((el) => (
-                  <li key={el.title}>
-                    <NavLinkCustom title={el.title} to={el.to} />
-                  </li>
-                ))}
-              </ul>
+      <div className="w-full ">
+        <div className="flex items-center justify-end w-full mx-auto md:justify-between">
+          <nav className="hidden px-4 py-3 mx-auto sm:block">
+            <ul className="flex justify-center flex-1 gap-5 text-sm">
+              <li
+                onClick={() => {
+                  homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`transition-all cursor-pointer  ${
+                  isHomeInView
+                    ? "text-fifth"
+                    : " text-firstColor/50 hover:underline"
+                }`}
+              >
+                Home
+              </li>
+              <li
+                onClick={() => {
+                  serviceRef?.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`transition-all cursor-pointer ${
+                  isServiceInView
+                    ? "text-fifth "
+                    : " text-firstColor/50 hover:underline"
+                }`}
+              >
+                Services
+              </li>
+              <li
+                onClick={() => {
+                  whyWeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`transition-all cursor-pointer ${
+                  isWhyWeInView
+                    ? "text-fifth "
+                    : " text-firstColor/50 hover:underline"
+                }`}
+              >
+                Why we are?
+              </li>
+              <li
+                onClick={() => {
+                  worksRef?.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`transition-all cursor-pointer ${
+                  isWorksInView
+                    ? "text-fifth "
+                    : " text-firstColor/50 hover:underline"
+                }`}
+              >
+                Works
+              </li>
+              <li
+                onClick={() => {
+                  teamRef?.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`transition-all cursor-pointer ${
+                  isTeamInView
+                    ? "text-fifth "
+                    : " text-firstColor/50 hover:underline"
+                }`}
+              >
+                Team
+              </li>
+            </ul>
+          </nav>
+
+          <div className="flex items-center gap-5">
+            <div className="flex items-center justify-center gap-2 text-xs text-firstColor">
+              <address>+380989571902</address>
+              <AiFillPhone className="w-3 h-3 mb-1" />
             </div>
-          </div>
-          <div className="px-3 md:hidden">
-            <DropDownMenu logout={logout} />
-          </div>
-          <div>
             <LinkButtonCustom
               title="Login"
               to="/login"
@@ -56,7 +106,7 @@ const UserNoAuth = () => {
             />
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };

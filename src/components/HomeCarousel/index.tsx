@@ -51,7 +51,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         </Carousel>
       </div>
 
-      <div className="container px-28 absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
+      <div className="container md:px-28 absolute inset-0 flex flex-col justify-between p-5 pt-[100px] mx-auto font-apocBold">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 100 }}
@@ -61,14 +61,14 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="flex text-white "
+          className="flex items-center justify-center text-white sm:justify-start"
           id="Home"
         >
-          <div className="flex items-center justify-center gap-2 px-5 rounded-sm bg-thirdColor/50">
+          <div className="flex items-center self-center justify-center gap-2 px-5 rounded-sm bg-thirdColor/50">
             <h1 className=" text-[74px] text-firstColor ">DM</h1>
-            <div className=" md:flex md:flex-col text-fifth">
-              <h2 className="text-[30px]  sm:leading-none">studio</h2>
-              <h2 className="text-[30px]  sm:-mt-3 ">luxury</h2>
+            <div className="gap-1  md:flex md:flex-col text-fifth">
+              <h2 className="text-2xl -mt-2  md:text-[28px] ">studio</h2>
+              <h2 className="text-2xl -mt-2  md:text-[28px]">luxury</h2>
             </div>
           </div>
         </motion.div>

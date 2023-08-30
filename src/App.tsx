@@ -28,7 +28,6 @@ const App = () => {
   const ref = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(ref);
 
-
   useEffect(() => {
     //!
     getUserAPI()
@@ -68,10 +67,11 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center min-h-full font-apocRegular">
-      {
-        <NavBarVertical isShow={!isInView}/>
-      }
-      <header ref={ref} className="absolute top-0 w-full px-5  m-auto bg-gradient-to-b from-firstColor/20 to-thirdColor/30 min-h-[80px] z-20 flex items-center shadow-sm shadow-thirdColor/30">
+      {<NavBarVertical isShow={!isInView} user={user} />}
+      <header
+        ref={ref}
+        className="absolute top-0 w-full px-5  m-auto bg-gradient-to-b from-firstColor/20 to-thirdColor/30 min-h-[80px] z-20 flex items-center shadow-sm shadow-thirdColor/30"
+      >
         {location.pathname === "/" && <Navbar user={user} />}
       </header>
 

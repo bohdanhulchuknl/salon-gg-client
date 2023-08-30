@@ -14,8 +14,11 @@ import {
 } from "../../app/slices/scrollRefs.slice";
 import { motion } from "framer-motion";
 import { LinkButtonCustom } from "../Custom";
+import { IUser } from "../../types/users.type";
+
 interface INavBarVertical {
   isShow: boolean;
+  user: IUser | null;
 }
 
 const menuVariants = {
@@ -30,7 +33,7 @@ const menuVariants = {
   },
 };
 
-const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
+const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
   const homeRef = useSelector(selectHomeRef);
   const isHomeInView = useSelector(selectHomeIsInView);
   const serviceRef = useSelector(selectServiceRef);
@@ -50,13 +53,20 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
         delay: 0.1,
         ease: [0, 0.71, 0.2, 1.01],
       }}
-      className="fixed top-0 left-0 z-50 flex flex-col justify-between h-screen gap-2 px-2 py-4 overflow-hidden transition-all shadow-sm opacity-0 shadow-secondColor w-25 bg-thirdColor"
+      className="fixed top-0 left-0 z-50 flex-col justify-between hidden h-screen gap-2 px-2 py-4 overflow-hidden transition-all shadow-sm opacity-0 md:flex shadow-secondColor w-25 bg-thirdColor"
     >
       <div className="flex flex-col w-full h-full ">
-        <div>
-          <Logo />
-        </div>
+        <div className="flex flex-col items-center justify-center w-full gap-8">
+          <div className="w-full">
+            <Logo
+              onClick={() => {
+                homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            />
+          </div>
 
+          <address className="text-[10px]">+380989571902</address>
+        </div>
         <div className="flex flex-col justify-center flex-1 gap-5 text-sm">
           <button
             onClick={() => {
@@ -68,7 +78,7 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
                 : " text-firstColor/50 hover:underline"
             }`}
           >
-            HOME
+            Home
           </button>
           <button
             onClick={() => {
@@ -80,7 +90,7 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
                 : " text-firstColor/50 hover:underline"
             }`}
           >
-            SERVICES
+            Services
           </button>
           <button
             onClick={() => {
@@ -92,7 +102,7 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
                 : " text-firstColor/50 hover:underline"
             }`}
           >
-            WHY WE ARE?
+            Why we are?
           </button>
           <button
             onClick={() => {
@@ -104,7 +114,7 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
                 : " text-firstColor/50 hover:underline"
             }`}
           >
-            WORKS
+            Works
           </button>
           <button
             onClick={() => {
@@ -116,16 +126,22 @@ const NavBarVertical = ({ isShow = false }: INavBarVertical) => {
                 : " text-firstColor/50 hover:underline"
             }`}
           >
-            TEAM
+            Team
           </button>
         </div>
       </div>
 
-      <LinkButtonCustom
-        title="Login"
-        to="/login"
-        className="!px-[10px] py-[5px] text-xs"
-      />
+      <div className="flex flex-col items-center justify-center gap-5 pb-2 text-[10px] text-firstColor">
+        <div className="text-firstColor/50">{user?.name}</div>
+      </div>
+
+      {!user && (
+        <LinkButtonCustom
+          title="Login"
+          to="/login"
+          className="!px-[10px] py-[5px] text-xs"
+        />
+      )}
       <LinkButtonCustom
         title="Create order"
         to="/login"

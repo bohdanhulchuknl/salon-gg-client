@@ -52,7 +52,7 @@ const OurWorks = () => {
   return (
     <div
       ref={ref}
-      className="container flex flex-col min-h-screen pb-5 mx-auto pl-28"
+      className="container flex flex-col min-h-screen pb-5 mx-auto md:pl-28"
     >
       <motion.h2
         initial={{ opacity: 0, y: -100 }}

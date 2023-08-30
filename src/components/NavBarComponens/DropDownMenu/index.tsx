@@ -16,7 +16,7 @@ const DropDownMenu = ({ logout }: IDropDownMenuProps) => {
             <Menu.Button className="group/dropMenuButton">
               <div className="flex items-center justify-center gap-1 py-2 pl-3 pr-2 ">
                 {!open ? (
-                  <ImMenu3 className="w-8 h-8 fill-firstColor" />
+                  <ImMenu3 className="w-8 h-8 fill-firstColor/70" />
                 ) : (
                   <ImMenu4 className="w-8 h-8 fill-firstColor" />
                 )}
@@ -31,7 +31,7 @@ const DropDownMenu = ({ logout }: IDropDownMenuProps) => {
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <Menu.Items className="divide-y divide-secondColor text-white absolute top-0 right-0 flex flex-col bg-firstColor min-w-[200px] border-2 border-thirdColor p-2  cursor-pointer text-xs">
+              <Menu.Items className="rounded-md divide-y divide-secondColor text-white absolute top-0 right-0 flex flex-col bg-firstColor min-w-[200px] border-2 border-thirdColor p-2  cursor-pointer text-xs">
                 <Menu.Item disabled>
                   <span className="flex items-center gap-1 p-1 opacity-75">
                     <AiFillSetting /> <span>Account settings</span>
@@ -42,11 +42,11 @@ const DropDownMenu = ({ logout }: IDropDownMenuProps) => {
                     {({ active }) => (
                       <div
                         onClick={logout}
-                        className={` cursor-pointer transition-all flex items-center gap-1 p-1 hover:bg-hoverColor hover:text-firstColor ${
+                        className={`rounded-sm cursor-pointer transition-all flex items-center gap-1 p-1 hover:bg-hoverColor hover:text-firstColor ${
                           active ? "bg-thirdColor" : ""
                         }`}
                       >
-                        <RiLogoutBoxRLine className="rotate-180" />{" "}
+                        <RiLogoutBoxRLine className="rotate-180" />
                         <span>Logout</span>
                       </div>
                     )}

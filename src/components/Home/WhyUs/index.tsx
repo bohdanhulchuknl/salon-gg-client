@@ -42,10 +42,10 @@ const WhyUs = () => {
     <Parallax
       strength={300}
       bgImage={imgParallax_4}
-      bgImageStyle={{ ["objectFit"]: "contain", ["objectPosition"]: "bottom" }}
+      bgImageStyle={{ ["objectFit"]: "cover", ["objectPosition"]: "bottom" }}
       className="shadow-2xl shadow-thirdColor"
     >
-      <div ref={ref} className="container flex flex-col min-h-screen p-5 mx-auto pl-28">
+      <div ref={ref} className="container flex flex-col items-center justify-center w-full min-h-screen p-5 mx-auto overflow-hidden md:pl-28">
         <motion.h2
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,11 +55,11 @@ const WhyUs = () => {
             ease: [0, 0.71, 0.2, 1.01],
           }}
           viewport={{ once: true }}
-          className="flex items-center justify-center py-5 text-3xl font-apocBold"
+          className="flex items-center justify-center py-5 text-xl md:text-3xl font-apocBold"
         >
           <div className="flex flex-col">
             <span>Why we are?</span>
-            <span className="text-xl text-fifth">DM studio luxury</span>
+            <span className="text-base md:text-xl text-fifth">DM studio luxury</span>
           </div>
         </motion.h2>
         <motion.div
@@ -73,7 +73,7 @@ const WhyUs = () => {
           viewport={{ once: true }}
           className="flex items-center justify-center p-3 "
         >
-          <h1 className="px-10 py-3 text-2xl text-justify rounded-lg text-firstColor font-apocBoldItalic drop-shadow-md bg-thirdColor">
+          <h1 className="p-3 text-justify rounded-lg md:text-2xl md:px-10 text-firstColor font-apocBoldItalic drop-shadow-md bg-thirdColor">
             <span className="font-bold text-justify">
               {text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()}
             </span>
@@ -91,7 +91,7 @@ const WhyUs = () => {
                 ease: [0, 0.71, 0.2, 1.01],
               }}
               viewport={{ once: true }}
-              className="flex self-end gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor md:max-w-screen-md "
+              className="flex flex-wrap gap-5 p-5 text-sm text-justify rounded-lg md:text-base md:self-end md:flex-nowrap drop-shadow-md bg-thirdColor md:max-w-screen-md"
             >
               <p className="w-full">
                 <span className="font-bold text-fifth">
@@ -119,7 +119,7 @@ const WhyUs = () => {
                 ease: [0, 0.71, 0.2, 1.01],
               }}
               viewport={{ once: true }}
-              className="flex self-start gap-5 p-5 text-justify rounded-lg drop-shadow-md bg-thirdColor md:max-w-screen-md"
+              className="flex flex-wrap gap-5 p-5 text-sm text-justify rounded-lg md:text-base md:flex-nowrap md:self-start drop-shadow-md bg-thirdColor md:max-w-screen-md"
             >
               <img
                 src={whyImg_1}
@@ -144,7 +144,7 @@ const WhyUs = () => {
                 ease: [0, 0.71, 0.2, 1.01],
               }}
               viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
-              className="flex self-end gap-5 p-5 text-justify rounded-lg bg-thirdColor md:max-w-screen-md drop-shadow-md"
+              className="flex flex-wrap gap-5 p-5 text-sm text-justify rounded-lg md:text-base md:flex-nowrap md:self-end bg-thirdColor md:max-w-screen-md drop-shadow-md"
             >
               <p className="w-full">
                 <span className="font-bold text-fifth">
