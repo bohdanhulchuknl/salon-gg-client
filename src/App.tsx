@@ -25,7 +25,7 @@ const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const location = useLocation();
-  const ref = useRef<HTMLHeadingElement>(null);
+  const ref = useRef<HTMLHeadingElement | null>(null);
   const isInView = useInView(ref);
 
   useEffect(() => {

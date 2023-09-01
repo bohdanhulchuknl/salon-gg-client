@@ -1,15 +1,29 @@
-import { RefObject } from "react";
-
+import { MutableRefObject } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 export interface IScrollRefs {
-  home: { ref: null | RefObject<HTMLDivElement>; isInView: boolean };
-  service: { ref: null | RefObject<HTMLDivElement>; isInView: boolean };
-  whyWe: { ref: null | RefObject<HTMLDivElement>; isInView: boolean };
-  works: { ref: null | RefObject<HTMLDivElement>; isInView: boolean };
-  team: { ref: null | RefObject<HTMLDivElement>; isInView: boolean };
+  home: {
+    ref: null | HTMLDivElement;
+    isInView: boolean;
+  };
+  service: {
+    ref: null | HTMLDivElement;
+    isInView: boolean;
+  };
+  whyWe: {
+    ref: null | HTMLDivElement;
+    isInView: boolean;
+  };
+  works: {
+    ref: null | HTMLDivElement;
+    isInView: boolean;
+  };
+  team: {
+    ref: null | HTMLDivElement;
+    isInView: boolean;
+  };
 }
 
 const initialState: IScrollRefs = {
@@ -40,60 +54,35 @@ export const scrollRefsSlice = createSlice({
   initialState,
   reducers: {
     //home
-    setHomeRef: (
-      state,
-      action: PayloadAction<RefObject<HTMLDivElement> | null>
-    ) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-ignore
+    setHomeRef: (state, action: PayloadAction<HTMLDivElement>) => {
       state.home.ref = action.payload;
     },
     setHomeIsInView: (state, action: PayloadAction<boolean>) => {
       state.home.isInView = action.payload;
     },
     //service
-    setServiceRef: (
-      state,
-      action: PayloadAction<RefObject<HTMLDivElement> | null>
-    ) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-ignore
+    setServiceRef: (state, action: PayloadAction<HTMLDivElement>) => {
       state.service.ref = action.payload;
     },
     setServiceIsInView: (state, action: PayloadAction<boolean>) => {
       state.service.isInView = action.payload;
     },
     //whyWe
-    setWhyWeRef: (
-      state,
-      action: PayloadAction<RefObject<HTMLDivElement> | null>
-    ) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-ignore
+    setWhyWeRef: (state, action: PayloadAction<HTMLDivElement>) => {
       state.whyWe.ref = action.payload;
     },
     setWhyWeIsInView: (state, action: PayloadAction<boolean>) => {
       state.whyWe.isInView = action.payload;
     },
     //works
-    setWorksRef: (
-      state,
-      action: PayloadAction<RefObject<HTMLDivElement> | null>
-    ) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-ignore
+    setWorksRef: (state, action: PayloadAction<HTMLDivElement>) => {
       state.works.ref = action.payload;
     },
     setWorksIsInView: (state, action: PayloadAction<boolean>) => {
       state.works.isInView = action.payload;
     },
     //team
-    setTeamRef: (
-      state,
-      action: PayloadAction<RefObject<HTMLDivElement> | null>
-    ) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-ignore
+    setTeamRef: (state, action: PayloadAction<HTMLDivElement>) => {
       state.team.ref = action.payload;
     },
     setTeamIsInView: (state, action: PayloadAction<boolean>) => {

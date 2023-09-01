@@ -33,7 +33,7 @@ const UserNoAuth = () => {
             <ul className="flex justify-center flex-1 gap-5 text-sm">
               <li
                 onClick={() => {
-                  homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                  homeRef?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`transition-all cursor-pointer  ${
                   isHomeInView
@@ -45,7 +45,7 @@ const UserNoAuth = () => {
               </li>
               <li
                 onClick={() => {
-                  serviceRef?.current?.scrollIntoView({ behavior: "smooth" });
+                  serviceRef?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`transition-all cursor-pointer ${
                   isServiceInView
@@ -57,7 +57,7 @@ const UserNoAuth = () => {
               </li>
               <li
                 onClick={() => {
-                  whyWeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                  whyWeRef?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`transition-all cursor-pointer ${
                   isWhyWeInView
@@ -69,7 +69,7 @@ const UserNoAuth = () => {
               </li>
               <li
                 onClick={() => {
-                  worksRef?.current?.scrollIntoView({ behavior: "smooth" });
+                  worksRef?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`transition-all cursor-pointer ${
                   isWorksInView
@@ -81,7 +81,7 @@ const UserNoAuth = () => {
               </li>
               <li
                 onClick={() => {
-                  teamRef?.current?.scrollIntoView({ behavior: "smooth" });
+                  teamRef?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={`transition-all cursor-pointer ${
                   isTeamInView

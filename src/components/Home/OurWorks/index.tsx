@@ -35,14 +35,14 @@ const worksArr = [
 ];
 
 const OurWorks = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const dispatch = useDispatch();
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
 
   useEffect(() => {
     if (ref) {
-      dispatch(setWorksRef(ref));
+      dispatch(setWorksRef(ref.current!));
     }
   }, [ref, dispatch]);
 
@@ -63,14 +63,14 @@ const OurWorks = () => {
           ease: [0, 0.71, 0.2, 1.01],
         }}
         viewport={{ once: true }}
-        className="flex items-center justify-center pt-16 pb-5 text-3xl font-apocBold "
+        className="flex items-center justify-center pt-16 pb-5 text-xl md:text-3xl font-apocBold "
       >
         <div className="flex flex-col ">
           <span>Our works</span>
-          <span className="text-xl text-fifth ">DM studio luxury</span>
+          <span className="text-base md:text-xl text-fifth ">DM studio luxury</span>
         </div>
       </motion.h2>
-      <div className="grid grid-cols-4 grid-rows-3 gap-5 p-5 overflow-hidden">
+      <div className="grid grid-cols-2 grid-rows-6 gap-5 p-5 overflow-hidden md:grid-cols-4 md:grid-rows-3">
         {worksArr.map((work, index) => (
           <motion.img
             key={index}

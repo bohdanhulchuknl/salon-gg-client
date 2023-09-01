@@ -33,7 +33,7 @@ const menuVariants = {
   },
 };
 
-const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
+const NavBarVertical = ({ isShow , user }: INavBarVertical) => {
   const homeRef = useSelector(selectHomeRef);
   const isHomeInView = useSelector(selectHomeIsInView);
   const serviceRef = useSelector(selectServiceRef);
@@ -44,6 +44,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
   const isWorksInView = useSelector(selectWorksIsInView);
   const teamRef = useSelector(selectTeamRef);
   const isTeamInView = useSelector(selectTeamIsInView);
+
   return (
     <motion.div
       variants={menuVariants}
@@ -60,7 +61,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
           <div className="w-full">
             <Logo
               onClick={() => {
-                homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                homeRef?.scrollIntoView({ behavior: "smooth" });
               }}
             />
           </div>
@@ -70,7 +71,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
         <div className="flex flex-col justify-center flex-1 gap-5 text-sm">
           <button
             onClick={() => {
-              homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+              homeRef?.scrollIntoView({ behavior: "smooth" });
             }}
             className={`transition-all  ${
               isHomeInView
@@ -82,7 +83,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
           </button>
           <button
             onClick={() => {
-              serviceRef?.current?.scrollIntoView({ behavior: "smooth" });
+              serviceRef?.scrollIntoView({ behavior: "smooth" });
             }}
             className={`${
               isServiceInView
@@ -94,7 +95,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
           </button>
           <button
             onClick={() => {
-              whyWeRef?.current?.scrollIntoView({ behavior: "smooth" });
+              whyWeRef?.scrollIntoView({ behavior: "smooth" });
             }}
             className={`${
               isWhyWeInView
@@ -106,7 +107,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
           </button>
           <button
             onClick={() => {
-              worksRef?.current?.scrollIntoView({ behavior: "smooth" });
+              worksRef?.scrollIntoView({ behavior: "smooth" });
             }}
             className={`${
               isWorksInView
@@ -118,7 +119,7 @@ const NavBarVertical = ({ isShow = false, user }: INavBarVertical) => {
           </button>
           <button
             onClick={() => {
-              teamRef?.current?.scrollIntoView({ behavior: "smooth" });
+              teamRef?.scrollIntoView({ behavior: "smooth" });
             }}
             className={`${
               isTeamInView

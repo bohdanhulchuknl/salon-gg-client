@@ -28,7 +28,7 @@ const userNavBarItems = [
 ];
 
 const UserProtectNavBar = ({ user }: IUserProtectNavBarProps) => {
-  console.log(user)
+
   return (
     <div className="shadow-sm bg-thirdColor">
       <div className="container w-full px-5 mx-auto">

@@ -14,14 +14,15 @@ interface ICaruosel {
 }
 
 const HomeCarousel = ({ slides, user }: ICaruosel) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const dispatch = useDispatch();
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
 
   useEffect(() => {
+  
     if (ref) {
-      dispatch(setHomeRef(ref));
+      dispatch(setHomeRef(ref.current!));
     }
   }, [ref, dispatch]);
 
@@ -66,7 +67,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
         >
           <div className="flex items-center self-center justify-center gap-2 px-5 rounded-sm bg-thirdColor/50">
             <h1 className=" text-[74px] text-firstColor ">DM</h1>
-            <div className="gap-1  md:flex md:flex-col text-fifth">
+            <div className="gap-1 md:flex md:flex-col text-fifth">
               <h2 className="text-2xl -mt-2  md:text-[28px] ">studio</h2>
               <h2 className="text-2xl -mt-2  md:text-[28px]">luxury</h2>
             </div>
@@ -94,7 +95,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
-              className="px-2 py-2 text-3xl text-white rounded-sm bg-firstColor whitespace-nowrap"
+              className="px-2 py-2 text-2xl text-white rounded-sm md:text-3xl bg-firstColor whitespace-nowrap"
             >
               beauty salon
             </motion.span>
@@ -104,7 +105,7 @@ const HomeCarousel = ({ slides, user }: ICaruosel) => {
             <LinkButtonCustom
               title="Create order"
               to={`${!user ? "/login" : "/create-order-select-master"}`}
-              className="px-6 py-3 text-xl bg-fifth !text-thirdColor hover:bg-firstColor border-2 border-fifth hover:border-thirdColor hover:scale-95
+              className="px-6 py-3 md:text-xl bg-fifth !text-thirdColor hover:bg-firstColor border-2 border-fifth hover:border-thirdColor hover:scale-95
               "
             />
           </div>

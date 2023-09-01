@@ -58,14 +58,14 @@ const team = [
 
 const OurTeam = () => {
   const [isOpenDialogMoreInfo, setIsOpenDialogMoreInfo] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const dispatch = useDispatch();
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
 
   useEffect(() => {
     if (ref) {
-      dispatch(setTeamRef(ref));
+      dispatch(setTeamRef(ref.current!));
     }
   }, [ref, dispatch]);
 
@@ -73,8 +73,8 @@ const OurTeam = () => {
     dispatch(setTeamIsInView(isInView));
   }, [isInView, dispatch]);
   return (
-    <div className="w-full h-screen p-5 md:pl-28" ref={ref}>
-      <div className="container relative flex flex-col items-center justify-center w-full h-full mx-auto">
+    <div className="container flex w-full min-h-screen p-5 mx-auto md:pl-28" ref={ref}>
+      <div className="relative flex flex-col items-center justify-center w-full ">
         <motion.h2
           viewport={{ once: true }}
           animate={isInView ? "top" : "center"}
@@ -85,11 +85,11 @@ const OurTeam = () => {
             delay: 1.0,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="absolute flex items-center justify-center text-3xl font-apocBold top-[35%] left-[45%]"
+          className="absolute top-0 flex items-center justify-center w-full text-xl md:text-3xl font-apocBold"
         >
           <div className="flex flex-col ">
-            <span>Our Team</span>
-            <span className="text-xl text-fifth ">DM studio luxury</span>
+            <span>Our team</span>
+            <span className="text-base md:text-xl text-fifth ">DM studio luxury</span>
           </div>
         </motion.h2>
         <motion.div
@@ -102,9 +102,9 @@ const OurTeam = () => {
             ease: [0, 0.71, 0.2, 1.01],
           }}
           viewport={{ once: true }}
-          className="flex items-center justify-center w-full gap-5 "
+          className="flex items-center justify-center w-full h-full gap-5 pt-28"
         >
-          <div className="flex flex-wrap items-center justify-around w-full gap-2">
+          <div className="flex flex-wrap items-center justify-around w-full h-full gap-2">
             {team.map((element, index) => (
               <div
                 key={index}

@@ -40,7 +40,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
           <div className="flex justify-center flex-1 gap-5 text-sm">
             <button
               onClick={() => {
-                homeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                homeRef?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`transition-all  ${
                 isHomeInView
@@ -52,7 +52,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
             </button>
             <button
               onClick={() => {
-                serviceRef?.current?.scrollIntoView({ behavior: "smooth" });
+                serviceRef?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`${
                 isServiceInView
@@ -64,7 +64,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
             </button>
             <button
               onClick={() => {
-                whyWeRef?.current?.scrollIntoView({ behavior: "smooth" });
+                whyWeRef?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`${
                 isWhyWeInView
@@ -76,7 +76,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
             </button>
             <button
               onClick={() => {
-                worksRef?.current?.scrollIntoView({ behavior: "smooth" });
+                worksRef?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`${
                 isWorksInView
@@ -88,7 +88,7 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
             </button>
             <button
               onClick={() => {
-                teamRef?.current?.scrollIntoView({ behavior: "smooth" });
+                teamRef?.scrollIntoView({ behavior: "smooth" });
               }}
               className={`${
                 isTeamInView

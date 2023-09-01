@@ -11,7 +11,7 @@ import whyImg_3 from "../../../assets/why/3.jpg";
 import { setWhyWeIsInView, setWhyWeRef} from '../../../app/slices/scrollRefs.slice';
 
 const WhyUs = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const dispatch = useDispatch();
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
@@ -30,7 +30,7 @@ const WhyUs = () => {
 
   useEffect(() => {
     if (ref) {
-      dispatch(setWhyWeRef(ref));
+      dispatch(setWhyWeRef(ref.current!));
     }
   }, [ref, dispatch]);
 

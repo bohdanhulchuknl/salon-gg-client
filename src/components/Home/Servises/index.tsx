@@ -6,14 +6,14 @@ import { CreateOrderSelectService } from "../../../pages";
 import { setServiceIsInView, setServiceRef } from '../../../app/slices/scrollRefs.slice';
 
 const Servises = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const dispatch = useDispatch();
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
 
   useEffect(() => {
     if (ref) {
-      dispatch(setServiceRef(ref));
+      dispatch(setServiceRef(ref.current!));
     }
   }, [ref, dispatch]);
 

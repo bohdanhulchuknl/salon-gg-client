@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
-
+import { useMobileOrientation } from "react-device-detect";
 import { motion } from "framer-motion";
 
 import neil from "../../assets/services/1.jpg";
@@ -21,7 +21,7 @@ const ServiceTitle = ({
   children: React.ReactNode;
   id: string;
 }) => {
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLParagraphElement | null>(null);
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
   const dispatch = useDispatch();
   const inViewService = useSelector(selectInViewService);
@@ -71,26 +71,29 @@ const Legs = ({
   variants: string[];
   img: string;
 }) => {
+  const { isLandscape } = useMobileOrientation();
   return (
     <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
       <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 group/serviceCard">
         <div className="flex items-center justify-center h-full ">
           <div className="relative z-10 px-4 py-4 md:py-4 md:px-4 bg-thirdColor rounded-2xl drop-shadow-md">
-            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl font-bold sm:flex font-apocBold rounded-2xl">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl font-bold md:flex font-apocBold rounded-2xl">
               <span className="p-2 text-fifth group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
                 {id}
               </span>
             </h5>
-            <div className="z-10 grid grid-cols-1 gap-4 text-sm transition-all sm:text-base sm:grid-cols-2">
+            <div className={`z-10 grid grid-cols-1 gap-4 text-sm transition-all sm:${!isLandscape ? "text-base" : ""} sm:grid-cols-2`}>
               {variants.map((variant) => (
-                <div className="p-2 border-l-2 border-fifth " key={variant}>{variant}</div>
+                <div className="p-2 border-l-2 border-fifth " key={variant}>
+                  {variant}
+                </div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
               <LinkButtonCustom
                 to="/"
                 title="Select"
-                className="!px-2 !py-2 text-xs sm:text-base"
+                className={`!px-2 !py-2 text-xs sm:${!isLandscape ? "text-base" : ""}`}
               />
             </div>
           </div>
@@ -118,26 +121,29 @@ const Neil = ({
   variants: string[];
   img: string;
 }) => {
+  const { isLandscape } = useMobileOrientation();
   return (
     <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
       <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 group/serviceCard">
         <div className="flex items-center justify-center h-full ">
           <div className="relative z-10 px-4 py-6 md:py-4 md:px-4 bg-thirdColor rounded-2xl drop-shadow-md">
-            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-apocBold rounded-2xl">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl md:flex font-apocBold rounded-2xl">
               <span className="p-2 font-bold text-fifth group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
                 {id}
               </span>
             </h5>
-            <div className="z-10 grid grid-cols-1 gap-4 text-sm transition-all sm:text-base sm:grid-cols-2">
+            <div className={`z-10 grid grid-cols-1 gap-4 text-sm transition-all o sm:${!isLandscape ? "text-base" : ""} sm:grid-cols-2`}>
               {variants.map((variant) => (
-                <div className="p-2 border-l-2 border-fifth" key={variant}>{variant}</div>
+                <div className="p-2 border-l-2 border-fifth" key={variant}>
+                  {variant}
+                </div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
               <LinkButtonCustom
                 to="/"
                 title="Select"
-                className="!px-2 !py-2 text-xs sm:text-base"
+                className={`!px-2 !py-2 text-xs sm:${!isLandscape ? "text-base" : ""}`}
               />
             </div>
           </div>
@@ -165,26 +171,29 @@ const Eyebrows = ({
   variants: string[];
   img: string;
 }) => {
+  const { isLandscape } = useMobileOrientation();
   return (
     <ServiceCard id={id} gradient="from-[#fff] to-[#fff]">
       <div className="relative z-10 flex flex-col w-full h-full sm:px-4 sm:py-6 group/serviceCard">
         <div className="flex items-center justify-center h-full ">
           <div className="relative z-10 px-4 py-6 md:py-4 md:px-4 bg-thirdColor rounded-2xl drop-shadow-md">
-            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl sm:flex font-apocBold rounded-2xl ">
+            <h5 className="items-center justify-center hidden w-full h-20 gap-2 pb-4 text-xl md:flex font-apocBold rounded-2xl ">
               <span className="p-2 font-bold text-fifth group-hover/serviceCard:bg-thirdColor/50 rounded-2xl">
                 {id}
               </span>
             </h5>
-            <div className="z-10 grid grid-cols-1 gap-4 text-sm transition-all sm:text-base sm:grid-cols-2 ">
+            <div className={`z-10 grid max-h-screen grid-cols-1 gap-4 text-sm transition-all sm:${!isLandscape ? "text-base" : ""} sm:grid-cols-2`}>
               {variants.map((variant) => (
-                <div className="p-2 border-l-2 border-fifth" key={variant}>{variant}</div>
+                <div className="p-2 border-l-2 border-fifth" key={variant}>
+                  {variant}
+                </div>
               ))}
             </div>
             <div className="z-10 flex items-center justify-end pt-5">
               <LinkButtonCustom
                 to="/"
                 title="Select"
-                className="!px-2 !py-2 text-xs sm:text-base"
+                className={`!px-2 !py-2 text-xs sm:${!isLandscape ? "text-base" : ""}`}
               />
             </div>
           </div>
@@ -239,6 +248,7 @@ const CreateOrderSelectService = () => {
     },
   ];
 
+
   return (
     <div className="container mx-auto">
       <motion.h5
@@ -250,14 +260,16 @@ const CreateOrderSelectService = () => {
           delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-        className="sticky z-10 flex items-center text-xl sm:justify-center md:text-3xl top-2 font-apocBold"
+        className="sticky z-10 flex items-center text-xl md:justify-center md:text-3xl top-2 font-apocBold"
       >
-        <div className="pl-[15vw] sm:pl-0 flex flex-col">
+        <div className="pl-[15vw] md:pl-0 flex flex-col">
           <span>Select a</span> <span className=" text-fifth">Service</span>
         </div>
       </motion.h5>
-      <div className="flex items-start w-full sm:gap-20">
-        <div className="flex w-full justify-center  py-[30vh] sm:py-[50vh]">
+      <div className="flex items-start w-full md:gap-20">
+        <div
+          className={`flex md:w-full justify-center px-2  py-[30vh] sm:py-[50vh]`}
+        >
           <ul>
             {services.map((service) => (
               <li key={service.title} className="">
@@ -266,8 +278,10 @@ const CreateOrderSelectService = () => {
             ))}
           </ul>
         </div>
-        <div className="sticky top-0 left-0 flex items-center w-full h-screen ">
-          <div className="relative flex flex-col justify-between w-full rounded-2xl">
+        <div
+          className={`sticky top-0 left-0 flex items-center justify-end w-full h-screen `}
+        >
+          <div className=" relative flex flex-col justify-between w-full max-w-[90%] rounded-2xl">
             {services.map((service) => (
               <service.card
                 key={service.title}

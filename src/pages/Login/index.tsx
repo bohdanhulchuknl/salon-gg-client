@@ -5,10 +5,8 @@ const Login = () => {
   const handleGoogleLogin = () => {
     window.open(`${serverUri}/auth/google`, "_self");
   };
+  console.log("LOGIN");
 
-  // const handleFacebookLogin = () => {
-  //     window.open("http://localhost:5000/auth/facebook", "_self")
-  // }
   return (
     <div className="container flex items-center justify-center h-screen mx-auto font-apocBold ">
       <div className="flex flex-col justify-center gap-3 mx-auto rounded-lg shadow shadow-firstColor px-7 py-14">
