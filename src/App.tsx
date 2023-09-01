@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import { Dialog } from "@headlessui/react";
 import { Navbar, AllRoutes, Footer, NavBarVertical } from "./components";
 import { useInView } from "framer-motion";
+import { AiOutlineCloseSquare } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -27,7 +28,7 @@ const App = () => {
   const location = useLocation();
   const ref = useRef<HTMLHeadingElement | null>(null);
   const isInView = useInView(ref);
-
+  const [isOpen, setIsOpen] = useState(true);
   useEffect(() => {
     //!
     getUserAPI()
@@ -83,6 +84,25 @@ const App = () => {
           <Footer />
         </footer>
       )}
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className="fixed top-0 flex items-center justify-center w-full h-screen backdrop-blur-sm bg-transparent/50"
+      >
+        <Dialog.Panel className="relative p-10 bg-white rounded-lg drop-shadow-2xl shadow-white">
+          <Dialog.Title className="flex flex-col justify-between gap-5 text-2xl">
+            <p>The site is under <span className="underline text-fifth">development</span>!!!</p>
+            <p>Cайт знаходиться в <span className="underline text-fifth">розробці</span>!!!</p>
+         
+          </Dialog.Title>
+
+
+          <AiOutlineCloseSquare
+            className="absolute transition cursor-pointer -right-1 h-7 w-7 -top-10 fill-white hover:fill-fifth"
+            onClick={() => setIsOpen(false)}
+          />
+        </Dialog.Panel>
+      </Dialog>
     </div>
   );
 };
