@@ -87,7 +87,7 @@ const App = () => {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className="fixed top-0 flex items-center justify-center w-full h-screen backdrop-blur-sm bg-transparent/50"
+        className="fixed top-0 flex items-center justify-center w-full h-screen font-apocBold backdrop-blur-sm bg-transparent/50"
       >
         <Dialog.Panel className="relative p-10 bg-white rounded-lg drop-shadow-2xl shadow-white">
           <Dialog.Title className="flex flex-col justify-between gap-5 text-2xl">
