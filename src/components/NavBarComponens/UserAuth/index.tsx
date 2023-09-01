@@ -34,72 +34,72 @@ const UserAuth = ({ logout, user }: IUserAuthProps) => {
   const teamRef = useSelector(selectTeamRef);
   const isTeamInView = useSelector(selectTeamIsInView);
   return (
-    <div className="container ">
-      <div className="flex items-center justify-between px-5 m-auto ">
-        <div className="px-4 py-3 mx-auto">
-          <div className="flex justify-center flex-1 gap-5 text-sm">
-            <button
+    <div className="container mx-auto">
+      <div className="flex items-center justify-end w-full mx-auto md:justify-between">
+        <nav className="hidden px-4 py-3 mx-auto sm:block">
+          <ul className="flex justify-center flex-1 gap-5 text-sm">
+            <li
               onClick={() => {
                 homeRef?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`transition-all  ${
+              className={`transition-all cursor-pointer ${
                 isHomeInView
                   ? "text-fifth"
                   : " text-firstColor/50 hover:underline"
               }`}
             >
               Home
-            </button>
-            <button
+            </li>
+            <li
               onClick={() => {
                 serviceRef?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`${
+              className={`transition-all cursor-pointer ${
                 isServiceInView
                   ? "text-fifth "
                   : " text-firstColor/50 hover:underline"
               }`}
             >
               Services
-            </button>
-            <button
+            </li>
+            <li
               onClick={() => {
                 whyWeRef?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`${
+              className={`transition-all cursor-pointer ${
                 isWhyWeInView
                   ? "text-fifth "
                   : " text-firstColor/50 hover:underline"
               }`}
             >
               Why we are?
-            </button>
-            <button
+            </li>
+            <li
               onClick={() => {
                 worksRef?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`${
+              className={`transition-all cursor-pointer ${
                 isWorksInView
                   ? "text-fifth "
                   : " text-firstColor/50 hover:underline"
               }`}
             >
               Works
-            </button>
-            <button
+            </li>
+            <li
               onClick={() => {
                 teamRef?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`${
+              className={`transition-all cursor-pointer ${
                 isTeamInView
                   ? "text-fifth "
                   : " text-firstColor/50 hover:underline"
               }`}
             >
               Team
-            </button>
-          </div>
-        </div>
+            </li>
+          </ul>
+        </nav>
         <div className="flex items-center justify-center gap-1 text-xs">
           <div className="flex items-center justify-center gap-2 pr-6 text-xs text-firstColor">
             <address>+380989571902</address>
