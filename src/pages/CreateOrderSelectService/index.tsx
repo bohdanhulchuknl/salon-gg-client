@@ -13,6 +13,7 @@ import {
 } from "../../app/slices/service.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkButtonCustom } from "../../components/Custom";
+import { selectServiceRef } from "../../app/slices/scrollRefs.slice";
 
 const ServiceTitle = ({
   children,
@@ -82,7 +83,11 @@ const Legs = ({
                 {id}
               </span>
             </h5>
-            <div className={`z-10 grid grid-cols-1 gap-4 text-sm transition-all sm:${!isLandscape ? "text-base" : ""} sm:grid-cols-2`}>
+            <div
+              className={`z-10 grid grid-cols-1 gap-4 text-sm transition-all sm:${
+                !isLandscape ? "text-base" : ""
+              } sm:grid-cols-2`}
+            >
               {variants.map((variant) => (
                 <div className="p-2 border-l-2 border-fifth " key={variant}>
                   {variant}
@@ -93,7 +98,9 @@ const Legs = ({
               <LinkButtonCustom
                 to="/"
                 title="Select"
-                className={`!px-2 !py-2 text-xs sm:${!isLandscape ? "text-base" : ""}`}
+                className={`!px-2 !py-2 text-xs sm:${
+                  !isLandscape ? "text-base" : ""
+                }`}
               />
             </div>
           </div>
@@ -132,7 +139,11 @@ const Neil = ({
                 {id}
               </span>
             </h5>
-            <div className={`z-10 grid grid-cols-1 gap-4 text-sm transition-all o sm:${!isLandscape ? "text-base" : ""} sm:grid-cols-2`}>
+            <div
+              className={`z-10 grid grid-cols-1 gap-4 text-sm transition-all o sm:${
+                !isLandscape ? "text-base" : ""
+              } sm:grid-cols-2`}
+            >
               {variants.map((variant) => (
                 <div className="p-2 border-l-2 border-fifth" key={variant}>
                   {variant}
@@ -143,7 +154,9 @@ const Neil = ({
               <LinkButtonCustom
                 to="/"
                 title="Select"
-                className={`!px-2 !py-2 text-xs sm:${!isLandscape ? "text-base" : ""}`}
+                className={`!px-2 !py-2 text-xs sm:${
+                  !isLandscape ? "text-base" : ""
+                }`}
               />
             </div>
           </div>
@@ -182,7 +195,11 @@ const Eyebrows = ({
                 {id}
               </span>
             </h5>
-            <div className={`z-10 grid max-h-screen grid-cols-1 gap-4 text-sm transition-all sm:${!isLandscape ? "text-base" : ""} sm:grid-cols-2`}>
+            <div
+              className={`z-10 grid max-h-screen grid-cols-1 gap-4 text-sm transition-all sm:${
+                !isLandscape ? "text-base" : ""
+              } sm:grid-cols-2`}
+            >
               {variants.map((variant) => (
                 <div className="p-2 border-l-2 border-fifth" key={variant}>
                   {variant}
@@ -193,7 +210,9 @@ const Eyebrows = ({
               <LinkButtonCustom
                 to="/"
                 title="Select"
-                className={`!px-2 !py-2 text-xs sm:${!isLandscape ? "text-base" : ""}`}
+                className={`!px-2 !py-2 text-xs sm:${
+                  !isLandscape ? "text-base" : ""
+                }`}
               />
             </div>
           </div>
@@ -214,6 +233,7 @@ const Eyebrows = ({
 };
 
 const CreateOrderSelectService = () => {
+  const serviceRef = useSelector(selectServiceRef);
   const services = [
     {
       title: "Педикюр",
@@ -248,6 +268,9 @@ const CreateOrderSelectService = () => {
     },
   ];
 
+  const scrollToServiceHandler = () => {
+    serviceRef?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="container mx-auto">
@@ -260,7 +283,8 @@ const CreateOrderSelectService = () => {
           delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-        className="sticky z-10 flex items-center text-xl md:justify-center md:text-3xl top-2 font-apocBold"
+        className="sticky z-10 flex items-center text-xl cursor-pointer md:justify-center md:text-3xl top-2 font-apocBold"
+        onClick={scrollToServiceHandler}
       >
         <div className="pl-[15vw] md:pl-0 flex flex-col">
           <span>Select a</span> <span className=" text-fifth">Service</span>

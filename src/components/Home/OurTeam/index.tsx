@@ -73,7 +73,10 @@ const OurTeam = () => {
     dispatch(setTeamIsInView(isInView));
   }, [isInView, dispatch]);
   return (
-    <div className="container flex w-full min-h-screen p-5 mx-auto md:pl-28" ref={ref}>
+    <div
+      className="container flex w-full min-h-screen p-5 mx-auto md:pl-28"
+      ref={ref}
+    >
       <div className="relative flex flex-col items-center justify-center w-full ">
         <motion.h2
           viewport={{ once: true }}
@@ -89,7 +92,9 @@ const OurTeam = () => {
         >
           <div className="flex flex-col ">
             <span>Our team</span>
-            <span className="text-base md:text-xl text-fifth ">DM studio luxury</span>
+            <span className="text-base md:text-xl text-fifth ">
+              DM studio luxury
+            </span>
           </div>
         </motion.h2>
         <motion.div
@@ -118,14 +123,24 @@ const OurTeam = () => {
                         className="absolute object-cover object-top w-full h-full rounded-full shadow-sm -z-10 shadow-black "
                       />
                       <h1 className="w-full py-2 text-center text-thirdColor ">
-                        {element.name}
+                        <span className="relative">
+                          {element.name}
+                          <div className="absolute top-0 -right-4">
+                            <span className="relative flex w-2 h-2 ">
+                              <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-thirdColor"></span>
+                              <span className="relative inline-flex w-2 h-2 rounded-full bg-fifth"></span>
+                            </span>
+                          </div>
+                        </span>
                       </h1>
                     </div>
                   </div>
 
                   <div className="absolute w-full h-full overflow-hidden text-xs border-2 rounded-full shadow-md shadow-black/50 my-rotate-y-180 backface-hidden">
                     <div className="flex flex-col items-center justify-center h-full gap-5 text-center text-firstColor ">
-                      <p className="text-fifth">{element.position.toUpperCase()}</p>
+                      <p className="text-fifth">
+                        {element.position.toUpperCase()}
+                      </p>
                       <LinkButtonCustom
                         title="more"
                         to="#"
@@ -144,9 +159,7 @@ const OurTeam = () => {
                     <Dialog.Title className="flex justify-between pb-5">
                       {element.desc}
                     </Dialog.Title>
-                    <Dialog.Description className="pb-2 text-gray-500">
-                      
-                    </Dialog.Description>
+                    <Dialog.Description className="pb-2 text-gray-500"></Dialog.Description>
 
                     <AiOutlineCloseSquare
                       className=" transition cursor-pointer h-7 w-7 absolute -top-[25%] right-0 fill-firstColor hover:fill-fifth  "
