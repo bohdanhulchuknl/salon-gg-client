@@ -1,4 +1,3 @@
-import { MutableRefObject } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
@@ -55,6 +54,8 @@ export const scrollRefsSlice = createSlice({
   reducers: {
     //home
     setHomeRef: (state, action: PayloadAction<HTMLDivElement>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       state.home.ref = action.payload;
     },
     setHomeIsInView: (state, action: PayloadAction<boolean>) => {
@@ -62,6 +63,8 @@ export const scrollRefsSlice = createSlice({
     },
     //service
     setServiceRef: (state, action: PayloadAction<HTMLDivElement>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       state.service.ref = action.payload;
     },
     setServiceIsInView: (state, action: PayloadAction<boolean>) => {
@@ -69,6 +72,8 @@ export const scrollRefsSlice = createSlice({
     },
     //whyWe
     setWhyWeRef: (state, action: PayloadAction<HTMLDivElement>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       state.whyWe.ref = action.payload;
     },
     setWhyWeIsInView: (state, action: PayloadAction<boolean>) => {
@@ -76,6 +81,8 @@ export const scrollRefsSlice = createSlice({
     },
     //works
     setWorksRef: (state, action: PayloadAction<HTMLDivElement>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       state.works.ref = action.payload;
     },
     setWorksIsInView: (state, action: PayloadAction<boolean>) => {
@@ -83,6 +90,8 @@ export const scrollRefsSlice = createSlice({
     },
     //team
     setTeamRef: (state, action: PayloadAction<HTMLDivElement>) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       state.team.ref = action.payload;
     },
     setTeamIsInView: (state, action: PayloadAction<boolean>) => {
